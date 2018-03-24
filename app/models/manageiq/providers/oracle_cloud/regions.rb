@@ -2,6 +2,11 @@ module ManageIQ
   module Providers::OracleCloud
     module Regions
       REGIONS = {
+        "us1" => {
+          :name        => "us2",
+          :hostname    => "https://compute.uscom-east-1.oraclecloud.com/",
+          :description => "US East 1",
+        },
         "us2" => {
           :name        => "us2",
           :hostname    => "https://compute.uscom-central-1.oraclecloud.com/",
