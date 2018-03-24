@@ -82,14 +82,14 @@ module ManageIQ::Providers
 
       def parse_volume(volume)
         new_result = {
-          :ems_ref     => volume.id,
+          :ems_ref     => volume.name,
           :name        => volume.name,
           :status      => volume.status,
-          :description => volume.description,
+          :description => parse_uid_from_url(volume.imagelist),
           :size        => volume.size,
         }
 
-        return volume.id, new_result
+        return volume.name, new_result
       end
 
       def parse_storage_as_template(storage)
@@ -103,7 +103,7 @@ module ManageIQ::Providers
           :ems_ref            => uid,
           :location           => storage.uri,
           :name               => name,
-          :vendor             => "unknown", # TODO
+          :vendor             => "oracle",
           :raw_power_state    => "never",
           :operating_system   => process_os(name),
           :template           => true,
@@ -139,44 +139,77 @@ module ManageIQ::Providers
         uid    = parse_uid_from_url(instance.name)
         name   = parse_name_from_url(instance.name)
 
-        flavor = query_and_add_flavor(instance.shape)
+        flavor = @data_index.fetch_path(:flavors, instance.shape)
 
         type = ManageIQ::Providers::OracleCloud::CloudManager::Vm.name
 
-        key_pairs = extract_keys(instance.sshkeys)
+        first_disk = instance.storage_attachments.find { |item| item['index'] == instance.boot_order.first }
+
+        first_disk_ref = first_disk.keys.include?('storage_volume_name') ? first_disk['storage_volume_name'] : first_disk['volume']
+
+        boot_disk = @data_index.fetch_path(:cloud_volumes, first_disk_ref)
+
+        os = boot_disk.nil? ? process_os(instance.platform) : process_os(boot_disk[:description])
+
+        #private_network = { 
+        #  :description => 'private',
+        #  :ipaddress   => instance.ip,
+        #  :hostname    => instance.hostname,
+        #}.delete_nils
 
         new_result = {
           :type             => type,
           :uid_ems          => uid,
           :ems_ref          => "#{name}/#{uid}",
           :name             => name,
-          :vendor           => 'unknown', # TODO
+          :vendor           => 'oracle',
           :raw_power_state  => instance.state,
           :flavor           => flavor,
           :boot_time        => instance.start_time,
-          :operating_system => process_os(instance.platform),
+          :operating_system => os,
           # :labels            => instance.tags,
           :hardware         => {
             :cpu_total_cores => flavor[:cpus],
             :memory_mb       => flavor[:memory] / 1.megabyte,
-            :networks        => [
-              { :description => 'private',
-                :ipaddress   => instance.ip,
-                :hostname    => instance.hostname,
-              }
-            ]
+            :disks           => [],
+         #   :networks        => [private_network]
           },
-          :key_pairs        => key_pairs,
+          :key_pairs        => extract_keys(instance.sshkeys),
         }
+
+        populate_hardware_hash_with_disks(new_result[:hardware][:disks], instance)
 
         return uid, new_result
       end
 
-      def query_and_add_flavor(flavor_uid)
-        flavor = @connection.shapes.get(flavor_uid)
-        process_collection(flavor.to_miq_a, :flavors) { |f| parse_flavor(f) }
-        @data_index.fetch_path(:flavors, flavor_uid)
+      def populate_hardware_hash_with_disks(hardware_disks_array, instance)
+        instance.storage_attachments.each do |storage_attachment|
+          storage_attachment_ref = storage_attachment.keys.include?('storage_volume_name') ? storage_attachment['storage_volume_name'] : storage_attachment['volume']
+
+          d = @data_index.fetch_path(:cloud_volumes, storage_attachment_ref)
+
+          next if d.nil?
+
+          disk_size     = d[:size].to_i
+          disk_name     = storage_attachment_ref
+          disk_location = storage_attachment['index']
+
+          disk = add_instance_disk(hardware_disks_array, disk_size, disk_name, disk_location)
+          # Link the disk and the instance together
+          disk[:backing]      = d
+          disk[:backing_type] = 'CloudVolume'
+        end
       end
+
+      def add_instance_disk(disks, size, name, location)
+        super(disks, size, location, name, "oracle")
+      end
+
+      #def query_and_add_flavor(flavor_uid)
+      #  flavor = @connection.shapes.get(flavor_uid)
+      #  process_collection(flavor.to_miq_a, :flavors) { |f| parse_flavor(f) }
+      #  @data_index.fetch_path(:flavors, flavor_uid)
+      #end
 
       def extract_keys(ssh_keys)
         return [] if ssh_keys.nil?

@@ -4,7 +4,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   # require_nested :Provision
   # require_nested :ProvisionWorkflow
   # require_nested :MetricsCapture
-  # require_nested :MetricsCollectorWorker
+  # 
+  # require_nested :OrchestrationStack
   require_nested :RefreshParser
   require_nested :RefreshWorker
   require_nested :Refresher
@@ -15,6 +16,13 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   supports :regions
   supports :provisioning
+
+  before_create :ensure_managers
+  before_update :ensure_managers_zone_and_provider_region
+
+  def ensure_network_manager
+    build_network_manager(:type => 'ManageIQ::Providers::OracleCloud::NetworkManager') unless network_manager
+  end
 
   def self.hostname_required?
     false
