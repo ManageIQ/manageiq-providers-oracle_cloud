@@ -1,10 +1,10 @@
 class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::CloudManager
   require_nested :AuthKeyPair
+  require_nested :EventCatcher
   require_nested :Flavor
   # require_nested :Provision
   # require_nested :ProvisionWorkflow
   # require_nested :MetricsCapture
-  # 
   # require_nested :OrchestrationStack
   require_nested :RefreshParser
   require_nested :RefreshWorker
@@ -15,7 +15,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   include ManageIQ::Providers::OracleCloud::ManagerMixin
 
   supports :regions
-  supports :provisioning
+  # supports :provisioning
 
   before_create :ensure_managers
   before_update :ensure_managers_zone_and_provider_region
