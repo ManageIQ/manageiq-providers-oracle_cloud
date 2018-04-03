@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = "OracleCloud Provider for ManageIQ"
   s.licenses    = ["Apache-2.0"]
 
-  s.files = Dir["{app,config,lib}/**/*"]
+  s.files = Dir["{app,config,lib,locale}/**/*"]
 
   s.add_dependency("fog-oraclecloud")
 

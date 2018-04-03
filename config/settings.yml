@@ -4,10 +4,6 @@
     :blacklisted_event_names: []
     :event_handling:
       :event_groups:
-        :power:
-          :critical:
-            - oracle_cloud_instance_power_on
-            - oracle_cloud_instance_power_off
 :http_proxy:
   :oracle_cloud:
     :host:
@@ -18,9 +14,8 @@
   :worker_base:
     :event_catcher:
       :event_catcher_oracle_cloud:
-        :poll: 20.seconds
+        :poll: 15.seconds
     :queue_worker_base:
-      :ems_metrics_collector_worker:
-        :ems_metrics_collector_worker_oracle_cloud: {}
       :ems_refresh_worker:
         :ems_refresh_worker_oracle_cloud: {}
+        :ems_refresh_worker_oracle_cloud_network: {}
