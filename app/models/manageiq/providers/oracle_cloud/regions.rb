@@ -11,6 +11,11 @@ module ManageIQ
           :name        => "us2",
           :hostname    => "https://compute.uscom-central-1.oraclecloud.com/",
           :description => "US Commercial 2",
+        },
+        "br1" => {
+          :name        => "br1",
+          :hostname    => "https://compute.brcom-central-1.oraclecloud.com/",
+          :description => "Brazil Commercial 1",
         }
       }.freeze
 
