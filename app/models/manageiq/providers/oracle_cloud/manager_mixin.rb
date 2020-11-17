@@ -20,24 +20,25 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
   end
 
   module ClassMethods
-    def raw_connect(user, password, domain, api)
-      require 'fog/oraclecloud'
+    def verify_credentials(user, tenant, private_key, public_key, region)
+      config = raw_connect(user, tenant, private_key, public_key, region)
+      identity_api = OCI::Identity::IdentityClient.new(:config => config)
+      !!identity_api.get_user(user)
+    end
 
-      config = {
-        :provider           => "oraclecloud",
-        :oracle_username    => user,
-        :oracle_password    => MiqPassword.try_decrypt(password),
-        :oracle_domain      => domain,
-        :oracle_compute_api => api
-      }
+    def raw_connect(user, tenant, private_key, public_key, region)
+      require "oci"
 
-      begin
-        connection = ::Fog::Compute.new(config)
-      rescue => err
-        raise MiqException::MiqInvalidCredentialsError, err.message
-      end
+      public_key = public_key.split("\n").delete_if { |part| part.start_with?("-----") }.join("\n")
+      fingerprint = Digest::MD5.hexdigest(Base64.decode64(public_key)).scan(/../).join(":")
 
-      connection
+      config = OCI::Config.new
+      config.user        = user
+      config.tenancy     = tenant
+      config.key_content = private_key
+      config.fingerprint = fingerprint
+      config.region      = region
+      config
     end
   end
 end
