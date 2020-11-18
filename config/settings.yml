@@ -1,9 +1,11 @@
----
 :ems:
   :ems_oracle_cloud:
     :blacklisted_event_names: []
     :event_handling:
       :event_groups:
+:ems_refresh:
+  :oracle_cloud:
+    :refresh_interval: 15.minutes
 :http_proxy:
   :oracle_cloud:
     :host:
@@ -14,8 +16,9 @@
   :worker_base:
     :event_catcher:
       :event_catcher_oracle_cloud:
-        :poll: 15.seconds
+        :poll: 20.seconds
     :queue_worker_base:
+      :ems_metrics_collector_worker:
+        :ems_metrics_collector_worker_oracle_cloud: {}
       :ems_refresh_worker:
         :ems_refresh_worker_oracle_cloud: {}
-        :ems_refresh_worker_oracle_cloud_network: {}
