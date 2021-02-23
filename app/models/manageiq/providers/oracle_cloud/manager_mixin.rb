@@ -2,14 +2,14 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
   extend ActiveSupport::Concern
 
   def api
-    ManageIQ::Providers::OracleCloud::Regions.find_by_name(provider_region)[:hostname]
+    ManageIQ::Providers::OracleCloud::Regions.regions.dig(provider_region, :hostname)
   end
 
   def connect(options = {})
     authentication = authentication_best_fit(options[:auth_type])
     config = self.class.raw_connect(
+      uid_ems,
       authentication.userid,
-      authentication.service_account,
       authentication.auth_key,
       authentication.public_key,
       provider_region
@@ -36,17 +36,22 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
   end
 
   module ClassMethods
-    def verify_credentials(user, tenant, private_key, public_key, region)
+    def verify_credentials(args)
+      region, tenant = args.values_at("provider_region", "uid_ems")
+
+      default_endpoint = args.dig("authentications", "default")
+      user, private_key, public_key = default_endpoint&.values_at("userid", "auth_key", "public_key")
+
       config = raw_connect(user, tenant, private_key, public_key, region)
       identity_api = OCI::Identity::IdentityClient.new(:config => config)
       !!identity_api.get_user(user)
     end
 
-    def raw_connect(user, tenant, private_key, public_key, region)
+    def raw_connect(tenant, user, private_key, public_key, region)
       require "oci"
 
       # Strip out any "----- BEGIN/END PUBLIC KEY -----" lines
-      public_key = public_key.split("\n").delete_if { |part| part.start_with?("-----") }.join("\n")
+      public_key.gsub!(/-----(BEGIN|END) PUBLIC KEY-----/, "")
       # Build a key fingerprint e.g. aa:bb:cc:dd:ee...
       fingerprint = Digest::MD5.hexdigest(Base64.decode64(public_key)).scan(/../).join(":")
 
