@@ -1,14 +1,46 @@
 class ManageIQ::Providers::OracleCloud::Inventory::Parser::CloudManager < ManageIQ::Providers::OracleCloud::Inventory::Parser
   def parse
-    vms
+    flavors
+    images
+    instances
   end
 
-  def vms
-    collector.vms.each do |inventory|
-      inventory_object = persister.vms.find_or_build(inventory.id.to_s)
-      inventory_object.name = inventory.name
-      inventory_object.location = inventory.location
-      inventory_object.vendor = inventory.vendor
+  def flavors
+    collector.shapes.each do |shape|
+      persister.flavors.build(
+        :ems_ref => shape.shape,
+        :name    => shape.shape,
+        :cpus    => shape.ocpus,
+        :memory  => shape.memory_in_gbs.gigabytes
+      )
+    end
+  end
+
+  def images
+    collector.images.each do |image|
+      persister.miq_templates.build(
+        :ems_ref         => image.id,
+        :uid_ems         => image.id,
+        :name            => image.display_name,
+        :location        => "unknown",
+        :raw_power_state => "never",
+        :vendor          => "oracle"
+      )
+    end
+  end
+
+  def instances
+    collector.instances.each do |instance|
+      persister.vms.build(
+        :ems_ref          => instance.id,
+        :uid_ems          => instance.id,
+        :name             => instance.display_name,
+        :location         => instance.compartment_id,
+        :vendor           => "oracle",
+        :raw_power_state  => instance.lifecycle_state,
+        :flavor           => persister.flavors.lazy_find(instance.shape),
+        :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id)
+      )
     end
   end
 end
