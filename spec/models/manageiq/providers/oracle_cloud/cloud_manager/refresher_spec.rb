@@ -26,7 +26,8 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
 
       def assert_specific_flavor
-        expect(ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro")).to have_attributes(
+        flavor = ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro")
+        expect(flavor).to have_attributes(
           :name    => "VM.Standard.E2.1.Micro",
           :cpus    => 1,
           :memory  => 1.gigabyte,
@@ -36,7 +37,8 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
 
       def assert_specific_instance
-        expect(ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")).to have_attributes(
+        vm = ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")
+        expect(vm).to have_attributes(
           :vendor           => "oracle",
           :name             => "instance-20210223-1239",
           :location         => "ocid1.tenancy.oc1..aaaaaaaa",
@@ -51,7 +53,8 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
 
       def assert_specific_image
-        expect(ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda")).to have_attributes(
+        template = ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda")
+        expect(template).to have_attributes(
           :vendor          => "oracle",
           :name            => "Oracle-Linux-7.9-2021.01.12-0",
           :location        => "unknown",
@@ -60,6 +63,16 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :type            => "ManageIQ::Providers::OracleCloud::CloudManager::Template",
           :ems_ref         => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
           :raw_power_state => "never"
+        )
+
+        expect(template.hardware).to have_attributes(
+          :guest_os            => "linux_oracle",
+          :size_on_disk        => 50_010_783_744,
+          :virtualization_type => "NATIVE",
+          :root_device_type    => "PARAVIRTUALIZED"
+        )
+        expect(template.operating_system).to have_attributes(
+          :product_name => "Oracle Linux 7.9"
         )
       end
     end

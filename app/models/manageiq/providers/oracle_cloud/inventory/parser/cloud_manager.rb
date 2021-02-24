@@ -18,13 +18,28 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser::CloudManager < Manage
 
   def images
     collector.images.each do |image|
-      persister.miq_templates.build(
+      persister_image = persister.miq_templates.build(
         :ems_ref         => image.id,
         :uid_ems         => image.id,
         :name            => image.display_name,
         :location        => "unknown",
         :raw_power_state => "never",
-        :vendor          => "oracle"
+        :template        => true,
+        :vendor          => "oracle",
+        :ems_created_on  => image.time_created
+      )
+
+      persister.hardwares.build(
+        :vm_or_template      => persister_image,
+        :guest_os            => OperatingSystem.normalize_os_name(image.operating_system),
+        :size_on_disk        => image.size_in_mbs&.megabytes,
+        :virtualization_type => image.launch_mode,
+        :root_device_type    => image.launch_options&.boot_volume_type
+      )
+
+      persister.operating_systems.build(
+        :vm_or_template => persister_image,
+        :product_name   => "#{image.operating_system} #{image.operating_system_version}"
       )
     end
   end
