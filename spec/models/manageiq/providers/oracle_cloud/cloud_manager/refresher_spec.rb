@@ -11,6 +11,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
 
           assert_ems
 
+          assert_specific_cloud_tenant
           assert_specific_flavor
           assert_specific_instance
           assert_specific_image
@@ -21,8 +22,20 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         expect(ems.last_refresh_error).to be_nil
         expect(ems.last_refresh_date).not_to be_nil
         expect(ems.vms.count).to eq(1)
-        expect(ems.miq_templates.count).to eq(95)
+        expect(ems.miq_templates.count).to eq(97)
         expect(ems.flavors.count).to eq(13)
+        expect(ems.cloud_tenants.count).to eq(3)
+      end
+
+      def assert_specific_cloud_tenant
+        cloud_tenant = ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
+        expect(cloud_tenant).to have_attributes(
+          :ems_ref     => "ocid1.tenancy.oc1..aaaaaaaa",
+          :name        => "manageiq",
+          :description => "manageiq",
+          :enabled     => true,
+          :parent      => nil
+        )
       end
 
       def assert_specific_flavor
@@ -48,7 +61,8 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :ems_ref          => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
           :flavor           => ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro"),
           :raw_power_state  => "RUNNING",
-          :genealogy_parent => ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda")
+          :genealogy_parent => ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda"),
+          :cloud_tenant     => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
         )
       end
 

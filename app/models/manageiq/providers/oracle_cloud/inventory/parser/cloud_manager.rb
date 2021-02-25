@@ -1,8 +1,21 @@
 class ManageIQ::Providers::OracleCloud::Inventory::Parser::CloudManager < ManageIQ::Providers::OracleCloud::Inventory::Parser
   def parse
+    cloud_tenants
     flavors
     images
     instances
+  end
+
+  def cloud_tenants
+    collector.compartments.each do |compartment|
+      persister.cloud_tenants.build(
+        :name        => compartment.name,
+        :description => compartment.description,
+        :ems_ref     => compartment.id,
+        :enabled     => compartment.lifecycle_state == "ACTIVE",
+        :parent      => persister.cloud_tenants.lazy_find(compartment.compartment_id)
+      )
+    end
   end
 
   def flavors
@@ -54,7 +67,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser::CloudManager < Manage
         :vendor           => "oracle",
         :raw_power_state  => instance.lifecycle_state,
         :flavor           => persister.flavors.lazy_find(instance.shape),
-        :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id)
+        :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id),
+        :cloud_tenant     => persister.cloud_tenants.lazy_find(instance.compartment_id)
       )
     end
   end
