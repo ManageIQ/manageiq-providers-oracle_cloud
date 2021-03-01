@@ -6,7 +6,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
   describe "#refresh" do
     context "full refresh" do
       it "Performs a full refresh" do
-        1.times do
+        2.times do
           with_vcr { refresh(ems) }
 
           assert_ems
