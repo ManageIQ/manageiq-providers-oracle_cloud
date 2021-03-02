@@ -42,7 +42,7 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
       default_endpoint = args.dig("authentications", "default")
       user, private_key, public_key = default_endpoint&.values_at("userid", "auth_key", "public_key")
 
-      config = raw_connect(user, tenant, private_key, public_key, region)
+      config = raw_connect(tenant, user, private_key, public_key, region)
       identity_api = OCI::Identity::IdentityClient.new(:config => config)
       !!identity_api.get_user(user)
     end
