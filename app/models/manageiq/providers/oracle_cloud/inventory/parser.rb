@@ -7,6 +7,9 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     flavors
     images
     instances
+    subnets
+    vnics
+    virtual_cloud_networks
   end
 
   def cloud_tenants
@@ -73,6 +76,72 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id),
         :cloud_tenant     => persister.cloud_tenants.lazy_find(instance.compartment_id)
       )
+    end
+  end
+
+  def subnets
+    collector.subnets.each do |subnet|
+      persister.cloud_subnets.build(
+        :ems_ref       => subnet.id,
+        :name          => subnet.display_name,
+        :cidr          => subnet.cidr_block,
+        :gateway       => subnet.virtual_router_ip,
+        :status        => subnet.lifecycle_state,
+        :cloud_network => persister.cloud_networks.lazy_find(subnet.vcn_id),
+        :cloud_tenant  => persister.cloud_tenants.lazy_find(subnet.compartment_id)
+      )
+    end
+  end
+
+  def virtual_cloud_networks
+    collector.vcns.each do |vcn|
+      persister.cloud_networks.build(
+        :ems_ref      => vcn.id,
+        :name         => vcn.display_name,
+        :cidr         => vcn.cidr_block,
+        :status       => vcn.lifecycle_state,
+        :enabled      => vcn.lifecycle_state == "AVAILABLE",
+        :cloud_tenant => persister.cloud_tenants.lazy_find(vcn.compartment_id)
+      )
+    end
+  end
+
+  def vnics
+    collector.vnics.each do |vnic|
+      vnic_attachment = collector.vnic_attachments_by_vnic_id[vnic.id]
+      next if vnic_attachment.nil?
+
+      instance_id = vnic_attachment.instance_id
+
+      network_port = persister.network_ports.build(
+        :ems_ref      => vnic.id,
+        :name         => vnic.display_name,
+        :status       => vnic.lifecycle_state,
+        :mac_address  => vnic.mac_address,
+        :device       => persister.vms.lazy_find(instance_id),
+        :cloud_tenant => persister.cloud_tenants.lazy_find(vnic.compartment_id)
+      )
+
+      if vnic.private_ip
+        persister.cloud_subnet_network_ports.build(
+          :address      => vnic.private_ip,
+          :cloud_subnet => persister.cloud_subnets.lazy_find(vnic.subnet_id),
+          :network_port => network_port
+        )
+      end
+
+      if vnic.public_ip
+        persister.cloud_subnet_network_ports.build(
+          :address      => vnic.public_ip,
+          :cloud_subnet => persister.cloud_subnets.lazy_find(vnic.subnet_id),
+          :network_port => network_port
+        )
+      end
+    end
+  end
+
+  def vnic_attachments
+    collector.vnic_attachments.each do |vnic|
     end
   end
 end
