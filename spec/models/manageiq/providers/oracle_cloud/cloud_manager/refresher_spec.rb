@@ -22,7 +22,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         expect(ems.last_refresh_error).to be_nil
         expect(ems.last_refresh_date).not_to be_nil
         expect(ems.vms.count).to eq(1)
-        expect(ems.miq_templates.count).to eq(97)
+        expect(ems.miq_templates.count).to eq(98)
         expect(ems.flavors.count).to eq(13)
         expect(ems.cloud_tenants.count).to eq(3)
       end

@@ -7,6 +7,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     flavors
     images
     instances
+    vnic_attachments
+    subnets
   end
 
   def cloud_tenants
@@ -73,6 +75,16 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id),
         :cloud_tenant     => persister.cloud_tenants.lazy_find(instance.compartment_id)
       )
+    end
+  end
+
+  def vnic_attachments
+    collector.vnic_attachments.each do |vnic|
+    end
+  end
+
+  def subnets
+    collector.subnets.each do |subnet|
     end
   end
 end

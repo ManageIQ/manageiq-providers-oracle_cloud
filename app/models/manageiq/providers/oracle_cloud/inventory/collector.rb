@@ -29,6 +29,18 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
+  def subnets
+    @subnets ||= compartments.flat_map do |compartment|
+      virtual_network_client.list_subnets(compartment.id).data
+    end
+  end
+
+  def vnic_attachments
+    @vnic_attachments ||= compartments.flat_map do |compartment|
+      compute_client.list_vnic_attachments(compartment.id).data
+    end
+  end
+
   private
 
   def compute_client
@@ -37,5 +49,9 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def identity_client
     @identity_client ||= manager.connect(:service => "Identity::IdentityClient")
+  end
+
+  def virtual_network_client
+    @virtual_network_client ||= manager.connect(:service => "Core::VirtualNetworkClient")
   end
 end
