@@ -121,6 +121,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       def assert_specific_cloud_network
         cloud_network = ems.cloud_networks.first
         expect(cloud_network).to have_attributes(
+          :ems_id       => ems.network_manager.id,
           :name         => "vcn-20210223-1239",
           :ems_ref      => "ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq",
           :cidr         => "10.0.0.0/16",
@@ -133,6 +134,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       def assert_specific_cloud_subnet
         cloud_subnet = ems.cloud_subnets.first
         expect(cloud_subnet).to have_attributes(
+          :ems_id        => ems.network_manager.id,
           :name          => "subnet-20210223-1239",
           :ems_ref       => "ocid1.subnet.oc1.iad.aaaaaaaanmzazihpr74jpktyicjibszf3dyye4tho43nxemsixabsc7ugdqq",
           :cloud_network => ems.cloud_networks.find_by(:ems_ref => "ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq"),

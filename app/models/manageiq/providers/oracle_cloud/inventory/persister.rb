@@ -21,8 +21,6 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     add_network_collection(:cloud_networks)
   end
 
-  private
-
   def cloud_manager
     manager.kind_of?(EmsCloud) ? manager : manager.parent_manager
   end
@@ -31,9 +29,14 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     manager.kind_of?(EmsNetwork) ? manager : manager.network_manager
   end
 
+  private
+
   def add_cloud_collection(name)
     add_collection(cloud, name) do |builder|
       builder.add_properties(:parent => cloud_manager)
+      if builder.instance_variable_get(:@default_values).key?(:ems_id)
+        builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
+      end
       yield builder if block_given?
     end
   end
@@ -41,6 +44,9 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
   def add_network_collection(name)
     add_collection(network, name) do |builder|
       builder.add_properties(:parent => network_manager)
+      if builder.instance_variable_get(:@default_values).key?(:ems_id)
+        builder.add_default_values(:ems_id => ->(persister) { persister.network_manager.id })
+      end
       yield builder if block_given?
     end
   end
