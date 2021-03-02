@@ -1,5 +1,7 @@
 class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::CloudManager
   require_nested :AuthKeyPair
+  require_nested :AvailabilityZone
+  require_nested :CloudVolume
   require_nested :Flavor
   require_nested :Refresher
   require_nested :RefreshWorker

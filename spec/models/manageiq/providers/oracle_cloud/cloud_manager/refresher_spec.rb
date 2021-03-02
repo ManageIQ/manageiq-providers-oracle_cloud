@@ -11,25 +11,39 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
 
           assert_ems
 
+          assert_specific_availability_zone
           assert_specific_cloud_tenant
           assert_specific_flavor
           assert_specific_instance
           assert_specific_image
           assert_specific_cloud_network
           assert_specific_cloud_subnet
+          assert_specific_cloud_volume
         end
       end
 
       def assert_ems
         expect(ems.last_refresh_error).to be_nil
         expect(ems.last_refresh_date).not_to be_nil
-        expect(ems.vms.count).to eq(1)
-        expect(ems.miq_templates.count).to eq(98)
-        expect(ems.flavors.count).to eq(13)
+
+        expect(ems.availability_zones.count).to eq(3)
         expect(ems.cloud_tenants.count).to eq(3)
         expect(ems.cloud_subnets.count).to eq(1)
         expect(ems.cloud_networks.count).to eq(1)
+        expect(ems.cloud_volumes.count).to eq(3)
+        expect(ems.flavors.count).to eq(13)
+        expect(ems.miq_templates.count).to eq(100)
         expect(ems.network_ports.count).to eq(1)
+        expect(ems.vms.count).to eq(1)
+      end
+
+      def assert_specific_availability_zone
+        az = ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3")
+        expect(az).to have_attributes(
+          :name    => "Foha:US-ASHBURN-AD-3",
+          :ems_ref => "ocid1.availabilitydomain.oc1..aaaaaaaatrwxaogr7dl4yschqtrmqrdv6uzis3mgbnomiagqrfhcb7mxsfdq",
+          :type    => "ManageIQ::Providers::OracleCloud::CloudManager::AvailabilityZone"
+        )
       end
 
       def assert_specific_cloud_tenant
@@ -57,17 +71,18 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       def assert_specific_instance
         vm = ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")
         expect(vm).to have_attributes(
-          :vendor           => "oracle",
-          :name             => "instance-20210223-1239",
-          :location         => "ocid1.tenancy.oc1..aaaaaaaa",
-          :uid_ems          => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
-          :power_state      => "on",
-          :type             => "ManageIQ::Providers::OracleCloud::CloudManager::Vm",
-          :ems_ref          => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
-          :flavor           => ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro"),
-          :raw_power_state  => "RUNNING",
-          :genealogy_parent => ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda"),
-          :cloud_tenant     => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
+          :vendor            => "oracle",
+          :name              => "instance-20210223-1239",
+          :location          => "ocid1.tenancy.oc1..aaaaaaaa",
+          :uid_ems           => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+          :power_state       => "on",
+          :type              => "ManageIQ::Providers::OracleCloud::CloudManager::Vm",
+          :ems_ref           => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+          :flavor            => ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro"),
+          :raw_power_state   => "RUNNING",
+          :genealogy_parent  => ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda"),
+          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :availability_zone => ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3")
         )
 
         expect(vm.network_ports.count).to eq(1)
@@ -91,6 +106,12 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :gateway       => "10.0.0.1",
           :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
           :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
+        )
+
+        expect(vm.cloud_volumes.count).to eq(2)
+        expect(vm.cloud_volumes).to include(
+          ems.cloud_volumes.find_by(:ems_ref => "ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq"),
+          ems.cloud_volumes.find_by(:ems_ref => "ocid1.volume.oc1.iad.abuwcljtuksa3l3ws63kvbtjpbh4vlwude4hiaipht6raafofxo2jhi4z5zq")
         )
       end
 
@@ -143,6 +164,19 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :gateway       => "10.0.0.1",
           :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
           :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
+        )
+      end
+
+      def assert_specific_cloud_volume
+        cloud_volume = ems.cloud_volumes.first
+        expect(cloud_volume).to have_attributes(
+          :type              => "ManageIQ::Providers::OracleCloud::CloudManager::CloudVolume",
+          :ems_ref           => "ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq",
+          :size              => 50_010_783_744,
+          :availability_zone => ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3"),
+          :name              => "instance-20210223-1239 (Boot Volume)",
+          :status            => "AVAILABLE",
+          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
         )
       end
     end

@@ -2,6 +2,28 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
   require_nested :CloudManager
   require_nested :NetworkManager
 
+  def availability_domains
+    @availability_domains ||= compartments.flat_map do |compartment|
+      identity_client.list_availability_domains(compartment.id).data
+    end
+  end
+
+  def boot_volumes
+    @boot_volumes ||= availability_domains.flat_map do |availability_domain|
+      blockstorage_client.list_boot_volumes(availability_domain.name, availability_domain.compartment_id).data
+    end
+  end
+
+  def boot_volume_attachments
+    @boot_volume_attachments ||= availability_domains.flat_map do |availability_domain|
+      compute_client.list_boot_volume_attachments(availability_domain.name, availability_domain.compartment_id).data
+    end
+  end
+
+  def boot_volume_attachments_by_instance_id
+    @boot_volume_attachments_by_instance_id ||= boot_volume_attachments.group_by(&:instance_id)
+  end
+
   def compartments
     @compartments ||= begin
       root_compartment = identity_client.get_compartment(identity_client.api_client.config.tenancy).data
@@ -63,7 +85,27 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     @vnic_attachments_by_instance_id ||= vnic_attachments.group_by(&:instance_id)
   end
 
+  def volumes
+    @volumes ||= compartments.flat_map do |compartment|
+      blockstorage_client.list_volumes(compartment.id).data
+    end
+  end
+
+  def volume_attachments
+    @volume_attachments ||= compartments.flat_map do |compartment|
+      compute_client.list_volume_attachments(compartment.id).data
+    end
+  end
+
+  def volume_attachments_by_instance_id
+    @volume_attachments_by_instance_id ||= volume_attachments.group_by(&:instance_id)
+  end
+
   private
+
+  def blockstorage_client
+    @blockstorage_client ||= manager.connect(:service => "Core::BlockstorageClient")
+  end
 
   def compute_client
     @compute_client ||= manager.connect(:service => "Core::ComputeClient")
