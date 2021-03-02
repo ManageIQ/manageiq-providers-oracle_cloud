@@ -3,6 +3,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
   require_nested :NetworkManager
 
   def parse
+    availability_domains
+    boot_volumes
     cloud_tenants
     flavors
     images
@@ -10,6 +12,28 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     subnets
     vnics
     virtual_cloud_networks
+  end
+
+  def availability_domains
+    collector.availability_domains.each do |availability_domain|
+      persister.availability_zones.build(
+        :ems_ref => availability_domain.id,
+        :name    => availability_domain.name
+      )
+    end
+  end
+
+  def boot_volumes
+    collector.boot_volumes.each do |boot_volume|
+      persister.cloud_volumes.build(
+        :ems_ref           => boot_volume.id,
+        :name              => boot_volume.display_name,
+        :size              => boot_volume.size_in_mbs.megabytes,
+        :status            => boot_volume.lifecycle_state,
+        :availability_zone => persister.availability_zones.lazy_find({:name => boot_volume.availability_domain}, {:ref => :by_name}),
+        :cloud_tenant      => persister.cloud_tenants.lazy_find(boot_volume.compartment_id)
+      )
+    end
   end
 
   def cloud_tenants
@@ -65,17 +89,30 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
 
   def instances
     collector.instances.each do |instance|
-      persister.vms.build(
-        :ems_ref          => instance.id,
-        :uid_ems          => instance.id,
-        :name             => instance.display_name,
-        :location         => instance.compartment_id,
-        :vendor           => "oracle",
-        :raw_power_state  => instance.lifecycle_state,
-        :flavor           => persister.flavors.lazy_find(instance.shape),
-        :genealogy_parent => persister.miq_templates.lazy_find(instance.image_id),
-        :cloud_tenant     => persister.cloud_tenants.lazy_find(instance.compartment_id)
+      vm = persister.vms.build(
+        :ems_ref           => instance.id,
+        :uid_ems           => instance.id,
+        :name              => instance.display_name,
+        :location          => instance.compartment_id,
+        :vendor            => "oracle",
+        :raw_power_state   => instance.lifecycle_state,
+        :flavor            => persister.flavors.lazy_find(instance.shape),
+        :genealogy_parent  => persister.miq_templates.lazy_find(instance.image_id),
+        :cloud_tenant      => persister.cloud_tenants.lazy_find(instance.compartment_id),
+        :availability_zone => persister.availability_zones.lazy_find({:name => instance.availability_domain}, {:ref => :by_name})
       )
+
+      hardware = persister.hardwares.build(
+        :vm_or_template => vm
+      )
+
+      collector.boot_volume_attachments_by_instance_id[instance.id]&.each do |attachment|
+        persister.disks.build(
+          :hardware    => hardware,
+          :device_name => attachment.display_name,
+          :backing     => persister.cloud_volumes.lazy_find(attachment.boot_volume_id)
+        )
+      end
     end
   end
 

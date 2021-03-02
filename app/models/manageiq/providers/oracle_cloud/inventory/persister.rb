@@ -3,9 +3,16 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
   require_nested :NetworkManager
 
   def initialize_inventory_collections
-    add_cloud_collection(:cloud_tenants) do |builder|
-      builder.add_default_values(:ems_id => ->(persister) { persister.manager.id} )
+    add_cloud_collection(:availability_zones) do |builder|
+      builder.add_properties(:secondary_refs => {:by_name => %i(name)})
     end
+    add_cloud_collection(:cloud_tenants) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
+    end
+    add_cloud_collection(:cloud_volumes) do |builder|
+      builder.add_default_values(:ems_id => ->(persister) { persister.cloud_manager.id })
+    end
+    add_cloud_collection(:disks)
     add_cloud_collection(:flavors)
     add_cloud_collection(:hardwares)
     add_cloud_collection(:miq_templates) do |builder|
