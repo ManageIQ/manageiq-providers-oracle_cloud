@@ -41,10 +41,26 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
+  def vnics
+    # There doesn't appear to be a #list_vnics method so we have to get these
+    # one-at-a-time.
+    @vnics ||= vnic_attachments.map do |vnic_attachment|
+      virtual_network_client.get_vnic(vnic_attachment.vnic_id).data
+    end
+  end
+
   def vnic_attachments
     @vnic_attachments ||= compartments.flat_map do |compartment|
       compute_client.list_vnic_attachments(compartment.id).data
     end
+  end
+
+  def vnic_attachments_by_vnic_id
+    @vnic_attachments_by_vnic_id ||= vnic_attachments.index_by(&:vnic_id)
+  end
+
+  def vnic_attachments_by_instance_id
+    @vnic_attachments_by_instance_id ||= vnic_attachments.group_by(&:instance_id)
   end
 
   private

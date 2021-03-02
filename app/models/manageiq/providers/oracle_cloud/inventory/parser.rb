@@ -8,7 +8,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     images
     instances
     subnets
-    vnic_attachments
+    vnics
     virtual_cloud_networks
   end
 
@@ -103,6 +103,40 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :enabled      => vcn.lifecycle_state == "AVAILABLE",
         :cloud_tenant => persister.cloud_tenants.lazy_find(vcn.compartment_id)
       )
+    end
+  end
+
+  def vnics
+    collector.vnics.each do |vnic|
+      vnic_attachment = collector.vnic_attachments_by_vnic_id[vnic.id]
+      next if vnic_attachment.nil?
+
+      instance_id = vnic_attachment.instance_id
+
+      network_port = persister.network_ports.build(
+        :ems_ref      => vnic.id,
+        :name         => vnic.display_name,
+        :status       => vnic.lifecycle_state,
+        :mac_address  => vnic.mac_address,
+        :device       => persister.vms.lazy_find(instance_id),
+        :cloud_tenant => persister.cloud_tenants.lazy_find(vnic.compartment_id)
+      )
+
+      if vnic.private_ip
+        persister.cloud_subnet_network_ports.build(
+          :address      => vnic.private_ip,
+          :cloud_subnet => persister.cloud_subnets.lazy_find(vnic.subnet_id),
+          :network_port => network_port
+        )
+      end
+
+      if vnic.public_ip
+        persister.cloud_subnet_network_ports.build(
+          :address      => vnic.public_ip,
+          :cloud_subnet => persister.cloud_subnets.lazy_find(vnic.subnet_id),
+          :network_port => network_port
+        )
+      end
     end
   end
 

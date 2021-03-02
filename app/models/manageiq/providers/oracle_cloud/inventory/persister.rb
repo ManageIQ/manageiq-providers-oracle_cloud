@@ -17,6 +17,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
 
     add_network_collection(:network_ports)
     add_network_collection(:cloud_subnets)
+    add_network_collection(:cloud_subnet_network_ports)
     add_network_collection(:cloud_networks)
   end
 
@@ -39,7 +40,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
 
   def add_network_collection(name)
     add_collection(network, name) do |builder|
-      builder.add_properties(:parent => cloud_manager)
+      builder.add_properties(:parent => network_manager)
       yield builder if block_given?
     end
   end
