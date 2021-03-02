@@ -30,9 +30,9 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         expect(ems.cloud_tenants.count).to eq(3)
         expect(ems.cloud_subnets.count).to eq(1)
         expect(ems.cloud_networks.count).to eq(1)
-        expect(ems.cloud_volumes.count).to eq(1)
+        expect(ems.cloud_volumes.count).to eq(3)
         expect(ems.flavors.count).to eq(13)
-        expect(ems.miq_templates.count).to eq(99)
+        expect(ems.miq_templates.count).to eq(100)
         expect(ems.network_ports.count).to eq(1)
         expect(ems.vms.count).to eq(1)
       end
@@ -108,8 +108,11 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
         )
 
-        expect(vm.cloud_volumes.count).to eq(1)
-        expect(vm.cloud_volumes.first).to eq(ems.cloud_volumes.find_by(:ems_ref => "ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq"))
+        expect(vm.cloud_volumes.count).to eq(2)
+        expect(vm.cloud_volumes).to include(
+          ems.cloud_volumes.find_by(:ems_ref => "ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq"),
+          ems.cloud_volumes.find_by(:ems_ref => "ocid1.volume.oc1.iad.abuwcljtuksa3l3ws63kvbtjpbh4vlwude4hiaipht6raafofxo2jhi4z5zq")
+        )
       end
 
       def assert_specific_image

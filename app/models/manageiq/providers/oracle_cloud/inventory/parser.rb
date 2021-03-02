@@ -12,6 +12,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     subnets
     vnics
     virtual_cloud_networks
+    volumes
   end
 
   def availability_domains
@@ -106,11 +107,21 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :vm_or_template => vm
       )
 
-      collector.boot_volume_attachments_by_instance_id[instance.id]&.each do |attachment|
+      boot_volumes = Array(collector.boot_volume_attachments_by_instance_id[instance.id])
+      boot_volumes.each do |attachment|
         persister.disks.build(
           :hardware    => hardware,
           :device_name => attachment.display_name,
           :backing     => persister.cloud_volumes.lazy_find(attachment.boot_volume_id)
+        )
+      end
+
+      volumes = Array(collector.volume_attachments_by_instance_id[instance.id])
+      volumes.each do |attachment|
+        persister.disks.build(
+          :hardware    => hardware,
+          :device_name => attachment.display_name,
+          :backing     => persister.cloud_volumes.lazy_find(attachment.volume_id)
         )
       end
     end
@@ -177,8 +188,16 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     end
   end
 
-  def vnic_attachments
-    collector.vnic_attachments.each do |vnic|
+  def volumes
+    collector.volumes.each do |volume|
+      persister.cloud_volumes.build(
+        :ems_ref           => volume.id,
+        :name              => volume.display_name,
+        :size              => volume.size_in_mbs.megabytes,
+        :status            => volume.lifecycle_state,
+        :availability_zone => persister.availability_zones.lazy_find({:name => volume.availability_domain}, {:ref => :by_name}),
+        :cloud_tenant      => persister.cloud_tenants.lazy_find(volume.compartment_id)
+      )
     end
   end
 end

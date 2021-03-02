@@ -85,6 +85,22 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     @vnic_attachments_by_instance_id ||= vnic_attachments.group_by(&:instance_id)
   end
 
+  def volumes
+    @volumes ||= compartments.flat_map do |compartment|
+      blockstorage_client.list_volumes(compartment.id).data
+    end
+  end
+
+  def volume_attachments
+    @volume_attachments ||= compartments.flat_map do |compartment|
+      compute_client.list_volume_attachments(compartment.id).data
+    end
+  end
+
+  def volume_attachments_by_instance_id
+    @volume_attachments_by_instance_id ||= volume_attachments.group_by(&:instance_id)
+  end
+
   private
 
   def blockstorage_client
