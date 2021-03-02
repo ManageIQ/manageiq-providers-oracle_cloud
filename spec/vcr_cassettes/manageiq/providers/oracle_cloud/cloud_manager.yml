@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Mar 2021 21:38:55 GMT
+      Authorization:
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="HGq0EpGOJF9iczvYxk7aoCz6VwE6gWldOJdm7ZLxbt6d+rvxzmmXCQZIhKGRdfRe6wrSYOCaskYwulJnETHFWD9iyj/tthSguWDB6L5PXDCxQZqlZoq7ZOD32sI/JTNjrvkMh6zzSnU+sig/bgPNLup4VABdxgVBQTmH3OaOCrViBmPGzFfJMJqMh9vTNAlhXECqNbtZP2eTiN137ECq6la1Vn6/fpBfkfkGW7pU+2Tq1lhia1yxlI3B3/Bl2Q1dCUmTdTCxiTEKogz0PF5BOzhu4iY2/1KvLihJISXZJUYOvjSr4M/xGr2J8paSeLW+qtmBU1vK0MT5wwjA1A+i/w==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - BFDD5331827F4B7F87ECECB5BF47A5F2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 Mar 2021 21:38:55 GMT
+      Opc-Request-Id:
+      - BFDD5331827F4B7F87ECECB5BF47A5F2/90F65E76BDF8AFF91CCB7106628F65EA/F3EBFEE2C6336B4BD5C77ECE4031C4E8
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Etag:
+      - 264f60870ff19c729663ef8463b4edbe74397b6f
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '925'
+    body:
+      encoding: UTF-8
+      string: '{"capabilities":{"canUseConsolePassword":false,"canUseApiKeys":true,"canUseAuthTokens":true,"canUseSmtpCredentials":true,"canUseCustomerSecretKeys":true,"canUseOAuth2ClientCredentials":true,"canUseDbCredentials":true},"emailVerified":true,"identityProviderId":"ocid1.saml2idp.oc1..aaaaaaaaidvkykvp7t4pccn54sta7th2rvldfewm5zssnig7lyv4vrjrxfgq","externalIdentifier":"c058f08db6da44188c2d3d17713e7989","timeModified":"2021-02-23T18:43:42.796Z","isMfaActivated":false,"id":"ocid1.user.oc1..aaaaaaaa","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","name":"oracleidentitycloudservice/accounts@manageiq.org","description":"accounts@manageiq.org","timeCreated":"2021-02-22T19:23:50.500Z","freeformTags":{},"definedTags":{"Oracle-Tags":{"CreatedBy":"scim-service","CreatedOn":"2021-02-22T19:23:50.416Z"}},"lifecycleState":"ACTIVE"}'
+    http_version:
+  recorded_at: Tue, 02 Mar 2021 21:38:55 GMT
+recorded_with: VCR 5.1.0
