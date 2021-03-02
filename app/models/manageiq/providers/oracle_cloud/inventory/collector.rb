@@ -29,6 +29,40 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
+  def subnets
+    @subnets ||= compartments.flat_map do |compartment|
+      virtual_network_client.list_subnets(compartment.id).data
+    end
+  end
+
+  def vcns
+    @vcns ||= compartments.flat_map do |compartment|
+      virtual_network_client.list_vcns(compartment.id).data
+    end
+  end
+
+  def vnics
+    # There doesn't appear to be a #list_vnics method so we have to get these
+    # one-at-a-time.
+    @vnics ||= vnic_attachments.map do |vnic_attachment|
+      virtual_network_client.get_vnic(vnic_attachment.vnic_id).data
+    end
+  end
+
+  def vnic_attachments
+    @vnic_attachments ||= compartments.flat_map do |compartment|
+      compute_client.list_vnic_attachments(compartment.id).data
+    end
+  end
+
+  def vnic_attachments_by_vnic_id
+    @vnic_attachments_by_vnic_id ||= vnic_attachments.index_by(&:vnic_id)
+  end
+
+  def vnic_attachments_by_instance_id
+    @vnic_attachments_by_instance_id ||= vnic_attachments.group_by(&:instance_id)
+  end
+
   private
 
   def compute_client
@@ -37,5 +71,9 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def identity_client
     @identity_client ||= manager.connect(:service => "Identity::IdentityClient")
+  end
+
+  def virtual_network_client
+    @virtual_network_client ||= manager.connect(:service => "Core::VirtualNetworkClient")
   end
 end
