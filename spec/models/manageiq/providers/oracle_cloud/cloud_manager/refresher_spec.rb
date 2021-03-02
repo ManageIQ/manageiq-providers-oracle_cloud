@@ -15,6 +15,8 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           assert_specific_flavor
           assert_specific_instance
           assert_specific_image
+          assert_specific_cloud_network
+          assert_specific_cloud_subnet
         end
       end
 
@@ -22,9 +24,11 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         expect(ems.last_refresh_error).to be_nil
         expect(ems.last_refresh_date).not_to be_nil
         expect(ems.vms.count).to eq(1)
-        expect(ems.miq_templates.count).to eq(98)
+        expect(ems.miq_templates.count).to eq(100)
         expect(ems.flavors.count).to eq(13)
         expect(ems.cloud_tenants.count).to eq(3)
+        expect(ems.cloud_subnets.count).to eq(1)
+        expect(ems.cloud_networks.count).to eq(1)
       end
 
       def assert_specific_cloud_tenant
@@ -87,6 +91,32 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         )
         expect(template.operating_system).to have_attributes(
           :product_name => "Oracle Linux 7.9"
+        )
+      end
+
+      def assert_specific_cloud_network
+        cloud_network = ems.cloud_networks.first
+        expect(cloud_network).to have_attributes(
+          :name         => "vcn-20210223-1239",
+          :ems_ref      => "ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq",
+          :cidr         => "10.0.0.0/16",
+          :status       => "AVAILABLE",
+          :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :type         => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudNetwork"
+        )
+      end
+
+      def assert_specific_cloud_subnet
+        cloud_subnet = ems.cloud_subnets.first
+        expect(cloud_subnet).to have_attributes(
+          :name          => "subnet-20210223-1239",
+          :ems_ref       => "ocid1.subnet.oc1.iad.aaaaaaaanmzazihpr74jpktyicjibszf3dyye4tho43nxemsixabsc7ugdqq",
+          :cloud_network => ems.cloud_networks.find_by(:ems_ref => "ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq"),
+          :cidr          => "10.0.0.0/24",
+          :status        => "AVAILABLE",
+          :gateway       => "10.0.0.1",
+          :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
         )
       end
     end

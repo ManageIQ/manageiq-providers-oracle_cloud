@@ -14,8 +14,10 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     add_cloud_collection(:operating_systems)
     add_cloud_collection(:vms)
     add_cloud_collection(:vm_and_miq_template_ancestry)
+
     add_network_collection(:network_ports)
     add_network_collection(:cloud_subnets)
+    add_network_collection(:cloud_networks)
   end
 
   private

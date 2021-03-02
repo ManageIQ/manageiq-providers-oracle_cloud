@@ -7,8 +7,9 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     flavors
     images
     instances
-    vnic_attachments
     subnets
+    vnic_attachments
+    virtual_cloud_networks
   end
 
   def cloud_tenants
@@ -78,13 +79,35 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     end
   end
 
-  def vnic_attachments
-    collector.vnic_attachments.each do |vnic|
+  def subnets
+    collector.subnets.each do |subnet|
+      persister.cloud_subnets.build(
+        :ems_ref       => subnet.id,
+        :name          => subnet.display_name,
+        :cidr          => subnet.cidr_block,
+        :gateway       => subnet.virtual_router_ip,
+        :status        => subnet.lifecycle_state,
+        :cloud_network => persister.cloud_networks.lazy_find(subnet.vcn_id),
+        :cloud_tenant  => persister.cloud_tenants.lazy_find(subnet.compartment_id)
+      )
     end
   end
 
-  def subnets
-    collector.subnets.each do |subnet|
+  def virtual_cloud_networks
+    collector.vcns.each do |vcn|
+      persister.cloud_networks.build(
+        :ems_ref      => vcn.id,
+        :name         => vcn.display_name,
+        :cidr         => vcn.cidr_block,
+        :status       => vcn.lifecycle_state,
+        :enabled      => vcn.lifecycle_state == "AVAILABLE",
+        :cloud_tenant => persister.cloud_tenants.lazy_find(vcn.compartment_id)
+      )
+    end
+  end
+
+  def vnic_attachments
+    collector.vnic_attachments.each do |vnic|
     end
   end
 end

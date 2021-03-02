@@ -35,6 +35,12 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
+  def vcns
+    @vcns ||= compartments.flat_map do |compartment|
+      virtual_network_client.list_vcns(compartment.id).data
+    end
+  end
+
   def vnic_attachments
     @vnic_attachments ||= compartments.flat_map do |compartment|
       compute_client.list_vnic_attachments(compartment.id).data
