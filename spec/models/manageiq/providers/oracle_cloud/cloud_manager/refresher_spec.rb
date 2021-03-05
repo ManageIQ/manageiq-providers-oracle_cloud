@@ -1,7 +1,6 @@
 describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
-  let!(:ems) do
-    FactoryBot.create(:ems_oracle_cloud_with_vcr_authentication)
-  end
+  let!(:ems) { FactoryBot.create(:ems_oracle_cloud_with_vcr_authentication) }
+  let(:root_tenant_id) { ems.uid_ems }
 
   describe "#refresh" do
     context "full refresh" do
@@ -47,9 +46,9 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
 
       def assert_specific_cloud_tenant
-        cloud_tenant = ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
+        cloud_tenant = ems.cloud_tenants.find_by(:ems_ref => root_tenant_id)
         expect(cloud_tenant).to have_attributes(
-          :ems_ref     => "ocid1.tenancy.oc1..aaaaaaaa",
+          :ems_ref     => root_tenant_id,
           :name        => "manageiq",
           :description => "manageiq",
           :enabled     => true,
@@ -73,7 +72,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         expect(vm).to have_attributes(
           :vendor            => "oracle",
           :name              => "instance-20210223-1239",
-          :location          => "ocid1.tenancy.oc1..aaaaaaaa",
+          :location          => root_tenant_id,
           :uid_ems           => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
           :power_state       => "on",
           :type              => "ManageIQ::Providers::OracleCloud::CloudManager::Vm",
@@ -81,7 +80,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :flavor            => ems.flavors.find_by(:ems_ref => "VM.Standard.E2.1.Micro"),
           :raw_power_state   => "RUNNING",
           :genealogy_parent  => ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda"),
-          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id),
           :availability_zone => ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3")
         )
 
@@ -93,7 +92,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :mac_address  => "02:00:17:09:70:43",
           :status       => "AVAILABLE",
           :device       => vm,
-          :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
+          :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id)
         )
 
         expect(vm.cloud_subnets.count).to eq(1)
@@ -104,7 +103,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :cidr          => "10.0.0.0/24",
           :status        => "AVAILABLE",
           :gateway       => "10.0.0.1",
-          :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id),
           :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
         )
 
@@ -147,7 +146,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :ems_ref      => "ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq",
           :cidr         => "10.0.0.0/16",
           :status       => "AVAILABLE",
-          :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id),
           :type         => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudNetwork"
         )
       end
@@ -162,7 +161,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :cidr          => "10.0.0.0/24",
           :status        => "AVAILABLE",
           :gateway       => "10.0.0.1",
-          :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa"),
+          :cloud_tenant  => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id),
           :type          => "ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet"
         )
       end
@@ -176,7 +175,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           :availability_zone => ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3"),
           :name              => "instance-20210223-1239 (Boot Volume)",
           :status            => "AVAILABLE",
-          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => "ocid1.tenancy.oc1..aaaaaaaa")
+          :cloud_tenant      => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id)
         )
       end
     end
