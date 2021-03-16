@@ -17,8 +17,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
     cursor = create_cursor(stream)
 
     until should_exit.true?
-      messages = stream_client(stream).get_messages(stream.id, cursor.value)
-      Array(messages).each { |message| yield message }
+      messages = stream_client(stream).get_messages(stream.id, cursor.value).data
+      Array(messages).each { |message| yield decode_message(message) }
+
+      sleep(poll_sleep)
     end
   end
 
@@ -51,6 +53,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
     stream_client(stream).create_cursor(stream.id, create_cursor_details).data
   end
 
+  def decode_message
+    JSON.parse(Base64.decode64(message.value))
+  end
+
   def stream_admin_client
     @stream_admin_client ||= ems.connect(:service => "Streaming::StreamAdminClient")
   end
@@ -65,5 +71,9 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
 
   def compartment_id
     ems.uid_ems
+  end
+
+  def poll_sleep
+    5.seconds
   end
 end

@@ -9,9 +9,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
     event_monitor_running
     ensure_event_stream
 
-    event_stream.poll do |event|
-      process_event(event)
-    end
+    event_stream.poll { |event| process_event(event) }
   ensure
     stop_event_monitor
   end
@@ -31,9 +29,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
   end
 
   def ensure_event_stream
-    self.event_stream ||= begin
-      ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream.new(ems)
-    end
+    self.event_stream ||= ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream.new(ems)
   end
 
   def reset_event_stream
