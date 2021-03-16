@@ -3,6 +3,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   require_nested :AvailabilityZone
   require_nested :CloudVolume
   require_nested :EventCatcher
+  require_nested :EventParser
   require_nested :Flavor
   require_nested :Refresher
   require_nested :RefreshWorker

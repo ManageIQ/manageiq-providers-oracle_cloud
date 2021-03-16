@@ -10,6 +10,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
     ensure_event_stream
 
     event_stream.poll do |event|
+      process_event(event)
     end
   ensure
     stop_event_monitor
@@ -22,8 +23,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
 
   private
 
-  attr_reader :ems
-  attr_writer :event_stream
+  attr_reader   :ems
+  attr_accessor :event_stream
 
   def parse_event(event)
     ManageIQ::Providers::OracleCloud::CloudManager::EventParser.event_to_hash(event, @cfg[:ems_id])
