@@ -22,7 +22,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventParser
     return if event_source.nil?
 
     event_parser_method = "parse_#{event_source}_event!"
-    send(event_parser_method, event, event_hash)
+    send(event_parser_method, event, event_hash) if respond_to?(event_parser_method)
 
     event_hash
   end

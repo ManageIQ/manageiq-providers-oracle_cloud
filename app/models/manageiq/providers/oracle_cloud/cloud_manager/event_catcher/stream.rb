@@ -13,8 +13,15 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
   end
 
   def poll
-    stream = find_or_create_manageiq_events_stream
-    cursor = create_cursor(stream)
+    # First create the target kafka topic that we will subscribe to
+    stream = find_or_create_stream!
+
+    # Then create an events rule that will send all events to that topic
+    find_or_create_rule!(stream)
+
+    # Set up an initial cursor that will start a consumer group looking at the
+    # latest events
+    cursor = create_cursor!(stream)
 
     until should_exit.true?
       result = stream_client(stream).get_messages(stream.id, cursor)
@@ -30,7 +37,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
 
   private
 
-  def find_or_create_manageiq_events_stream
+  def find_or_create_stream!
     streams = stream_admin_client.list_streams(:compartment_id => compartment_id).data
 
     manageiq_events_stream = streams.select { |stream| stream.lifecycle_state == "ACTIVE" }.detect { |stream| stream.name == "manageiq-events" }
@@ -48,7 +55,27 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
     stream_admin_client.create_stream(create_stream_details).data
   end
 
-  def create_cursor(stream)
+  def find_or_create_rule!(stream)
+    all_rules = events_client.list_rules(compartment_id).data
+    manageiq_events_rule = all_rules.select { |rule| rule.lifecycle_state == "ACTIVE" }.detect { |rule| rule.display_name == "manageiq-events" }
+    return manageiq_events_rule if manageiq_events_rule.present?
+
+    result = events_client.create_rule(
+      OCI::Events::Models::CreateRuleDetails.new(
+        :display_name   => "manageiq-events",
+        :is_enabled     => true,
+        :condition      => "{}", # this will match on all events
+        :compartment_id => compartment_id,
+        :actions        => OCI::Events::Models::ActionDetailsList.new(
+          :actions => [OCI::Events::Models::StreamingServiceAction.new(:stream_id => stream.id)]
+        )
+      )
+    )
+
+    result.data
+  end
+
+  def create_cursor!(stream)
     create_cursor_details = OCI::Streaming::Models::CreateGroupCursorDetails.new(
       :type          => "LATEST",
       :group_name    => "event_catcher-#{ems.uid_ems}",
@@ -60,6 +87,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
 
   def decode_message(message)
     JSON.parse(Base64.decode64(message.value))
+  end
+
+  def events_client
+    @events_client ||= ems.connect(:service => "Events::EventsClient")
   end
 
   def stream_admin_client
