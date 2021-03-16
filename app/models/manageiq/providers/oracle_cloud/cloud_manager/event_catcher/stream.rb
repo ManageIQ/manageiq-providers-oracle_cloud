@@ -17,8 +17,12 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
     cursor = create_cursor(stream)
 
     until should_exit.true?
-      messages = stream_client(stream).get_messages(stream.id, cursor.value).data
-      Array(messages).each { |message| yield decode_message(message) }
+      result = stream_client(stream).get_messages(stream.id, cursor)
+      next if result.status != 200
+
+      cursor = result.headers["opc-next-cursor"]
+
+      Array(result.data).each { |message| yield decode_message(message) }
 
       sleep(poll_sleep)
     end
@@ -45,15 +49,16 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
   end
 
   def create_cursor(stream)
-    create_cursor_details = OCI::Streaming::Models::CreateCursorDetails.new(
-      :type      => "LATEST",
-      :partition => "0"
+    create_cursor_details = OCI::Streaming::Models::CreateGroupCursorDetails.new(
+      :type          => "LATEST",
+      :group_name    => "event_catcher-#{ems.uid_ems}",
+      :commit_on_get => true
     )
 
-    stream_client(stream).create_cursor(stream.id, create_cursor_details).data
+    stream_client(stream).create_group_cursor(stream.id, create_cursor_details).data.value
   end
 
-  def decode_message
+  def decode_message(message)
     JSON.parse(Base64.decode64(message.value))
   end
 
