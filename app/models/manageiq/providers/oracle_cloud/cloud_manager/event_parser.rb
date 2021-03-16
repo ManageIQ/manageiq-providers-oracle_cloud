@@ -2,6 +2,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventParser
   def self.parse_compute_api_event!(event, event_hash)
     event_type = event["eventType"]
     if event_type.start_with?("com.oraclecloud.computeapi.instance")
+      event_hash["vm_uid_ems"] = event.dig("data", "resourceId")
       event_hash["vm_ems_ref"] = event.dig("data", "resourceId")
       event_hash["vm_name"]    = event.dig("data", "resourceName")
     end
