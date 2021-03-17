@@ -27,8 +27,11 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
       result = stream_client(stream).get_messages(stream.id, cursor)
       next if result.status != 200
 
+      # Grab the next cursor from the results
       cursor = result.headers["opc-next-cursor"]
 
+      # Each message is Base64 encoded so we have decode and JSON parse it
+      # before yielding to the block
       messages = Array(result.data)
       events   = messages.collect { |message| decode_message(message) }
 

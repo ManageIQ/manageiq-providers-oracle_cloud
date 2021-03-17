@@ -19,7 +19,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
 
   def process_event(event)
     _log.info("#{log_prefix} Caught event [#{event}]")
-    EmsEvent.add_queue("add", @cfg[:ems_id], parse_event(event))
+    EmsEvent.add_queue("add", ems_id, parse_event(event))
   end
 
   private
@@ -28,7 +28,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
   attr_accessor :event_stream
 
   def parse_event(event)
-    ManageIQ::Providers::OracleCloud::CloudManager::EventParser.event_to_hash(event, @cfg[:ems_id])
+    ManageIQ::Providers::OracleCloud::CloudManager::EventParser.event_to_hash(event, ems_id)
   end
 
   def ensure_event_stream
@@ -37,5 +37,9 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
 
   def reset_event_stream
     self.event_stream = nil
+  end
+
+  def ems_id
+    @cfg[:ems_id]
   end
 end
