@@ -196,9 +196,15 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       it "refreshes just the target" do
         with_vcr { refresh(ems) }
 
+        vm = ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")
+        expect(vm.raw_power_state).to eq("RUNNING")
+
         with_vcr("vm_target") do
           refresh(ems_event.manager_refresh_targets)
         end
+
+        vm.reload
+        expect(vm.raw_power_state).to eq("STOPPED")
       end
     end
 
