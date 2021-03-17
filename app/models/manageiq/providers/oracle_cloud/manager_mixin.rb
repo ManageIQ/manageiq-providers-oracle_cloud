@@ -6,7 +6,9 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
   end
 
   def connect(options = {})
-    authentication = authentication_best_fit(options[:auth_type])
+    auth_type = options.delete(:auth_type)
+
+    authentication = authentication_best_fit(auth_type)
     config = self.class.raw_connect(
       uid_ems,
       authentication.userid,
@@ -15,11 +17,12 @@ module ManageIQ::Providers::OracleCloud::ManagerMixin
       provider_region
     )
 
-    if options[:service]
-      api_client_klass = "OCI::#{options[:service]}".safe_constantize
+    service = options.delete(:service)
+    if service
+      api_client_klass = "OCI::#{service}".safe_constantize
       raise ArgumentError, _("Invalid service") if api_client_klass.nil?
 
-      api_client_klass.new(:config => config)
+      api_client_klass.new(options.reverse_merge(:config => config))
     else
       config
     end
