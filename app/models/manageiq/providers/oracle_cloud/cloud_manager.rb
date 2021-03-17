@@ -89,14 +89,13 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
                   :validate       => [{:type => "required"}]
                 },
                 {
-                  :component      => "text-field",
-                  :componentClass => 'textarea',
-                  :rows           => 10,
-                  :id             => "authentications.default.public_key",
-                  :name           => "authentications.default.public_key",
-                  :label          => "Public Key",
-                  :isRequired     => true,
-                  :validate       => [{:type => "required"}]
+                  :component  => "textarea",
+                  :rows       => 10,
+                  :id         => "authentications.default.public_key",
+                  :name       => "authentications.default.public_key",
+                  :label      => "Public Key",
+                  :isRequired => true,
+                  :validate   => [{:type => "required"}]
                 }
               ],
             },
