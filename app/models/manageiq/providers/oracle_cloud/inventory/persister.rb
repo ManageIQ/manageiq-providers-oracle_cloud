@@ -19,5 +19,6 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     add_network_collection(:cloud_subnets)
     add_network_collection(:cloud_subnet_network_ports)
     add_network_collection(:cloud_networks)
+    add_network_collection(:load_balancers)
   end
 end
