@@ -18,9 +18,9 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventTargetParser
     raw_event = ems_event.full_data
 
     resource_id = raw_event.dig("data", "resourceId")
-    association = if resource_id.start_with?("ocid1.instance")
+    association = if resource_id&.start_with?("ocid1.instance")
                     :vms
-                  elsif resource_id.start_with?("ocid1.image")
+                  elsif resource_id&.start_with?("ocid1.image")
                     :miq_templates
                   end
 

@@ -180,8 +180,33 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
     end
 
-    def with_vcr(&block)
-      VCR.use_cassette(described_class.name.underscore, &block)
+    context "targeted refresh" do
+      let(:vm) { FactoryBot.create(:vm_cloud, :ext_management_system => ems) }
+      let(:raw_event) do
+        {
+          "data" => {
+            "resourceId" => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q"
+          }
+        }
+      end
+      let(:ems_event) do
+        FactoryBot.create(:ems_event, :ext_management_system => ems, :vm_or_template => vm, :full_data => raw_event)
+      end
+
+      it "refreshes just the target" do
+        with_vcr { refresh(ems) }
+
+        with_vcr("vm_target") do
+          refresh(ems_event.manager_refresh_targets)
+        end
+      end
+    end
+
+    def with_vcr(suffix = nil, &block)
+      cassette_name = described_class.name.underscore
+      cassette_name += "_#{suffix}" if suffix
+
+      VCR.use_cassette(cassette_name, &block)
     end
 
     def refresh(targets)
