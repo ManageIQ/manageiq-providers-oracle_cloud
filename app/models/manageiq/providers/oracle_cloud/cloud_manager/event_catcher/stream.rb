@@ -29,9 +29,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
 
       cursor = result.headers["opc-next-cursor"]
 
-      Array(result.data).each { |message| yield decode_message(message) }
+      messages = Array(result.data)
+      events   = messages.collect { |message| decode_message(message) }
 
-      sleep(poll_sleep)
+      yield events
     end
   end
 

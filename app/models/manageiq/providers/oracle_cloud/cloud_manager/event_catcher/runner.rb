@@ -9,7 +9,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
     event_monitor_running
     ensure_event_stream
 
-    event_stream.poll { |event| process_event(event) }
+    event_stream.poll do |events|
+      @queue.enq(events)
+      sleep_poll_normal
+    end
   ensure
     stop_event_monitor
   end
