@@ -1,6 +1,10 @@
+---
 :ems:
   :ems_oracle_cloud:
-    :blacklisted_event_names: []
+    :blacklisted_event_names:
+    - com.oraclecloud.resourcequeryservice.searchresources
+    - com.oraclecloud.identitysignon.federatedinteractiveloginattempt
+    - serviceapi
     :event_handling:
       :event_groups:
 :ems_refresh:
