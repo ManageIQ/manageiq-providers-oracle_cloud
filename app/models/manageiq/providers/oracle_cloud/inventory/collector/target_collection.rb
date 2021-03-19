@@ -22,16 +22,17 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector::TargetCollection <
   end
 
   def images
-    []
+    refs = references(:miq_templates)
+    return [] if refs.blank?
+
+    @images ||= refs.map { |ref| compute_client.get_image(ref).data }
   end
 
   def instances
     refs = references(:vms)
     return [] if refs.blank?
 
-    @instances ||= begin
-      refs.map { |ref| compute_client.get_instance(ref).data }
-    end
+    @instances ||= refs.map { |ref| compute_client.get_instance(ref).data }
   end
 
   def shapes
@@ -77,8 +78,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector::TargetCollection <
     end
   end
 
-  def parse_vm_target!(t)
-    add_simple_target!(:vms, t.ems_ref)
+  def parse_vm_target!(vm)
+    add_simple_target!(:vms, vm.ems_ref)
   end
 
   def add_simple_target!(association, ems_ref)
