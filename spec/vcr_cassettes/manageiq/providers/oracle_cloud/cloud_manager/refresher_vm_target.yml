@@ -16,24 +16,24 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 17 Mar 2021 18:15:15 GMT
+      - Mon, 22 Mar 2021 12:43:04 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ORACLE_CLOUD_DEFAULTS_TENANT_IDg6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq/ORACLE_CLOUD_DEFAULTS_USER_ID3yzc47pwxfbrjdnft6ptoxw45vu4poctevj2e2a666s2watp3hxa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="LidillXYm5jNMxMY2Dtq63GgdSlJFQEZCzikJXoCPk5a1zSHurAoHxN+f+TClKyuTeGZQIfZRoiQJvxGTPZhou3PuHguC5/rxoWLlWwtiOATyCIiqYhGX8nPhLaYdVUS+Nu3Ne7figq+jqvW8OJnDEfR6nL4B+mCGuwV48FhYZvUeuW6kUb3G8dDbWH2vBuqYZWr1CbYYx627oJWXlAY2MXk8YZA/WnHErSECkdspdNWNekpCCzqlWfhihR4mXu21Xjv41OjzpUviNdYQ/4597Yt9XisBENd9d4YSO7rVqJFCJ99Jx/pQojx3OY1HGZZSWKA7hIYQgqwF67/BXQNRQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="lQtRtqDl5PuGry4DgHZkbgbXPqKrI46En+lLSMovi1ztnksbQX6RiZ7eP1u9D8XasE7YE4Cv/qWnpIkEawaRGwAOhSHc6J+vlMHrqsnL8PAPNrJpEvQY6jfI4qWea+6qj978XgfglOQKS/B2J6dggy2JHlEsJUD0iWK/vQta0xVktg1C629kkCrxn3j4jnn36wQHqW1KDrLcls2qLG6ivemJn/2BX9O/EeIkbYGhMyfWuZA7NO5jBnFBi6wElSGucrErXFOB4xGLZMju3TqDN+rVcUld7+jY/eidujazV+bUqqf/hHeM518GoOyvQkxnihm8rwEW4RpBQfYaWefOdw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.12.0
       Opc-Request-Id:
-      - 28FBB6904FC44BAA94D35E71F590F6B0
+      - 117810F7193D4815836CE3670F98DFD8
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 17 Mar 2021 18:15:15 GMT
+      - Mon, 22 Mar 2021 12:43:05 GMT
       Opc-Request-Id:
-      - 28FBB6904FC44BAA94D35E71F590F6B0/0F7E0B1E38CFA0512E2E85F6905CD17B/8BF811268DD6EA9C2E20529803B3EA15
+      - 117810F7193D4815836CE3670F98DFD8/387A43BF131463BFA0DBF3EFACB6D3A3/A01796FE98BB5729AB16C550E6760193
       Etag:
-      - 6d8623460ec556ce650b844f2e7253e8658d5e1016969a3b81ecf3006d95a6df
+      - 1db4d9476e4553579575c515050ae1fa306ac00cf953178004fc02dec89c6c1e
       Connection:
       - keep-alive
       Content-Type:
@@ -45,7 +45,98 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhdmFpbGFiaWxpdHlEb21haW4iOiJGb2hhOlVTLUFTSEJVUk4tQUQtMyIsImNhcGFjaXR5UmVzZXJ2YXRpb25JZCI6bnVsbCwiY29tcGFydG1lbnRJZCI6Ik9SQUNMRV9DTE9VRF9ERUZBVUxUU19URU5BTlRfSURnNm10b256bXVuZGFkaXgyM3B3NHlnd2toYTNidTN5ZW56cnljbHN2YmxvNXRnMnFhZHJxIiwiZGVkaWNhdGVkVm1Ib3N0SWQiOm51bGwsImRlZmluZWRUYWdzIjp7Ik9yYWNsZS1UYWdzIjp7IkNyZWF0ZWRCeSI6Im9yYWNsZWlkZW50aXR5Y2xvdWRzZXJ2aWNlL2FjY291bnRzQG1hbmFnZWlxLm9yZyIsIkNyZWF0ZWRPbiI6IjIwMjEtMDItMjNUMTg6Mzg6MDAuNjgzWiJ9fSwiZGlzcGxheU5hbWUiOiJpbnN0YW5jZS0yMDIxMDIyMy0xMjM5IiwiZXh0ZW5kZWRNZXRhZGF0YSI6e30sImZhdWx0RG9tYWluIjoiRkFVTFQtRE9NQUlOLTEiLCJmcmVlZm9ybVRhZ3MiOnt9LCJpZCI6Im9jaWQxLmluc3RhbmNlLm9jMS5pYWQuYW51d2NsanR3M2VucXZ5Y3Y0N2R4NmV3Y3NtcGpxemF6cHF4YmxzaWt6emtpdzd1YmhoZ29wcWYzaTNxIiwiaW1hZ2VJZCI6Im9jaWQxLmltYWdlLm9jMS5pYWQuYWFhYWFhYWFxZGM3anNsYnR1ZTdhYmh3dnhhcTNpaHZhemZ2aWhoczJyd2sybXZjaXYzNnY3dXg1c2RhIiwiaXB4ZVNjcmlwdCI6bnVsbCwibGF1bmNoTW9kZSI6IlBBUkFWSVJUVUFMSVpFRCIsImxhdW5jaE9wdGlvbnMiOnsiYm9vdFZvbHVtZVR5cGUiOiJQQVJBVklSVFVBTElaRUQiLCJmaXJtd2FyZSI6IlVFRklfNjQiLCJuZXR3b3JrVHlwZSI6IlBBUkFWSVJUVUFMSVpFRCIsInJlbW90ZURhdGFWb2x1bWVUeXBlIjoiUEFSQVZJUlRVQUxJWkVEIiwiaXNQdkVuY3J5cHRpb25JblRyYW5zaXRFbmFibGVkIjpmYWxzZSwiaXNDb25zaXN0ZW50Vm9sdW1lTmFtaW5nRW5hYmxlZCI6dHJ1ZX0sImluc3RhbmNlT3B0aW9ucyI6eyJhcmVMZWdhY3lJbWRzRW5kcG9pbnRzRGlzYWJsZWQiOmZhbHNlfSwiYXZhaWxhYmlsaXR5Q29uZmlnIjp7ImlzTGl2ZU1pZ3JhdGlvblByZWZlcnJlZCI6bnVsbCwicmVjb3ZlcnlBY3Rpb24iOiJSRVNUT1JFX0lOU1RBTkNFIn0sInByZWVtcHRpYmxlSW5zdGFuY2VDb25maWciOm51bGwsImxpZmVjeWNsZVN0YXRlIjoiU1RPUFBFRCIsIm1ldGFkYXRhIjp7fSwicmVnaW9uIjoiaWFkIiwic2hhcGUiOiJWTS5TdGFuZGFyZC5FMi4xLk1pY3JvIiwic2hhcGVDb25maWciOnsib2NwdXMiOjEuMCwibWVtb3J5SW5HQnMiOjEuMCwiYmFzZWxpbmVPY3B1VXRpbGl6YXRpb24iOm51bGwsInByb2Nlc3NvckRlc2NyaXB0aW9uIjoiMi4wIEdIeiBBTUQgRVBZQ+KEoiA3NTUxIChOYXBsZXMpIiwibmV0d29ya2luZ0JhbmR3aWR0aEluR2JwcyI6MC40OCwibWF4Vm5pY0F0dGFjaG1lbnRzIjoxLCJncHVzIjowLCJncHVEZXNjcmlwdGlvbiI6bnVsbCwibG9jYWxEaXNrcyI6MCwibG9jYWxEaXNrc1RvdGFsU2l6ZUluR0JzIjpudWxsLCJsb2NhbERpc2tEZXNjcmlwdGlvbiI6bnVsbH0sInNvdXJjZURldGFpbHMiOnsic291cmNlVHlwZSI6ImltYWdlIiwiYm9vdFZvbHVtZVNpemVJbkdCcyI6bnVsbCwiaW1hZ2VJZCI6Im9jaWQxLmltYWdlLm9jMS5pYWQuYWFhYWFhYWFxZGM3anNsYnR1ZTdhYmh3dnhhcTNpaHZhemZ2aWhoczJyd2sybXZjaXYzNnY3dXg1c2RhIiwia21zS2V5SWQiOm51bGx9LCJzeXN0ZW1UYWdzIjp7Im9yY2wtY2xvdWQiOnsiZnJlZS10aWVyLXJldGFpbmVkIjoidHJ1ZSJ9fSwidGltZUNyZWF0ZWQiOiIyMDIxLTAyLTIzVDE4OjM4OjAxLjU4MloiLCJhZ2VudENvbmZpZyI6eyJpc01vbml0b3JpbmdEaXNhYmxlZCI6ZmFsc2UsImlzTWFuYWdlbWVudERpc2FibGVkIjpmYWxzZSwiYXJlQWxsUGx1Z2luc0Rpc2FibGVkIjpmYWxzZSwicGx1Z2luc0NvbmZpZyI6W3sibmFtZSI6Ik9TIE1hbmFnZW1lbnQgU2VydmljZSBBZ2VudCIsImRlc2lyZWRTdGF0ZSI6IkVOQUJMRUQifSx7Im5hbWUiOiJDdXN0b20gTG9ncyBNb25pdG9yaW5nIiwiZGVzaXJlZFN0YXRlIjoiRU5BQkxFRCJ9LHsibmFtZSI6IkNvbXB1dGUgSW5zdGFuY2UgUnVuIENvbW1hbmQiLCJkZXNpcmVkU3RhdGUiOiJFTkFCTEVEIn0seyJuYW1lIjoiQ29tcHV0ZSBJbnN0YW5jZSBNb25pdG9yaW5nIiwiZGVzaXJlZFN0YXRlIjoiRU5BQkxFRCJ9XX0sInRpbWVNYWludGVuYW5jZVJlYm9vdER1ZSI6bnVsbCwidGltZVN0b3BTY2hlZHVsZWQiOm51bGwsInByZWZlcnJlZE1haW50ZW5hbmNlQWN0aW9uIjoiUkVCT09UIiwicGxhdGZvcm1Db25maWciOm51bGx9
+        eyJhdmFpbGFiaWxpdHlEb21haW4iOiJGb2hhOlVTLUFTSEJVUk4tQUQtMyIsImNhcGFjaXR5UmVzZXJ2YXRpb25JZCI6bnVsbCwiY29tcGFydG1lbnRJZCI6Im9jaWQxLnRlbmFuY3kub2MxLi5hYWFhYWFhYSIsImRlZGljYXRlZFZtSG9zdElkIjpudWxsLCJkZWZpbmVkVGFncyI6eyJPcmFjbGUtVGFncyI6eyJDcmVhdGVkQnkiOiJvcmFjbGVpZGVudGl0eWNsb3Vkc2VydmljZS9hY2NvdW50c0BtYW5hZ2VpcS5vcmciLCJDcmVhdGVkT24iOiIyMDIxLTAyLTIzVDE4OjM4OjAwLjY4M1oifX0sImRpc3BsYXlOYW1lIjoiaW5zdGFuY2UtMjAyMTAyMjMtMTIzOSIsImV4dGVuZGVkTWV0YWRhdGEiOnt9LCJmYXVsdERvbWFpbiI6IkZBVUxULURPTUFJTi0xIiwiZnJlZWZvcm1UYWdzIjp7fSwiaWQiOiJvY2lkMS5pbnN0YW5jZS5vYzEuaWFkLmFudXdjbGp0dzNlbnF2eWN2NDdkeDZld2NzbXBqcXphenBxeGJsc2lrenpraXc3dWJoaGdvcHFmM2kzcSIsImltYWdlSWQiOiJvY2lkMS5pbWFnZS5vYzEuaWFkLmFhYWFhYWFhcWRjN2pzbGJ0dWU3YWJod3Z4YXEzaWh2YXpmdmloaHMycndrMm12Y2l2MzZ2N3V4NXNkYSIsImlweGVTY3JpcHQiOm51bGwsImxhdW5jaE1vZGUiOiJQQVJBVklSVFVBTElaRUQiLCJsYXVuY2hPcHRpb25zIjp7ImJvb3RWb2x1bWVUeXBlIjoiUEFSQVZJUlRVQUxJWkVEIiwiZmlybXdhcmUiOiJVRUZJXzY0IiwibmV0d29ya1R5cGUiOiJQQVJBVklSVFVBTElaRUQiLCJyZW1vdGVEYXRhVm9sdW1lVHlwZSI6IlBBUkFWSVJUVUFMSVpFRCIsImlzUHZFbmNyeXB0aW9uSW5UcmFuc2l0RW5hYmxlZCI6ZmFsc2UsImlzQ29uc2lzdGVudFZvbHVtZU5hbWluZ0VuYWJsZWQiOnRydWV9LCJpbnN0YW5jZU9wdGlvbnMiOnsiYXJlTGVnYWN5SW1kc0VuZHBvaW50c0Rpc2FibGVkIjpmYWxzZX0sImF2YWlsYWJpbGl0eUNvbmZpZyI6eyJpc0xpdmVNaWdyYXRpb25QcmVmZXJyZWQiOm51bGwsInJlY292ZXJ5QWN0aW9uIjoiUkVTVE9SRV9JTlNUQU5DRSJ9LCJwcmVlbXB0aWJsZUluc3RhbmNlQ29uZmlnIjpudWxsLCJsaWZlY3ljbGVTdGF0ZSI6IlNUT1BQRUQiLCJtZXRhZGF0YSI6e30sInJlZ2lvbiI6ImlhZCIsInNoYXBlIjoiVk0uU3RhbmRhcmQuRTIuMS5NaWNybyIsInNoYXBlQ29uZmlnIjp7Im9jcHVzIjoxLjAsIm1lbW9yeUluR0JzIjoxLjAsImJhc2VsaW5lT2NwdVV0aWxpemF0aW9uIjpudWxsLCJwcm9jZXNzb3JEZXNjcmlwdGlvbiI6IjIuMCBHSHogQU1EIEVQWUPihKIgNzU1MSAoTmFwbGVzKSIsIm5ldHdvcmtpbmdCYW5kd2lkdGhJbkdicHMiOjAuNDgsIm1heFZuaWNBdHRhY2htZW50cyI6MSwiZ3B1cyI6MCwiZ3B1RGVzY3JpcHRpb24iOm51bGwsImxvY2FsRGlza3MiOjAsImxvY2FsRGlza3NUb3RhbFNpemVJbkdCcyI6bnVsbCwibG9jYWxEaXNrRGVzY3JpcHRpb24iOm51bGx9LCJzb3VyY2VEZXRhaWxzIjp7InNvdXJjZVR5cGUiOiJpbWFnZSIsImJvb3RWb2x1bWVTaXplSW5HQnMiOm51bGwsImltYWdlSWQiOiJvY2lkMS5pbWFnZS5vYzEuaWFkLmFhYWFhYWFhcWRjN2pzbGJ0dWU3YWJod3Z4YXEzaWh2YXpmdmloaHMycndrMm12Y2l2MzZ2N3V4NXNkYSIsImttc0tleUlkIjpudWxsfSwic3lzdGVtVGFncyI6eyJvcmNsLWNsb3VkIjp7ImZyZWUtdGllci1yZXRhaW5lZCI6InRydWUifX0sInRpbWVDcmVhdGVkIjoiMjAyMS0wMi0yM1QxODozODowMS41ODJaIiwiYWdlbnRDb25maWciOnsiaXNNb25pdG9yaW5nRGlzYWJsZWQiOmZhbHNlLCJpc01hbmFnZW1lbnREaXNhYmxlZCI6ZmFsc2UsImFyZUFsbFBsdWdpbnNEaXNhYmxlZCI6ZmFsc2UsInBsdWdpbnNDb25maWciOlt7Im5hbWUiOiJPUyBNYW5hZ2VtZW50IFNlcnZpY2UgQWdlbnQiLCJkZXNpcmVkU3RhdGUiOiJFTkFCTEVEIn0seyJuYW1lIjoiQ3VzdG9tIExvZ3MgTW9uaXRvcmluZyIsImRlc2lyZWRTdGF0ZSI6IkVOQUJMRUQifSx7Im5hbWUiOiJDb21wdXRlIEluc3RhbmNlIFJ1biBDb21tYW5kIiwiZGVzaXJlZFN0YXRlIjoiRU5BQkxFRCJ9LHsibmFtZSI6IkNvbXB1dGUgSW5zdGFuY2UgTW9uaXRvcmluZyIsImRlc2lyZWRTdGF0ZSI6IkVOQUJMRUQifV19LCJ0aW1lTWFpbnRlbmFuY2VSZWJvb3REdWUiOm51bGwsInRpbWVTdG9wU2NoZWR1bGVkIjpudWxsLCJwcmVmZXJyZWRNYWludGVuYW5jZUFjdGlvbiI6IlJFQk9PVCIsInBsYXRmb3JtQ29uZmlnIjpudWxsfQ==
     http_version:
-  recorded_at: Wed, 17 Mar 2021 18:15:15 GMT
+  recorded_at: Mon, 22 Mar 2021 12:43:05 GMT
+- request:
+    method: get
+    uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-3&compartmentId=ocid1.tenancy.oc1..aaaaaaaa&instanceId=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json, application/x-json-stream
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Mar 2021 12:43:05 GMT
+      Authorization:
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="CuB7SZy5jd/GqByJCQd1FuSzg4+Y4feYbc07uIjSzfww26SIp2rM9yB1fRDo6/IG9qKJSs/m2RMuAicis+Op8/pEdqgfdbdObos0cjupnhhkzOfSxZr1PW2ZhHsA1aWaZX/tjnZBFdT/le79DAneO8z52BtE6IdMLPNxvEzELK7CqfEDHV2Cx9f5+uY04khemJOmQ+Nmoobbe05kW+ZWIiOoBWs1PHEXytve+CFcZcwIrKXatpI8NpKo6Wpug76IXi+byKjO6aCnNi3LqiVlxkLYcH/DCdHBwxHjv3IBd+7gJHYVDj4lBwqspJIQ6Q/gZpQGgi69RhoeWbSfgGysEw==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - CC43C141D2BC4FF5848CA09F0DF8FE1F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 22 Mar 2021 12:43:05 GMT
+      Opc-Request-Id:
+      - CC43C141D2BC4FF5848CA09F0DF8FE1F/D0413F7C386630645A24AD05FE1118AF/69C3F705EEC2BB510DECEE8CA9ED2AF7
+      Content-Type:
+      - application/json
+      Connection:
+      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '664'
+    body:
+      encoding: UTF-8
+      string: '[{"availabilityDomain":"Foha:US-ASHBURN-AD-3","bootVolumeId":"ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","displayName":"Remote
+        boot attachment for instance","id":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","instanceId":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","lifecycleState":"ATTACHED","timeCreated":"2021-02-23T18:38:10.028Z","attachmentType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":false,"encryptionInTransitType":null}]'
+    http_version:
+  recorded_at: Mon, 22 Mar 2021 12:43:05 GMT
+- request:
+    method: get
+    uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/volumeAttachments/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa&instanceId=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json, application/x-json-stream
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Mar 2021 12:43:05 GMT
+      Authorization:
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="KCTWzOQMqIcpOA8+VBzfynuQZbVnqHOcP920IRP0ZXAJsXTj9cvh8E1DkB22mLEESa4tNy1I1SDPKvXc8jV1zvIg4Vh9v1IWHUxvqs4xsS7UvHO61RHnwFJPeWAlBn2Csomu8D9CDUDhniwvu0vuLo8L+XF/flOfYP0Hn1Kbv8grKyiKCISXK2JJZy1TQu1UX3UWNH/1CoGveiL9JW7KLSUTZuHsAXXkh5spPQCs86iIjCMEquAL1BwYg72nomkQX9Xd0Uk6JagGFBcnG8LjUzkLWx9fUAa5t6RG2YsV8HRVL9ygWlwp3HvXtbcAq+lCT++hhHwWfPXUE+uRhZ0rSQ==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - D410743F71BE4E2BA66AFF2E5727190F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 22 Mar 2021 12:43:05 GMT
+      Opc-Request-Id:
+      - D410743F71BE4E2BA66AFF2E5727190F/C52EDB2355C2EE130EE619FCC320BFE5/A0C1178B52B45B00C0E85A7DDF3EBBAC
+      Content-Type:
+      - application/json
+      Connection:
+      - keep-alive
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '776'
+    body:
+      encoding: UTF-8
+      string: '[{"attachmentType":"paravirtualized","availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","device":"/dev/oracleoci/oraclevdb","displayName":"volumeattachment20210302202008","id":"ocid1.volumeattachment.oc1.iad.anuwcljtw3enqvyc6mtrxxspqc3dnxzg3rrd5kqn42cw65s34n2ojyiir3za","instanceId":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","isReadOnly":false,"isShareable":false,"lifecycleState":"ATTACHED","timeCreated":"2021-03-02T20:20:09.265Z","volumeId":"ocid1.volume.oc1.iad.abuwcljtuksa3l3ws63kvbtjpbh4vlwude4hiaipht6raafofxo2jhi4z5zq","isPvEncryptionInTransitEnabled":false,"isMultipath":null,"iscsiLoginState":null,"encryptionInTransitType":null}]'
+    http_version:
+  recorded_at: Mon, 22 Mar 2021 12:43:05 GMT
 recorded_with: VCR 5.1.0

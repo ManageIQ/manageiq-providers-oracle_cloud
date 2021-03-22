@@ -14,7 +14,17 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector::TargetCollection <
   end
 
   def boot_volume_attachments
-    []
+    return [] if instances.empty?
+
+    @boot_volume_attachments ||= begin
+      instances.flat_map do |instance|
+        compute_client.list_boot_volume_attachments(
+          instance.availability_domain,
+          instance.compartment_id,
+          :instance_id => instance.id
+        ).data
+      end
+    end
   end
 
   def compartments
@@ -60,7 +70,16 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector::TargetCollection <
   end
 
   def volume_attachments
-    []
+    return [] if instances.empty?
+
+    @volume_attachments ||= begin
+      instances.flat_map do |instance|
+        compute_client.list_volume_attachments(
+          instance.compartment_id,
+          :instance_id => instance.id
+        ).data
+      end
+    end
   end
 
   private
