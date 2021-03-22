@@ -1,6 +1,7 @@
 class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Providers::Inventory::Persister
   require_nested :CloudManager
   require_nested :NetworkManager
+  require_nested :TargetCollection
 
   def initialize_inventory_collections
     add_cloud_collection(:availability_zones, :secondary_refs => {:by_name => %i(name)})
@@ -18,5 +19,6 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     add_network_collection(:cloud_subnets)
     add_network_collection(:cloud_subnet_network_ports)
     add_network_collection(:cloud_networks)
+    add_network_collection(:load_balancers)
   end
 end

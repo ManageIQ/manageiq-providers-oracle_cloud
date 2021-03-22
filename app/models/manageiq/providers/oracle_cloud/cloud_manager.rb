@@ -114,6 +114,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
 
+  def allow_targeted_refresh?
+    true
+  end
+
   def vm_start(vm, _options = {})
     vm.start
   rescue => err
