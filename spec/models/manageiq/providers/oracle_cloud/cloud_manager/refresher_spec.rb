@@ -21,21 +21,6 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
         end
       end
 
-      def assert_ems
-        expect(ems.last_refresh_error).to be_nil
-        expect(ems.last_refresh_date).not_to be_nil
-
-        expect(ems.availability_zones.count).to eq(3)
-        expect(ems.cloud_tenants.count).to eq(3)
-        expect(ems.cloud_subnets.count).to eq(1)
-        expect(ems.cloud_networks.count).to eq(1)
-        expect(ems.cloud_volumes.count).to eq(3)
-        expect(ems.flavors.count).to eq(13)
-        expect(ems.miq_templates.count).to eq(100)
-        expect(ems.network_ports.count).to eq(1)
-        expect(ems.vms.count).to eq(1)
-      end
-
       def assert_specific_availability_zone
         az = ems.availability_zones.find_by(:name => "Foha:US-ASHBURN-AD-3")
         expect(az).to have_attributes(
@@ -180,8 +165,60 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       end
     end
 
-    def with_vcr(&block)
-      VCR.use_cassette(described_class.name.underscore, &block)
+    context "targeted refresh" do
+      let(:raw_event) do
+        {
+          "data" => {
+            "resourceId" => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q"
+          }
+        }
+      end
+
+      it "refreshes the target" do
+        with_vcr { refresh(ems) }
+
+        vm = ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")
+        expect(vm.raw_power_state).to eq("RUNNING")
+
+        ems_event = FactoryBot.create(:ems_event, :ext_management_system => ems, :vm_or_template => vm, :full_data => raw_event)
+        with_vcr("vm_target") { refresh(ems_event.manager_refresh_targets) }
+
+        vm.reload
+        expect(vm.raw_power_state).to eq("STOPPED")
+      end
+
+      it "doesn't impact other inventory" do
+        with_vcr { refresh(ems) }
+
+        vm        = ems.vms.find_by(:ems_ref => "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q")
+        ems_event = FactoryBot.create(:ems_event, :ext_management_system => ems, :vm_or_template => vm, :full_data => raw_event)
+
+        with_vcr("vm_target") { refresh(ems_event.manager_refresh_targets) }
+
+        assert_ems
+      end
+    end
+
+    def assert_ems
+      expect(ems.last_refresh_error).to be_nil
+      expect(ems.last_refresh_date).not_to be_nil
+
+      expect(ems.availability_zones.count).to eq(3)
+      expect(ems.cloud_tenants.count).to eq(3)
+      expect(ems.cloud_subnets.count).to eq(1)
+      expect(ems.cloud_networks.count).to eq(1)
+      expect(ems.cloud_volumes.count).to eq(3)
+      expect(ems.flavors.count).to eq(13)
+      expect(ems.miq_templates.count).to eq(100)
+      expect(ems.network_ports.count).to eq(1)
+      expect(ems.vms.count).to eq(1)
+    end
+
+    def with_vcr(suffix = nil, &block)
+      cassette_name = described_class.name.underscore
+      cassette_name += "_#{suffix}" if suffix
+
+      VCR.use_cassette(cassette_name, &block)
     end
 
     def refresh(targets)
