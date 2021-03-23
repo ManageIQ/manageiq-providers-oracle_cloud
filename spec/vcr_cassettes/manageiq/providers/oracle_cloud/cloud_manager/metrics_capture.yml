@@ -1,0 +1,1115 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"CpuUtilization[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:46 GMT
+      Content-Length:
+      - '257'
+      X-Content-Sha256:
+      - 8u9iPCnqMZ4iMy11J8BAHQQgDi5cJGsJdSlGBD1i5S8=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="JJquNREO/qHaH/blVnLdR8Y0ngcOu6jcVh8RRTn1vja+zdVBnucmWQfYSe2Ev8W4rIRuTcG+Axz6svmEwfbPgGD3IuFKa9oeVANyxOsRuVU/RJd8MtUlso+UBM2hJfiXcJqb0D/OIWW+6NEWLXRP8sFay1PrqbMrrxExkqtgNxfmotUJDG/LeIV6BBdmnpAQ5XGNhF0yP4rgsHDTJVIWUx2zIR5+onsGr9A4Z3H1kS2ZNKo37aSuXA6AJrkr8nfBBMn9uJfPV7/wLUhQk7RVMctLjDYrUTiDOsNCZMrBLoUgbGM1g1+t6FORXYJaWnMDWZPQ2dUI2emkWTomUrdsLQ==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - 1F2083C85EFB412D953B1C4CEBDEDD67
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - 1F2083C85EFB412D953B1C4CEBDEDD67/DF05E405139B6745CD29F12D3D6DC03A/F8C59B4C067EA211093E6412275913A6
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '6083'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "namespace" : "oci_computeagent",
+          "resourceGroup" : null,
+          "compartmentId" : "ocid1.tenancy.oc1..aaaaaaaa",
+          "name" : "CpuUtilization",
+          "dimensions" : {
+            "instancePoolId" : "Default",
+            "resourceDisplayName" : "instance-20210223-1239",
+            "faultDomain" : "FAULT-DOMAIN-1",
+            "resourceId" : "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+            "availabilityDomain" : "Foha:US-ASHBURN-AD-3",
+            "imageId" : "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+            "region" : "us-ashburn-1",
+            "shape" : "VM.Standard.E2.1.Micro"
+          },
+          "metadata" : {
+            "displayName" : "CPU Utilization",
+            "maxRange" : "100",
+            "unit" : "Percent",
+            "minRange" : "0"
+          },
+          "resolution" : null,
+          "aggregatedDatapoints" : [ {
+            "timestamp" : "2021-03-23T18:00:00.000Z",
+            "value" : 1.7870910263081596
+          }, {
+            "timestamp" : "2021-03-23T18:01:00.000Z",
+            "value" : 3.1823957724057235
+          }, {
+            "timestamp" : "2021-03-23T18:02:00.000Z",
+            "value" : 2.285936110302508
+          }, {
+            "timestamp" : "2021-03-23T18:03:00.000Z",
+            "value" : 1.989302371906087
+          }, {
+            "timestamp" : "2021-03-23T18:04:00.000Z",
+            "value" : 1.9865042956975476
+          }, {
+            "timestamp" : "2021-03-23T18:05:00.000Z",
+            "value" : 3.8611045622512195
+          }, {
+            "timestamp" : "2021-03-23T18:06:00.000Z",
+            "value" : 1.5441219771164907
+          }, {
+            "timestamp" : "2021-03-23T18:07:00.000Z",
+            "value" : 2.0944814895676167
+          }, {
+            "timestamp" : "2021-03-23T18:08:00.000Z",
+            "value" : 1.8016294199418617
+          }, {
+            "timestamp" : "2021-03-23T18:09:00.000Z",
+            "value" : 2.452883705992123
+          }, {
+            "timestamp" : "2021-03-23T18:10:00.000Z",
+            "value" : 1.8470321637864862
+          }, {
+            "timestamp" : "2021-03-23T18:11:00.000Z",
+            "value" : 3.017719142863735
+          }, {
+            "timestamp" : "2021-03-23T18:12:00.000Z",
+            "value" : 1.8957544095270116
+          }, {
+            "timestamp" : "2021-03-23T18:13:00.000Z",
+            "value" : 1.7836451193847582
+          }, {
+            "timestamp" : "2021-03-23T18:14:00.000Z",
+            "value" : 2.3109530461562526
+          }, {
+            "timestamp" : "2021-03-23T18:15:00.000Z",
+            "value" : 2.5399120758204865
+          }, {
+            "timestamp" : "2021-03-23T18:16:00.000Z",
+            "value" : 2.135668639347554
+          }, {
+            "timestamp" : "2021-03-23T18:17:00.000Z",
+            "value" : 1.7259814561242453
+          }, {
+            "timestamp" : "2021-03-23T18:18:00.000Z",
+            "value" : 2.1242356883496227
+          }, {
+            "timestamp" : "2021-03-23T18:19:00.000Z",
+            "value" : 2.46584151902876
+          }, {
+            "timestamp" : "2021-03-23T18:20:00.000Z",
+            "value" : 2.210667687020471
+          }, {
+            "timestamp" : "2021-03-23T18:21:00.000Z",
+            "value" : 2.0802018569952216
+          }, {
+            "timestamp" : "2021-03-23T18:22:00.000Z",
+            "value" : 3.6434340224190342
+          }, {
+            "timestamp" : "2021-03-23T18:23:00.000Z",
+            "value" : 2.420114802931494
+          }, {
+            "timestamp" : "2021-03-23T18:24:00.000Z",
+            "value" : 2.1783037167676764
+          }, {
+            "timestamp" : "2021-03-23T18:25:00.000Z",
+            "value" : 2.425699717181469
+          }, {
+            "timestamp" : "2021-03-23T18:26:00.000Z",
+            "value" : 2.308680431931528
+          }, {
+            "timestamp" : "2021-03-23T18:27:00.000Z",
+            "value" : 1.9041544539858961
+          }, {
+            "timestamp" : "2021-03-23T18:28:00.000Z",
+            "value" : 1.9701671745879283
+          }, {
+            "timestamp" : "2021-03-23T18:29:00.000Z",
+            "value" : 1.9311383282290968
+          }, {
+            "timestamp" : "2021-03-23T18:30:00.000Z",
+            "value" : 1.9688443418901065
+          }, {
+            "timestamp" : "2021-03-23T18:31:00.000Z",
+            "value" : 3.1391204712120566
+          }, {
+            "timestamp" : "2021-03-23T18:32:00.000Z",
+            "value" : 1.9875742301623476
+          }, {
+            "timestamp" : "2021-03-23T18:33:00.000Z",
+            "value" : 1.7030456893622572
+          }, {
+            "timestamp" : "2021-03-23T18:34:00.000Z",
+            "value" : 1.9625469832114815
+          }, {
+            "timestamp" : "2021-03-23T18:35:00.000Z",
+            "value" : 4.121378147114198
+          }, {
+            "timestamp" : "2021-03-23T18:36:00.000Z",
+            "value" : 2.233570073116938
+          }, {
+            "timestamp" : "2021-03-23T18:37:00.000Z",
+            "value" : 2.283767091286603
+          }, {
+            "timestamp" : "2021-03-23T18:38:00.000Z",
+            "value" : 1.818420054682196
+          }, {
+            "timestamp" : "2021-03-23T18:39:00.000Z",
+            "value" : 2.3706773795333005
+          }, {
+            "timestamp" : "2021-03-23T18:40:00.000Z",
+            "value" : 2.5122269895015417
+          }, {
+            "timestamp" : "2021-03-23T18:41:00.000Z",
+            "value" : 2.5315383741775888
+          }, {
+            "timestamp" : "2021-03-23T18:42:00.000Z",
+            "value" : 2.0657507199380443
+          }, {
+            "timestamp" : "2021-03-23T18:43:00.000Z",
+            "value" : 2.742961156935898
+          }, {
+            "timestamp" : "2021-03-23T18:44:00.000Z",
+            "value" : 2.5932854583128115
+          }, {
+            "timestamp" : "2021-03-23T18:45:00.000Z",
+            "value" : 2.0835852937182335
+          }, {
+            "timestamp" : "2021-03-23T18:46:00.000Z",
+            "value" : 2.302402831269523
+          }, {
+            "timestamp" : "2021-03-23T18:47:00.000Z",
+            "value" : 1.8817973885004047
+          }, {
+            "timestamp" : "2021-03-23T18:48:00.000Z",
+            "value" : 2.241961150118039
+          }, {
+            "timestamp" : "2021-03-23T18:49:00.000Z",
+            "value" : 2.420620437073954
+          }, {
+            "timestamp" : "2021-03-23T18:50:00.000Z",
+            "value" : 1.7871423795963557
+          }, {
+            "timestamp" : "2021-03-23T18:51:00.000Z",
+            "value" : 2.5763234701151205
+          }, {
+            "timestamp" : "2021-03-23T18:52:00.000Z",
+            "value" : 2.345210343404785
+          }, {
+            "timestamp" : "2021-03-23T18:53:00.000Z",
+            "value" : 2.186401576460334
+          }, {
+            "timestamp" : "2021-03-23T18:54:00.000Z",
+            "value" : 2.269338314465351
+          }, {
+            "timestamp" : "2021-03-23T18:55:00.000Z",
+            "value" : 1.8801408290350083
+          }, {
+            "timestamp" : "2021-03-23T18:56:00.000Z",
+            "value" : 2.0842343167933954
+          }, {
+            "timestamp" : "2021-03-23T18:57:00.000Z",
+            "value" : 2.1309433106591134
+          }, {
+            "timestamp" : "2021-03-23T18:58:00.000Z",
+            "value" : 2.555566169996877
+          }, {
+            "timestamp" : "2021-03-23T18:59:00.000Z",
+            "value" : 2.2099222439049426
+          }, {
+            "timestamp" : "2021-03-23T19:00:00.000Z",
+            "value" : 1.930973685859671
+          } ]
+        } ]
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"MemoryUtilization[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Content-Length:
+      - '260'
+      X-Content-Sha256:
+      - 3vLyglhN6wRH9fJyDqJe/pC9kpwZ5Zs3K0gLVab5FaA=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="k2ExclNoxPH3ol+ijSU/MSm6reIgqj3cBRFGBlbx2n7yyA+IY/SME0PZ8ohk8XdlfDiuvj220chAcIOdxVLTSMZizhW2U/bZ/ZIEJPvULFSL8dnLxA0+zRauaio/Ayg3tiqvPPOFCjN92rVO1bbI6pLsnCuqIaNzKJyLOVwcPWm5aQrAiSmAqyWdW2zoznONLtbvcKjWiHXctXCs8S0cn4z3e08DG701b89eOjv9yJZKSK9zK3S7XZ7khJIKtWW7iH/Tjl/jZtnPeqkCfgsyIFWXin7EKOBp5f3RRylSA3zQNZviZ/jajwrUdK8SRyotfaoii/FSD/acJzlOMhlxHA==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - 38FA5D2C81DB4AB0A737796A1AC1E643
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - 38FA5D2C81DB4AB0A737796A1AC1E643/3D0D6D35B6AB154D14D90BDD652F8DF0/CE392EC39143FD0F0D1CC716F8B747A6
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '6038'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "namespace" : "oci_computeagent",
+          "resourceGroup" : null,
+          "compartmentId" : "ocid1.tenancy.oc1..aaaaaaaa",
+          "name" : "MemoryUtilization",
+          "dimensions" : {
+            "instancePoolId" : "Default",
+            "resourceDisplayName" : "instance-20210223-1239",
+            "faultDomain" : "FAULT-DOMAIN-1",
+            "resourceId" : "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+            "availabilityDomain" : "Foha:US-ASHBURN-AD-3",
+            "imageId" : "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+            "region" : "us-ashburn-1",
+            "shape" : "VM.Standard.E2.1.Micro"
+          },
+          "metadata" : {
+            "displayName" : "Memory Utilization",
+            "maxRange" : "100",
+            "unit" : "Percent",
+            "minRange" : "0"
+          },
+          "resolution" : null,
+          "aggregatedDatapoints" : [ {
+            "timestamp" : "2021-03-23T18:00:00.000Z",
+            "value" : 66.56001996789253
+          }, {
+            "timestamp" : "2021-03-23T18:01:00.000Z",
+            "value" : 66.5402600742367
+          }, {
+            "timestamp" : "2021-03-23T18:02:00.000Z",
+            "value" : 66.5320346639589
+          }, {
+            "timestamp" : "2021-03-23T18:03:00.000Z",
+            "value" : 66.54593277098
+          }, {
+            "timestamp" : "2021-03-23T18:04:00.000Z",
+            "value" : 66.54054370907386
+          }, {
+            "timestamp" : "2021-03-23T18:05:00.000Z",
+            "value" : 66.57353989513074
+          }, {
+            "timestamp" : "2021-03-23T18:06:00.000Z",
+            "value" : 66.53298011341613
+          }, {
+            "timestamp" : "2021-03-23T18:07:00.000Z",
+            "value" : 66.54829639462304
+          }, {
+            "timestamp" : "2021-03-23T18:08:00.000Z",
+            "value" : 66.59055798536066
+          }, {
+            "timestamp" : "2021-03-23T18:09:00.000Z",
+            "value" : 66.57013627708477
+          }, {
+            "timestamp" : "2021-03-23T18:10:00.000Z",
+            "value" : 66.64142316615896
+          }, {
+            "timestamp" : "2021-03-23T18:11:00.000Z",
+            "value" : 66.69786649875483
+          }, {
+            "timestamp" : "2021-03-23T18:12:00.000Z",
+            "value" : 66.73596811188071
+          }, {
+            "timestamp" : "2021-03-23T18:13:00.000Z",
+            "value" : 66.76036070787693
+          }, {
+            "timestamp" : "2021-03-23T18:14:00.000Z",
+            "value" : 66.54016552929097
+          }, {
+            "timestamp" : "2021-03-23T18:15:00.000Z",
+            "value" : 66.55415818125779
+          }, {
+            "timestamp" : "2021-03-23T18:16:00.000Z",
+            "value" : 66.53780190564794
+          }, {
+            "timestamp" : "2021-03-23T18:17:00.000Z",
+            "value" : 66.53137284933884
+          }, {
+            "timestamp" : "2021-03-23T18:18:00.000Z",
+            "value" : 66.49156942718999
+          }, {
+            "timestamp" : "2021-03-23T18:19:00.000Z",
+            "value" : 66.55604908017223
+          }, {
+            "timestamp" : "2021-03-23T18:20:00.000Z",
+            "value" : 66.53506010222199
+          }, {
+            "timestamp" : "2021-03-23T18:21:00.000Z",
+            "value" : 66.51577293329477
+          }, {
+            "timestamp" : "2021-03-23T18:22:00.000Z",
+            "value" : 66.6011470192815
+          }, {
+            "timestamp" : "2021-03-23T18:23:00.000Z",
+            "value" : 66.53383101792761
+          }, {
+            "timestamp" : "2021-03-23T18:24:00.000Z",
+            "value" : 66.54744549011154
+          }, {
+            "timestamp" : "2021-03-23T18:25:00.000Z",
+            "value" : 66.53647827640782
+          }, {
+            "timestamp" : "2021-03-23T18:26:00.000Z",
+            "value" : 66.5624781364813
+          }, {
+            "timestamp" : "2021-03-23T18:27:00.000Z",
+            "value" : 66.54999820364604
+          }, {
+            "timestamp" : "2021-03-23T18:28:00.000Z",
+            "value" : 66.60833243515636
+          }, {
+            "timestamp" : "2021-03-23T18:29:00.000Z",
+            "value" : 66.66222305421775
+          }, {
+            "timestamp" : "2021-03-23T18:30:00.000Z",
+            "value" : 66.73965536476386
+          }, {
+            "timestamp" : "2021-03-23T18:31:00.000Z",
+            "value" : 66.71601912833343
+          }, {
+            "timestamp" : "2021-03-23T18:32:00.000Z",
+            "value" : 66.72925542073448
+          }, {
+            "timestamp" : "2021-03-23T18:33:00.000Z",
+            "value" : 66.52513288292121
+          }, {
+            "timestamp" : "2021-03-23T18:34:00.000Z",
+            "value" : 66.55274000707196
+          }, {
+            "timestamp" : "2021-03-23T18:35:00.000Z",
+            "value" : 66.52068927047229
+          }, {
+            "timestamp" : "2021-03-23T18:36:00.000Z",
+            "value" : 66.50858751741991
+          }, {
+            "timestamp" : "2021-03-23T18:37:00.000Z",
+            "value" : 66.54754003505727
+          }, {
+            "timestamp" : "2021-03-23T18:38:00.000Z",
+            "value" : 66.53080557966452
+          }, {
+            "timestamp" : "2021-03-23T18:39:00.000Z",
+            "value" : 66.5368564561907
+          }, {
+            "timestamp" : "2021-03-23T18:40:00.000Z",
+            "value" : 66.54829639462304
+          }, {
+            "timestamp" : "2021-03-23T18:41:00.000Z",
+            "value" : 66.52428197840972
+          }, {
+            "timestamp" : "2021-03-23T18:42:00.000Z",
+            "value" : 66.52068927047229
+          }, {
+            "timestamp" : "2021-03-23T18:43:00.000Z",
+            "value" : 66.53978734950807
+          }, {
+            "timestamp" : "2021-03-23T18:44:00.000Z",
+            "value" : 66.5394091697252
+          }, {
+            "timestamp" : "2021-03-23T18:45:00.000Z",
+            "value" : 66.53846372026797
+          }, {
+            "timestamp" : "2021-03-23T18:46:00.000Z",
+            "value" : 66.6541867338314
+          }, {
+            "timestamp" : "2021-03-23T18:47:00.000Z",
+            "value" : 66.57807805252538
+          }, {
+            "timestamp" : "2021-03-23T18:48:00.000Z",
+            "value" : 66.66458667786078
+          }, {
+            "timestamp" : "2021-03-23T18:49:00.000Z",
+            "value" : 66.71620821822486
+          }, {
+            "timestamp" : "2021-03-23T18:50:00.000Z",
+            "value" : 66.71261551028743
+          }, {
+            "timestamp" : "2021-03-23T18:51:00.000Z",
+            "value" : 66.76612794956594
+          }, {
+            "timestamp" : "2021-03-23T18:52:00.000Z",
+            "value" : 66.56720538376739
+          }, {
+            "timestamp" : "2021-03-23T18:53:00.000Z",
+            "value" : 66.52456561324689
+          }, {
+            "timestamp" : "2021-03-23T18:54:00.000Z",
+            "value" : 66.52740196161852
+          }, {
+            "timestamp" : "2021-03-23T18:55:00.000Z",
+            "value" : 66.54196188325969
+          }, {
+            "timestamp" : "2021-03-23T18:56:00.000Z",
+            "value" : 66.5372346359736
+          }, {
+            "timestamp" : "2021-03-23T18:57:00.000Z",
+            "value" : 66.535060102222
+          }, {
+            "timestamp" : "2021-03-23T18:58:00.000Z",
+            "value" : 66.50584571399398
+          }, {
+            "timestamp" : "2021-03-23T18:59:00.000Z",
+            "value" : 66.5415837034768
+          }, {
+            "timestamp" : "2021-03-23T19:00:00.000Z",
+            "value" : 66.52276925927818
+          } ]
+        } ]
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"DiskBytesRead[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Content-Length:
+      - '256'
+      X-Content-Sha256:
+      - QfwEdAByS7G7l6rNIKNk9eMTaca3V4OBD50Vt3PbONk=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Pl057CdE5Sl4bb5Aiv6aNc/f5NqnhjGrGqg8jnz+s4nw7g7mEkqVvgYUioSb67DwGIJAQwWdn4emmhDMfaMreoKpeRX2lLnvECSm8tmZMgZqg+0F7+zeDcqXS97JSgukGWJukl9Xphti0EooZnPpfmsxEMCsEwafYZkJhMMei8Lj0A126bWVZ+xc4XiVGYlzzNW6ByM+XQSIwKGfj80O4dukRyfxMj8PSOC/18JHfi/4SLbUjv9/h22yxavZIrvMFbR+OKX2UJ+MBuWFFoG4MLzxq0TVQEQgvwtDthtJm0uYtOsrCCop0ewxGHDx2WZQo+oq8ZI1DwlTwj3rb+6OVg==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - 000A75BF10C943B381BE318C86779267
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - 000A75BF10C943B381BE318C86779267/F0CC1D2100F76610197D2F03FA309BD2/3EC2841AD46F28FDA75A68C5B4B0D587
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '5612'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "namespace" : "oci_computeagent",
+          "resourceGroup" : null,
+          "compartmentId" : "ocid1.tenancy.oc1..aaaaaaaa",
+          "name" : "DiskBytesRead",
+          "dimensions" : {
+            "instancePoolId" : "Default",
+            "resourceDisplayName" : "instance-20210223-1239",
+            "faultDomain" : "FAULT-DOMAIN-1",
+            "resourceId" : "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+            "availabilityDomain" : "Foha:US-ASHBURN-AD-3",
+            "imageId" : "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+            "region" : "us-ashburn-1",
+            "shape" : "VM.Standard.E2.1.Micro"
+          },
+          "metadata" : {
+            "displayName" : "Disk Read Bytes",
+            "unit" : "Bytes"
+          },
+          "resolution" : null,
+          "aggregatedDatapoints" : [ {
+            "timestamp" : "2021-03-23T18:00:00.000Z",
+            "value" : 7.60759808E8
+          }, {
+            "timestamp" : "2021-03-23T18:01:00.000Z",
+            "value" : 7.607652693333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:02:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:03:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:04:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:05:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:06:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:07:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:08:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:09:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:10:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:11:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:12:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:13:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:14:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:15:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:16:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:17:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:18:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:19:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:20:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:21:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:22:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:23:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:24:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:25:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:26:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:27:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:28:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:29:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:30:00.000Z",
+            "value" : 7.60768E8
+          }, {
+            "timestamp" : "2021-03-23T18:31:00.000Z",
+            "value" : 7.60866304E8
+          }, {
+            "timestamp" : "2021-03-23T18:32:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:33:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:34:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:35:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:36:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:37:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:38:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:39:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:40:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:41:00.000Z",
+            "value" : 7.60915456E8
+          }, {
+            "timestamp" : "2021-03-23T18:42:00.000Z",
+            "value" : 7.60923648E8
+          }, {
+            "timestamp" : "2021-03-23T18:43:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:44:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:45:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:46:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:47:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:48:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:49:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:50:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:51:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:52:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:53:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:54:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:55:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:56:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:57:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:58:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T18:59:00.000Z",
+            "value" : 7.60964608E8
+          }, {
+            "timestamp" : "2021-03-23T19:00:00.000Z",
+            "value" : 7.60964608E8
+          } ]
+        } ]
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"DiskBytesWritten[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Content-Length:
+      - '259'
+      X-Content-Sha256:
+      - 7temAacWxKeKV0kG+5EVbrL3iX35I986mmUwMnOaaqU=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="h8CswPaxfVoMH4rOxPwRMM+mIAduxQVIE54M15lH9rKcTrshm22nb1P6JfuIXAzJBrewMI8V6+hcK80b6IoAAKWjOBhEaUsP1eTUWo8hg2BZ1yivisNRWmSc2O/8CWCWFLdWPOvwXu+2BJ1PlQpz/9Fk7pMreZDQNa3OhBjm5ytGJAk8jbd+hXOvq5J4cJAKnXFatjynL0HkCR2ZzHnq0k73V7QMMJm7I5ChLn0c+ovl+sCGagM2RLGrdAXUZpxmOPTlZoArmv43cNIg1i4eVXB3bgBijIbhQGOc4eo7d1rxtAv5tC3LVGrzIisuZzjLnTO4rKuHhxkfhswE+g9SQw==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - 361ABCE0811F4D81B46DFC3F3608B24F
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - 361ABCE0811F4D81B46DFC3F3608B24F/4FD9E34BBCA22982E110498DFE197D4B/28F5658F122CC063973A6A3FD94A173C
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '5907'
+    body:
+      encoding: UTF-8
+      string: |-
+        [ {
+          "namespace" : "oci_computeagent",
+          "resourceGroup" : null,
+          "compartmentId" : "ocid1.tenancy.oc1..aaaaaaaa",
+          "name" : "DiskBytesWritten",
+          "dimensions" : {
+            "instancePoolId" : "Default",
+            "resourceDisplayName" : "instance-20210223-1239",
+            "faultDomain" : "FAULT-DOMAIN-1",
+            "resourceId" : "ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q",
+            "availabilityDomain" : "Foha:US-ASHBURN-AD-3",
+            "imageId" : "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+            "region" : "us-ashburn-1",
+            "shape" : "VM.Standard.E2.1.Micro"
+          },
+          "metadata" : {
+            "displayName" : "Disk Write Bytes",
+            "unit" : "Bytes"
+          },
+          "resolution" : null,
+          "aggregatedDatapoints" : [ {
+            "timestamp" : "2021-03-23T18:00:00.000Z",
+            "value" : 8.12670976E8
+          }, {
+            "timestamp" : "2021-03-23T18:01:00.000Z",
+            "value" : 8.1339392E8
+          }, {
+            "timestamp" : "2021-03-23T18:02:00.000Z",
+            "value" : 8.144295253333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:03:00.000Z",
+            "value" : 8.149633706666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:04:00.000Z",
+            "value" : 8.154036906666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:05:00.000Z",
+            "value" : 8.159573333333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:06:00.000Z",
+            "value" : 8.16437248E8
+          }, {
+            "timestamp" : "2021-03-23T18:07:00.000Z",
+            "value" : 8.16859136E8
+          }, {
+            "timestamp" : "2021-03-23T18:08:00.000Z",
+            "value" : 8.174380373333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:09:00.000Z",
+            "value" : 8.178619733333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:10:00.000Z",
+            "value" : 8.18313216E8
+          }, {
+            "timestamp" : "2021-03-23T18:11:00.000Z",
+            "value" : 8.188634453333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:12:00.000Z",
+            "value" : 8.193686186666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:13:00.000Z",
+            "value" : 8.19795968E8
+          }, {
+            "timestamp" : "2021-03-23T18:14:00.000Z",
+            "value" : 8.202103466666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:15:00.000Z",
+            "value" : 8.20721664E8
+          }, {
+            "timestamp" : "2021-03-23T18:16:00.000Z",
+            "value" : 8.212179626666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:17:00.000Z",
+            "value" : 8.2169856E8
+          }, {
+            "timestamp" : "2021-03-23T18:18:00.000Z",
+            "value" : 8.22075392E8
+          }, {
+            "timestamp" : "2021-03-23T18:19:00.000Z",
+            "value" : 8.225273173333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:20:00.000Z",
+            "value" : 8.231041706666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:21:00.000Z",
+            "value" : 8.235956906666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:22:00.000Z",
+            "value" : 8.243759786666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:23:00.000Z",
+            "value" : 8.24952832E8
+          }, {
+            "timestamp" : "2021-03-23T18:24:00.000Z",
+            "value" : 8.25360384E8
+          }, {
+            "timestamp" : "2021-03-23T18:25:00.000Z",
+            "value" : 8.259160746666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:26:00.000Z",
+            "value" : 8.26363904E8
+          }, {
+            "timestamp" : "2021-03-23T18:27:00.000Z",
+            "value" : 8.26830848E8
+          }, {
+            "timestamp" : "2021-03-23T18:28:00.000Z",
+            "value" : 8.273414826666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:29:00.000Z",
+            "value" : 8.277592746666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:30:00.000Z",
+            "value" : 8.281586346666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:31:00.000Z",
+            "value" : 8.28721152E8
+          }, {
+            "timestamp" : "2021-03-23T18:32:00.000Z",
+            "value" : 8.29247488E8
+          }, {
+            "timestamp" : "2021-03-23T18:33:00.000Z",
+            "value" : 8.29782016E8
+          }, {
+            "timestamp" : "2021-03-23T18:34:00.000Z",
+            "value" : 8.30142464E8
+          }, {
+            "timestamp" : "2021-03-23T18:35:00.000Z",
+            "value" : 8.30681088E8
+          }, {
+            "timestamp" : "2021-03-23T18:36:00.000Z",
+            "value" : 8.31318016E8
+          }, {
+            "timestamp" : "2021-03-23T18:37:00.000Z",
+            "value" : 8.318266026666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:38:00.000Z",
+            "value" : 8.323426986666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:39:00.000Z",
+            "value" : 8.32704512E8
+          }, {
+            "timestamp" : "2021-03-23T18:40:00.000Z",
+            "value" : 8.331762346666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:41:00.000Z",
+            "value" : 8.33716224E8
+          }, {
+            "timestamp" : "2021-03-23T18:42:00.000Z",
+            "value" : 8.34224128E8
+          }, {
+            "timestamp" : "2021-03-23T18:43:00.000Z",
+            "value" : 8.347634346666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:44:00.000Z",
+            "value" : 8.352290133333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:45:00.000Z",
+            "value" : 8.357430613333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:46:00.000Z",
+            "value" : 8.362113706666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:47:00.000Z",
+            "value" : 8.366353066666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:48:00.000Z",
+            "value" : 8.3716096E8
+          }, {
+            "timestamp" : "2021-03-23T18:49:00.000Z",
+            "value" : 8.3766272E8
+          }, {
+            "timestamp" : "2021-03-23T18:50:00.000Z",
+            "value" : 8.38141952E8
+          }, {
+            "timestamp" : "2021-03-23T18:51:00.000Z",
+            "value" : 8.387072E8
+          }, {
+            "timestamp" : "2021-03-23T18:52:00.000Z",
+            "value" : 8.39221248E8
+          }, {
+            "timestamp" : "2021-03-23T18:53:00.000Z",
+            "value" : 8.397120853333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:54:00.000Z",
+            "value" : 8.40122368E8
+          }, {
+            "timestamp" : "2021-03-23T18:55:00.000Z",
+            "value" : 8.406084266666666E8
+          }, {
+            "timestamp" : "2021-03-23T18:56:00.000Z",
+            "value" : 8.41129984E8
+          }, {
+            "timestamp" : "2021-03-23T18:57:00.000Z",
+            "value" : 8.41590784E8
+          }, {
+            "timestamp" : "2021-03-23T18:58:00.000Z",
+            "value" : 8.420222293333334E8
+          }, {
+            "timestamp" : "2021-03-23T18:59:00.000Z",
+            "value" : 8.425936213333334E8
+          }, {
+            "timestamp" : "2021-03-23T19:00:00.000Z",
+            "value" : 8.432196266666666E8
+          } ]
+        } ]
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"NetworkBytesIn[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Content-Length:
+      - '257'
+      X-Content-Sha256:
+      - ZYUFoWSG7eCNBox5mCc+0rWY86vYNnxTUnFVCW301dU=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="GhCdFlUlpXXPqs8Xt5iRgq0z1jWjYsObWaKKCX5C6Okwu3zkf5/6zAXpdzqwYlTfKOVDwC/EL35IPaJ0vxqPtA+WHrvkKA0EMULIoFf8Tr+Ey8uymMdOSSPD6VoJOL0PGo7OtspPAE6y/GwUR1DgMy8VhbRUovf+AwDS2VFL3gyCFkZ0YwS4E6FTFt2gq6qywR41lZPJsW6QrWdqny788kSIc2gN+8qLpmQrUIadLJqnDhaCEQX1YsWbigISjcw9SqGPzz68gw1/F1zoJPNT+IhTuqNxrpk/bz2jPK00o1PSjPmD0M8KSEjIFzN2iIc0si4M7Bx5Cj3OShaTEv6KCQ==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - DE74F9422A474D63BE333BCC2F9F5526
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - DE74F9422A474D63BE333BCC2F9F5526/11FB52E11713257ABDB14ECBCDB8864D/0FD0D84352EFD7EA670B4784046FA324
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: "[ ]"
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+- request:
+    method: post
+    uri: https://telemetry.us-ashburn-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: UTF-8
+      string: '{"namespace":"oci_computeagent","query":"NetworkBytesOut[1m]{resourceID=ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q}.avg()","startTime":"2021-03-23T18:00:00.000Z","endTime":"2021-03-23T19:00:00.000Z","resolution":"1m"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Oracle-RubySDK/2.12.0 (ruby 2.7.2; x86_64-linux-gnu)
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Content-Length:
+      - '258'
+      X-Content-Sha256:
+      - gCz5+VzJsexNdAZcKnsRit05ZW6YrtJy992NfbytP38=
+      Authorization:
+      - Signature headers="date (request-target) host content-length content-type
+        x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Z+jg3AKp6CjXsPv1iAILKJR3xNAOe0B3GeGgI/oqZDpx46qU5iXw3lLyKywV0M1kerDCU7RpEl0p24aAl3wZkeS9Kt2SCXOoBNwBNV6wizmXfltVXs0C8impsU2NY2u/fMchVwkuhiTVQw0ET5VYNpZv/+2iPvaLQeDt+lfLZ8K+at9X6jRl/9WudEtGS3e4OzvLthMnqYIp6zBwa2Ew6+fxs/p8JF2ae8+PtH2MK16mm7D/kDpquvqkfF7XQL2VE/hDA6gZYLFZJbbhqlQq2SMk4RdgYllZAdeBOh41GQ6GblQCPwu8FgzSFLJYCh1VosdknmD4KQjSl6XJTANV1w==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.12.0
+      Opc-Request-Id:
+      - 3FD649BBCFA54A61B0097937C266902D
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 23 Mar 2021 20:43:47 GMT
+      Opc-Request-Id:
+      - 3FD649BBCFA54A61B0097937C266902D/737E00E8F00EA1B763C42A4F7F3613C5/02D7E00674020EB4F601AA599A38D407
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '3'
+    body:
+      encoding: UTF-8
+      string: "[ ]"
+    http_version:
+  recorded_at: Tue, 23 Mar 2021 20:43:47 GMT
+recorded_with: VCR 5.1.0
