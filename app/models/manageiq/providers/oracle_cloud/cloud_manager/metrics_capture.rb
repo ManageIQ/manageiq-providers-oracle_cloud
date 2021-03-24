@@ -85,15 +85,15 @@ class ManageIQ::Providers::OracleCloud::CloudManager::MetricsCapture < ManageIQ:
     monitoring_client = ext_management_system.connect(:service => "Monitoring::MonitoringClient")
 
     query_params = metrics_query_params(counter_name, start_time, end_time, interval, statistic)
+    metrics_data = monitoring_client.summarize_metrics_data(compartment_id, query_params).flat_map do |response|
+      response.data&.first&.aggregated_datapoints
+    end
 
-    response    = monitoring_client.summarize_metrics_data(compartment_id, query_params)
-    metric_data = response&.data&.first
-
-    parse_datapoints(metric_data&.aggregated_datapoints)
+    parse_datapoints(metrics_data.compact)
   end
 
   def parse_datapoints(aggregated_datapoints)
-    Array(aggregated_datapoints)
+    aggregated_datapoints
       .index_by { |datapoint| datapoint.timestamp&.to_s }
       .except(nil)
       .transform_values(&:value)
