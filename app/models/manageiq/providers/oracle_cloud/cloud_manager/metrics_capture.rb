@@ -1,5 +1,6 @@
 class ManageIQ::Providers::OracleCloud::CloudManager::MetricsCapture < ManageIQ::Providers::CloudManager::MetricsCapture
   delegate :ext_management_system, :to => :target
+  attr_accessor :monitoring_client
 
   VIM_STYLE_COUNTERS = {
     "cpu_usage_rate_average"     => {
@@ -40,10 +41,13 @@ class ManageIQ::Providers::OracleCloud::CloudManager::MetricsCapture < ManageIQ:
     }.freeze,
   }.freeze
 
-  def perf_collect_metrics(_interval_name, start_time = nil, end_time = nil)
+  def perf_collect_metrics(interval_name, start_time = nil, end_time = nil)
     require "oci/monitoring/monitoring"
 
     raise _("No EMS defined") if ext_management_system.nil?
+
+    # This is just for consistency, to produce a :connect benchmark
+    self.monitoring_client, = Benchmark.realtime_block(:connect) { ext_management_system.connect(:service => "Monitoring::MonitoringClient") }
 
     end_time ||= Time.now.utc
     start_time ||= end_time - 4.hours
@@ -69,6 +73,12 @@ class ManageIQ::Providers::OracleCloud::CloudManager::MetricsCapture < ManageIQ:
     store_datapoints!(net_usage_kbps, "net_usage_rate_average", counter_values_by_mor[target.ems_ref])
 
     return counters_by_mor, counter_values_by_mor
+  rescue StandardError => err
+    log_header = "[#{interval_name}] for: [#{target.class.name}], [#{target.id}], [#{target.name}]"
+    _log.error("#{log_header} Unhandled exception during perf data collection: [#{err}], class: [#{err.class}]")
+    _log.error("#{log_header}   Timings at time of error: #{Benchmark.current_realtime.inspect}")
+    _log.log_backtrace(err)
+    raise
   end
 
   def metrics_query_params(counter_name, start_time, end_time, interval, statistic)
@@ -82,11 +92,11 @@ class ManageIQ::Providers::OracleCloud::CloudManager::MetricsCapture < ManageIQ:
   end
 
   def metrics_query(counter_name, start_time, end_time, interval = "1m", statistic = "avg")
-    monitoring_client = ext_management_system.connect(:service => "Monitoring::MonitoringClient")
-
     query_params = metrics_query_params(counter_name, start_time, end_time, interval, statistic)
-    metrics_data = monitoring_client.summarize_metrics_data(compartment_id, query_params).flat_map do |response|
-      response.data&.first&.aggregated_datapoints
+    metrics_data, = Benchmark.realtime_block(:capture_counters) do
+      monitoring_client.summarize_metrics_data(compartment_id, query_params).flat_map do |response|
+        response.data&.first&.aggregated_datapoints
+      end
     end
 
     parse_datapoints(metrics_data.compact)
