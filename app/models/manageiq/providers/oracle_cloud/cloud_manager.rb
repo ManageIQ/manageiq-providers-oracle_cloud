@@ -1,5 +1,4 @@
 class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::CloudManager
-  require_nested :AuthKeyPair
   require_nested :AvailabilityZone
   require_nested :CloudVolume
   require_nested :EventCatcher
@@ -116,29 +115,5 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   def allow_targeted_refresh?
     true
-  end
-
-  def vm_start(vm, _options = {})
-    vm.start
-  rescue => err
-    _log.error("vm=[#{vm.name}], error: #{err}")
-  end
-
-  def vm_stop(vm, _options = {})
-    vm.stop
-  rescue => err
-    _log.error("vm=[#{vm.name}], error: #{err}")
-  end
-
-  def vm_destroy(vm, _options = {})
-    vm.vm_destroy
-  rescue => err
-    _log.error("vm=[#{vm.name}], error: #{err}")
-  end
-
-  def vm_reboot_guest(vm, _options = {})
-    vm.reboot_guest
-  rescue => err
-    _log.error("vm=[#{vm.name}], error: #{err}")
   end
 end
