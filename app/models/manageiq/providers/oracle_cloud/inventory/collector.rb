@@ -69,7 +69,11 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     # one-at-a-time.
     @vnics ||= vnic_attachments.map do |vnic_attachment|
       virtual_network_client.get_vnic(vnic_attachment.vnic_id).data
-    end
+    rescue OCI::Errors::ServiceError => err
+      raise unless err.status_code == 404
+
+      nil
+    end.compact
   end
 
   def vnic_attachments
