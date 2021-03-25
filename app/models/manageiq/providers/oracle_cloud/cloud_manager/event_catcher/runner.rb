@@ -18,8 +18,12 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
   end
 
   def process_event(event)
-    _log.info("#{log_prefix} Caught event [#{event}]")
-    EmsEvent.add_queue("add", ems_id, parse_event(event))
+    if filtered?(event)
+      _log.debug("#{log_prefix} Skipping filtered event #{event["eventType"]}")
+    else
+      _log.info("#{log_prefix} Caught event [#{event["eventType"]}] [#{event}]")
+      EmsEvent.add_queue("add", ems_id, parse_event(event))
+    end
   end
 
   private
@@ -29,6 +33,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
 
   def parse_event(event)
     ManageIQ::Providers::OracleCloud::CloudManager::EventParser.event_to_hash(event, ems_id)
+  end
+
+  def filtered?(event)
+    filtered_events.include?(event["eventType"])
   end
 
   def ensure_event_stream
