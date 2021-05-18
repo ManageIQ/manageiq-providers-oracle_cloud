@@ -13,6 +13,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   include ManageIQ::Providers::OracleCloud::ManagerMixin
 
+  supports :metrics
   supports :regions
 
   before_create :ensure_managers
