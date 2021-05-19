@@ -46,7 +46,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::Vm < ManageIQ::Providers::
     case raw_power_state.downcase
     when /running/, /starting/
       "on"
-    when /shutdown/, /stopping/, /terminating/, /terminated/
+    when /shutdown/, /stopping/, /stopped/, /terminating/, /terminated/
       "off"
     else
       "unknown"
