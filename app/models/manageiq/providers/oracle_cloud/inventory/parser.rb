@@ -53,10 +53,10 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
   def flavors
     collector.shapes.each do |shape|
       persister.flavors.build(
-        :ems_ref => shape.shape,
-        :name    => shape.shape,
-        :cpus    => shape.ocpus,
-        :memory  => shape.memory_in_gbs.gigabytes
+        :ems_ref         => shape.shape,
+        :name            => shape.shape,
+        :cpu_total_cores => shape.ocpus,
+        :memory          => shape.memory_in_gbs.gigabytes
       )
     end
   end
