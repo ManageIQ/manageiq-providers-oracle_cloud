@@ -46,6 +46,18 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
+  def mysql_databases
+    @mysql_databases ||= compartments.flat_map do |compartment|
+      mysql_client.list_db_systems(compartment.id).data
+    end
+  end
+
+  def oracle_databases
+    @oracle_databases ||= compartments.flat_map do |compartment|
+      database_client.list_autonomous_databases(compartment.id).data
+    end
+  end
+
   def shapes
     @shapes ||= compartments.flat_map do |compartment|
       compute_client.list_shapes(compartment.id).data
@@ -116,8 +128,16 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     @compute_client ||= manager.connect(:service => "Core::ComputeClient")
   end
 
+  def database_client
+    @database_client ||= manager.connect(:service => "Database::DatabaseClient")
+  end
+
   def identity_client
     @identity_client ||= manager.connect(:service => "Identity::IdentityClient")
+  end
+
+  def mysql_client
+    @mysql_client ||= manager.connect(:service => "Mysql::DbSystemClient")
   end
 
   def virtual_network_client
