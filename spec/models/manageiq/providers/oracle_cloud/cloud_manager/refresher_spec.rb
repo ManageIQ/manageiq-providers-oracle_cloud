@@ -15,6 +15,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
           assert_specific_flavor
           assert_specific_instance
           assert_specific_image
+          assert_specific_cloud_database
           assert_specific_cloud_network
           assert_specific_cloud_subnet
           assert_specific_cloud_volume
@@ -61,12 +62,13 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       expect(ems.last_refresh_date).not_to be_nil
 
       expect(ems.availability_zones.count).to eq(3)
-      expect(ems.cloud_tenants.count).to eq(3)
+      expect(ems.cloud_databases.count).to eq(1)
+      expect(ems.cloud_tenants.count).to eq(2)
       expect(ems.cloud_subnets.count).to eq(1)
       expect(ems.cloud_networks.count).to eq(1)
-      expect(ems.cloud_volumes.count).to eq(3)
-      expect(ems.flavors.count).to eq(13)
-      expect(ems.miq_templates.count).to eq(100)
+      expect(ems.cloud_volumes.count).to eq(2)
+      expect(ems.flavors.count).to eq(3)
+      expect(ems.miq_templates.count).to eq(99)
       expect(ems.network_ports.count).to eq(1)
       expect(ems.vms.count).to eq(1)
     end
@@ -150,15 +152,15 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
     end
 
     def assert_specific_image
-      template = ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda")
+      template = ems.miq_templates.find_by(:ems_ref => "ocid1.image.oc1.iad.aaaaaaaab3w3vzjenuyy3idksenczspj77wz74o7unpxid6xr7zmsyi7u47q")
       expect(template).to have_attributes(
         :vendor          => "oracle",
-        :name            => "Oracle-Linux-7.9-2021.01.12-0",
+        :name            => "Oracle-Linux-7.9-2021.07.27-0",
         :location        => "unknown",
-        :uid_ems         => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+        :uid_ems         => "ocid1.image.oc1.iad.aaaaaaaab3w3vzjenuyy3idksenczspj77wz74o7unpxid6xr7zmsyi7u47q",
         :power_state     => "never",
         :type            => "ManageIQ::Providers::OracleCloud::CloudManager::Template",
-        :ems_ref         => "ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda",
+        :ems_ref         => "ocid1.image.oc1.iad.aaaaaaaab3w3vzjenuyy3idksenczspj77wz74o7unpxid6xr7zmsyi7u47q",
         :raw_power_state => "never"
       )
 
@@ -170,6 +172,17 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       )
       expect(template.operating_system).to have_attributes(
         :product_name => "Oracle Linux 7.9"
+      )
+    end
+
+    def assert_specific_cloud_database
+      cloud_database = ems.cloud_databases.find_by(:ems_ref => "ocid1.autonomousdatabase.oc1.iad.anuwcljsw3enqvya6pxc43uemcy2zx7purn64fimk5euwq4kmfwlqasvsmga")
+      expect(cloud_database).to have_attributes(
+        :name         => "DB202108131402",
+        :db_engine    => "Oracle Database 19c",
+        :used_storage => 20.gigabytes,
+        :type         => "ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase",
+        :cloud_tenant => ems.cloud_tenants.find_by(:ems_ref => root_tenant_id)
       )
     end
 
