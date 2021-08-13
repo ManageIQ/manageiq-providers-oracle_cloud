@@ -7,6 +7,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Persister < ManageIQ::Provide
     add_cloud_collection(:availability_zones, :secondary_refs => {:by_name => %i(name)})
     add_cloud_collection(:cloud_tenants)
     add_cloud_collection(:cloud_volumes)
+    add_cloud_collection(:cloud_databases)
     add_cloud_collection(:disks)
     add_cloud_collection(:flavors)
     add_cloud_collection(:hardwares)
