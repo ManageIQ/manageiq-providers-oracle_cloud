@@ -34,12 +34,6 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
     end
   end
 
-  def autonomous_databases
-    @autonomous_databases ||= compartments.flat_map do |compartment|
-      database_client.list_autonomous_databases(compartment.id).data
-    end
-  end
-
   def images
     @images ||= compartments.flat_map do |compartment|
       compute_client.list_images(compartment.id).data
@@ -49,6 +43,18 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
   def instances
     @instances ||= compartments.flat_map do |compartment|
       compute_client.list_instances(compartment.id).data
+    end
+  end
+
+  def mysql_databases
+    @mysql_databases ||= compartments.flat_map do |compartment|
+      mysql_client.list_db_systems(compartment.id).data
+    end
+  end
+
+  def oracle_databases
+    @oracle_databases ||= compartments.flat_map do |compartment|
+      database_client.list_autonomous_databases(compartment.id).data
     end
   end
 
@@ -128,6 +134,10 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def identity_client
     @identity_client ||= manager.connect(:service => "Identity::IdentityClient")
+  end
+
+  def mysql_client
+    @mysql_client ||= manager.connect(:service => "Mysql::DbSystemClient")
   end
 
   def virtual_network_client

@@ -16,22 +16,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="akGPUt7AYQnSP797mj724vyK/A+UjcYkl7JQQbKNTyY7WrUdV8DAp3+pLQtbHgBT/sprqGRWuslnmyGrsXWYBuz/RwCS/mquhkxXYnY+GIjqUtZgYb4bZMp1aYTayRy6lloGwrHK/TnsqYAWkimV7G1Hv3Hly1BKb4m0NqJllzEb+bHWyXi0bQ6mxg7RN4cWHJlnpSsVNTty7UBz5+Ijq3BJ753HjBYFosMlKa6021iyOvurG6nmK/blYAs8g3naO/3dvLynVtqa5TLxoWNiMYJZ0owJmCPqYmPTS0mMjRfgp1EXA4RAYtJKmQE09pjTyNjKAEbK1NY6XnzDjbaryQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="fHCP5YSh3PQPC8rK2y0ZBc7CaXUcR4cUdiuciGePD/p3MerJFlKesi2aXWeA/GDqPg3KSI6Nu4zs9ear8DL3ulf+aoAP3THiNFCtlpME3W1BqVR2xnEWYgNQzX7S0Mb+fyCRGdRtk3SvD3CM4t2YWZte1c89x+YYEr2yNXZvY3v63bbIZJppcsqTkk+0ZQqBD9K2vm+fEp/fKhMJCjR0E7v4YCcuHowcvn3LXzAnnM0xG7pv/tiB4P3EZL4CGRtVQ79VEjT9IAvYiah8Q7kYgbRgbTVLPgw7zlgRHnIu2OcGwMFkIwNMr5I40p86sdzg6z4kdfcaZ7DyqTSQdm2yOg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 7272601885FE4FCABF2042643336E30C
+      - 3A849E95D521420D8DD6FE6365234BCF
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Opc-Request-Id:
-      - 7272601885FE4FCABF2042643336E30C/403928CA3DA53009FD437F6965F1B79E/EAB328A5002C074DB56EB05A30200D6B
+      - 3A849E95D521420D8DD6FE6365234BCF/C88FBD39A71699FF9448ADF5E5EA9486/97BDC3C5182C24F93D8EC5F500C898E6
       Cache-Control:
       - no-cache, no-store, must-revalidate
       Etag:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"isAccessible":true,"id":"ocid1.tenancy.oc1..aaaaaaaa","name":"manageiq","description":"manageiq","timeCreated":"2021-02-22T19:15:41.798Z","freeformTags":{},"definedTags":{},"lifecycleState":"ACTIVE"}'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:30 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:00 GMT
 - request:
     method: get
     uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/compartments/?accessLevel=ANY&compartmentId=ocid1.tenancy.oc1..aaaaaaaa&compartmentIdInSubtree=true
@@ -65,22 +65,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="L/a3hOOWS5VQ/BCaMTCU7/IZyUF12Tiho6F22/cz89BCjFORt5F3+Y8uW3J+ZPAEMmy/Odl6RFUhl9ewTInQvQc7y5UH+L473Ko9plyvI0yKpD4mHwifWkiGVCoR1zaIFS0tdDWQO9nQAf9cqPT1TqK+jr8zQuIYonHsXJ98c6wB4A4UUNdvq147rf6o4TbO0lUx6lbDBrLKL3wliC1IqDWIZRVWwDZZNhtvpWrDpA3Yj/uRW8Qr8zvPPQl3nWFc/f9Xt8uEPgd9TsJ2Lxo2zOjfAeU8I/G2iESEUlKgt+8MTvxp/KFr36quIjWhWb+OvDtCDtzZPGlKir1SKpWtmQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="BO4ZDo0VcOKWeV6Q5nq319pCvR9p+Ho+Ha25woGgpktXyoNZ4MarO3lYnv8D3zNQbYrfaprxyJWOALo/bELi7wWV+as/fCvwmcadL3fI9ejXLpyLfykHNHxbdIkMb2+3y1bJDHPsitnSmNh+IjP566OE1PYz4Pvl5eWOXH99bSXjluQHUaXu5WH65vh/C9LJKRqKzWgcW98J1VuNFXoIt7AYT7FjBtiw5ABe3K3Sab6Rwn9k4ePWbAR99adJfLbTbl2PaajwVVCurruOwyrU61dr8ce4qCqIFMTbbfAciHn+vC2dBAucyQ2/+rR+iqer+CSHxEFNcov7jkV9Batkdg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 9D9651A862034F179BBB36196CDDCA58
+      - 1E4CBF9B98B84AD0B44841C859421909
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Opc-Request-Id:
-      - 9D9651A862034F179BBB36196CDDCA58/179947F355EC49FB3DD8FFB86C4445A8/04F35CEECF56555DDE1881785B19D836
+      - 1E4CBF9B98B84AD0B44841C859421909/0D9C09B252328A44C0F1C0A6DBFDE1A7/1BD8A623BC6E3577405ECDDBC1280861
       Content-Type:
       - application/json
       Cache-Control:
@@ -97,7 +97,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","id":"ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq","name":"ManagedCompartmentForPaaS","description":"idcs-7be817c943a14314a056b16e8aeca70f|23431874|accounts@manageiq.org-440543","timeCreated":"2021-02-22T19:31:59.273Z","freeformTags":{},"definedTags":{},"lifecycleState":"ACTIVE"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:30 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:00 GMT
 - request:
     method: get
     uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -114,22 +114,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Bvpa2xXtaNPbH7tKYAND2LlBlh7mxOx42JLUMIlqHg/lNu1c7zY946edzGP8wACqTEz4jXkAgTiEqpriihPd92MapXAaR//XtsR3e8hRZLxz65xy+2IbGuu8AdnecUKqHcNZ+IcQ4TWp6vU750XeGUR5+8LVPVzQo4glDhjSrYDGjrcZfaFsC0Mo44MOTtbIhzHa19GCYImSexdDck2xhMtZfwIN44JbEe+g8Gu2wQm6rnFn0DaimxFeMZY5pdvjVpQ2lW/77nPpIAc+tY2BcA4pirvYoQm528X4nJHI8P2t8aV5n1NvCtwmVekJ2jhVO9TxaUSG+7FIseninx3/2w==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="eqvEn4M82aW8QEf+C6AhW0T74bVyy+iL0x0QF9u0wHvQCCd1B4dk+8YmrAZxmqgiErJwQoao3H6RbT2R77C4piATQwVNOFpstoerz6ckAy1sMF9vTDccT7V7QtUJfULKPax1DUO9ijUJJaYNqQV+omXmSFGuZmyt/kG0IsIMTntkf5eIzkfimFI1nSydxUYeXI1f7sQwg9oxTc6wQ3VUc6BKAOjpPFLEY3MVU6r2+BEjELWOmBNmeLBHf9N8t/IzFcPpA6WaX9N0Fam9oEErXvaCDjwhzTFRWX8mTqhqNXIf3ez0Xvo5lxBf3fr3gRAbMjWcZNR2BEjfx9wYsKhX8A==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - EDE366878C77419983359894D7A1D767
+      - F7A4148C40294C55B81F85E5D465D6A9
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:00 GMT
       Opc-Request-Id:
-      - EDE366878C77419983359894D7A1D767/8D528C5BDE1B5C5463CF308D310CE0C7/C6A646BF3FEB6A97FA5C36132756D7E6
+      - F7A4148C40294C55B81F85E5D465D6A9/7F1A10EB11D4259E91B1979053533392/FB6677D1ECCDAE7FFCEBF9CBDB0D0F35
       Content-Type:
       - application/json
       Cache-Control:
@@ -144,7 +144,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","id":"ocid1.availabilitydomain.oc1..aaaaaaaaztunlny6ae4yw2vghp5go2zceaonwp6wiioe3tnh2vlaxjjl2n3a","name":"Foha:US-ASHBURN-AD-1"},{"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","id":"ocid1.availabilitydomain.oc1..aaaaaaaauvt2n7pijol7uqgdnnsoojcukrijtmcltvfwxazmitk235wyohta","name":"Foha:US-ASHBURN-AD-2"},{"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","id":"ocid1.availabilitydomain.oc1..aaaaaaaatrwxaogr7dl4yschqtrmqrdv6uzis3mgbnomiagqrfhcb7mxsfdq","name":"Foha:US-ASHBURN-AD-3"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:30 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -161,22 +161,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="k6c/5c2qD7PrYVaUQLy/i2ABTJRgbvTADqVvZvUsk+kxA908AZdZNXq6FFR+LC0ZwoGeQoM4j2UWoMaS9Lkb/OOU03T7olCURTSQi1xL7IuTXGPG2+dkiC3CX0SfXcezk1n8F1fe9LWcgh94lQkyMWl34oRhKkZEAB8BoaEtxstuiN3jtorv6Go5eTH3ZMCo+YL9jdtBowlpBvq9BbLGfrlQPW6tHuog8FjxklyzuBpgejvcfw8MVL14jLw1BumfAtQQhErD7UHNxEvF50L4zHqOir1DdwafinPlWd+i6E76AeMlHd6kqn8Fp+7Qq88AUGP1AYLW6lnhJiln8mXklQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="UZNym0Zsw28SGvShO2R0NTZZlMigo7pdAs8Df1kR2yR/MCnGB3A3SpYDjNxWIPB05XVlTdfeOqAFAl9xSJ5Pb4UtxIdp1FgbZbx57NgSwtAqOT8ALR4WrnEuk8hf3f5mLGOr81aM/NhhAjj+XMZ10pStTV0yz1W1enuq5KDjPEpm8rFxadXWo+UutmxVZdM4t+BQJvb85hpDMvAExZape0X+xnpZO+h1FNz6Gm9FrppfQRhKTAs7NOi9r1Q/L4c9WBSEiTSZsJMNzQhzkeruWgOttfcvdHi6PPjQl509KnKFzu6A1vGm+h2yvr6xw171DIHPIL3wadC7cFD4/jAiYw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 2601FED8F04B48F4BE0D65212F53497D
+      - 14F5BC33D7F84C2AAD3273C1FD9E4CEC
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:30 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Opc-Request-Id:
-      - 2601FED8F04B48F4BE0D65212F53497D/562D65222402F391F768602EFFE57B0B/BACD883F33E9C062DC465E2799C638B6
+      - 14F5BC33D7F84C2AAD3273C1FD9E4CEC/CB410F93ED3A762F002A6A683F6E3B8C/2F050806265F41A1030C89FAB31917A7
       Content-Type:
       - application/json
       Cache-Control:
@@ -191,7 +191,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"compartmentId":"ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq","id":"ocid1.availabilitydomain.oc1..aaaaaaaaztunlny6ae4yw2vghp5go2zceaonwp6wiioe3tnh2vlaxjjl2n3a","name":"Foha:US-ASHBURN-AD-1"},{"compartmentId":"ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq","id":"ocid1.availabilitydomain.oc1..aaaaaaaauvt2n7pijol7uqgdnnsoojcukrijtmcltvfwxazmitk235wyohta","name":"Foha:US-ASHBURN-AD-2"},{"compartmentId":"ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq","id":"ocid1.availabilitydomain.oc1..aaaaaaaatrwxaogr7dl4yschqtrmqrdv6uzis3mgbnomiagqrfhcb7mxsfdq","name":"Foha:US-ASHBURN-AD-3"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-1&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -208,22 +208,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="NWXwcX3zf9T+88ZXpd+myX0UgEbg2jUzHcO066B1u6e/4VWVY0IoCMmzp6gbvaGdhEYRP23dzWLCs7Zx5hGeJoTBO7qo+pjux4An3VU1kIaTPklPVJqs7a7Rn3OcrNUpkKoBirfI22eBy2E3dlkas7dpm4ysm7ZLmGyZqpXYvGnTjgMg+kUDnUNKqISWeOQZlCFRnFrP9xksPbiUEvOpsYwXb5FixpKyhgN/CmNmAyxiBqEeOhVv8rvxyHOhwf8s3tdewm0qEScjS4AjidI++h0OipRJiLKMUoXgM7Kl6RW92tLKPVgfXkdsbkS9h5TQcN++5mg8i/7SxXzeNAImKg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="YEqgOb4CaFsfce1CvkhGKSjMYSeiKNr9ozY2szxcI+4W3VztxlLr0sto1sKUF6AhQaB+/vXcrSmIIsbaP6Sm/oCujQvF8IQ08+cX+Ibuo/o0N4zv1xkhyEoHKaaLPr8j9rwmT0xrp+kjdP/QbAerRie+X6mqYy0R/JKOpjAp7F2wChZ+WDxXRa8NKlCw6M7WkPOly2oL/jB1kZ1x9WCkFXfyZE1+juFypKE1/sthyVMhdrRpugtdrgADtV94zU02yz5rAmjzjucKAHR+2f+sqFM/hD8lG/0iY/glpjTwRxmPb6DCdJiDBGeVULt9AdBukjulXtewZd4M2sFqCHknwg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 7332EDF59855470EB4EBAD15D086418C
+      - F2247718C46E40198831A5B485273263
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Opc-Request-Id:
-      - 7332EDF59855470EB4EBAD15D086418C/BFAEA4271329D7774AAB7CC55E643F07/C1AD69010BC250A9C176C489425B95C1
+      - F2247718C46E40198831A5B485273263/948D4ACFA65F80A42213EB1F83173124/FE57CD759C3E7251059518397AAE5D82
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -234,7 +234,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-2&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -251,22 +251,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="SfrHJK3KLvLwjKAmEpyCIqpPlJHBdQZ+3aBAFQ3gF5E9151tdVlzjWCyPKqzez4f6eKBG+LrzwtY08d61TLMpuK2cwuJDlQZ7sCbGzGhto0Y5C0IXGZEkp0ubBHYEpZoWzKSEF5POKQxYWMB/tAxIfU9tzqx9HZgPCkYd+VL27wRsRRdTZiEd/RD8ggM4usOIccamUPkAMqKmjOz5viBXj13YZghy+SWtnblDjaLoaCEdwqTGRo4NHxYgmrt1HBcWsU0KuI4/RhBfTzdtW9V6+Jbf5Jo4zcTNR6520aCSMn02P/x6gRNmdSIkShzsM6Lpx+6HNaFNKmJyc1Bvs+xVg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="amoyzuaDgPViHRaM4PH+SUP8NHJClnYH5xm6T6V0If4toAoHaTidkdxPXxyMSR3Zje7IMFQvvgW+0mXaeyrvl58dW59Iy69q4zgbfJh1NYAvPXwTtlYJnSWwgT0M/l99HdQbGur4LSmu86wZh34+OvHO/akZDNjBY9Atoh+08OApFSRwatYmqxTJE5yZSOB+hfBN5BOY6arJ7CYQCeVKLEM6NhAytKnCHcphGV/Yh2MQK1pbhr61bcp5+FGqBukC8MkMYzjGhiy5iWqgjNE/BPidsYHLpLsybzF3YAS0/Gew2UfsBWiE9W3KhUseT90M/CaI443qmhSAe2DNo3bLGQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - DBE2705DDCA544689ABFCE4B17817726
+      - B3984046FAE54E4B9E30B89D3C9F3BBD
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Opc-Request-Id:
-      - DBE2705DDCA544689ABFCE4B17817726/97ED746DC107E6E39D0A2220544D369D/C08512562EB6C59B7455B0A310CFC39D
+      - B3984046FAE54E4B9E30B89D3C9F3BBD/180D6C2C0D31FA6C8C6FE2230063F960/898C824FC7ADC6F74167CB978D350807
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -277,7 +277,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-3&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -294,22 +294,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="JO9/vslmg4XPaykt+l8SCKmpQwoodg2hIJCMKW8CBqWNGE5KpePgyFS/hO2hsiV6n/wXSwHuuo0T1ahtZ6ltMDdXCBQhlwNPXBug2lV0EeWX5RY4FWf4gSeDGODIVwLbWlQTrxasPHBzW3y5/VAucLGKo/XhOH0DarBMhX+x5GpzmuGfrA5Krfb5c9mEBHSuXJD/0LDhVaP/h7GYsTrSsVwHCD00xPQyydO9ud8JULFb780CrTYHb3gWPiGb6IeajYi3Pzz4ksYwwoYvMqf7E91lFm9WjmWJz3I05Qxujvb+bJZiLiHshHjFTI9atENSu5tmPawZOpRwoA1ut3nCLw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ZkmlECTH5IsRDfJoZFkHGAflVlGWwjw2zxeGfP2n1lj9hG669kE0p8XiEFYUDMyfrs2zxG+E6ZJ4KXiMHVI72C+bZ6uAkuyD0r0FPrnxeebPHq08y5E1LCg+sSmj2z5CFOTM6fZJFd/43HLlRG+rXtMaBw+uEMQSykRbIUXp539tcebDAh3YgKwvh/Fy4I566zVKoFOduyuVNQ5II+hYaSVtjvLy4VQEshwMholwdGBLRamHMirVzALU30LZGkMPmyCmJYawxfDxTkP5i6YmyGCP9t2/mZrHpLVzNBGyO8chmWYmlAjI6K3ymOEmJO/YwPI0HtYTBsjMHOOVKIjzKw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - A3817DEB15144FBFA48C6744ACB74D1A
+      - 24EF3B9EE6DF41168A62C55DEFD4DC5D
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Opc-Request-Id:
-      - A3817DEB15144FBFA48C6744ACB74D1A/FA2A82C6EC8EB053A37739D195A1F5AD/71E0C3441A7FDDCA2CA789D1D8B4287A
+      - 24EF3B9EE6DF41168A62C55DEFD4DC5D/1B031268E5A5EC8A31686B4DCD02CDFF/59C35E234ED69AEB5AEDCB4B89E0FDA3
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -321,7 +321,7 @@ http_interactions:
       string: '[{"availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-02-23T18:38:00.683Z"}},"systemTags":{"orcl-cloud":{"free-tier-retained":"true"}},"displayName":"instance-20210223-1239
         (Boot Volume)","freeformTags":{},"id":"ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq","imageId":"ocid1.image.oc1.iad.aaaaaaaaqdc7jslbtue7abhwvxaq3ihvazfvihhs2rwk2mvciv36v7ux5sda","isHydrated":true,"vpusPerGB":10,"lifecycleState":"AVAILABLE","sizeInGBs":47,"sizeInMBs":47694,"sourceDetails":null,"timeCreated":"2021-02-23T18:38:09.802Z","volumeGroupId":null,"kmsKeyId":null,"isAutoTuneEnabled":false,"autoTunedVpusPerGB":null,"bootVolumeReplicas":null}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-1&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -338,22 +338,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="IUmtJGIkYAb+q0ASw/5RQU5YaNLJFDDsjUZt3MQ+hZ4+KZNUNRE1C+68b9b2KnvuKKolnWJYPapCkSpGt3ozbVVieLijxsVFcF6TIb3f3f2OC2E+tsTkh1Bd+BLoqETucKk9cWp4Y626P5yPQhnGfrKAyTZ4SxmQhQCPMW1zdul8TckoSWASgeNyCYGzq+pat+qzpRSzxIMcILkN34B8z/yQRssx4La8kJbJsjkHNg4jQw8mqI6SVb22a7KLEwqox/m+vPPX7s+bU7WCdf5xDUXV3L86dGUT2r6Jv4Ss26vQo/HTEzDaKC40myiVcoCf00YkkwLY1he+WpzneFgGmQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ZWjlaV0IePM4tCxoymYhTmefUJ2yAd/oOJjq04gPdLrITiw4toS8xRieOR/tvjfSvDr3BHzH86s6xmBvPCpdOpRtYIA9Hkun/s+yuWQGmNXhe7t6urS90OrzOSWMeCXl+BwmS1AtoxakQusprA7Y2MAGNfyO+MbIx6/LdDAaVWqH7SH1Q4VfLTRguQUNtNBlhLq63clMELhBK1p1k+1Mef0BxPzEXd4LPZXBFlG5QIMG2npyWS6SvWUYUF74i/ZdYHEVwuONWEz2hAoXC3PZtHr4WRaO3rKtmT7IwrwY6GlLC9vgiq1Agx2gaIN01v4yC1+TH+auAXpKlIHCgtXhug==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - FFE741658ED24CA2B388AF4FDC36EFAC
+      - 46BA55F7474542F8A425224FCF1C0795
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Opc-Request-Id:
-      - FFE741658ED24CA2B388AF4FDC36EFAC/764CCE3595976F2C44B87BB7D81F9150/401034E3D1D50377B5D6134D5D4E4AB6
+      - 46BA55F7474542F8A425224FCF1C0795/C5F7D719A8C35A1B581B96826FEDFDD5/5821498C1D6FE34222805580D5072A53
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -364,7 +364,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-2&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -381,22 +381,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:01 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ajRK5PH+Le5iyBJlQQfJi4Fox3WoHdgLILt/nJiXhoRq9G33EuqAeq1WZtmqUPu9E458CKCOKSEmAKRE+dPI3u+fmiYhtHTznps5Gapfxr9zHRiQyEIHl25K8fher4xp4YM2AmUUei/KYtg5Bh+WdW9yaf7Jn6U4CqALv9VZMS8hZOInonDjE8ukM8K/Np3OOv6tlmYzWeaaaIvyndLVNY6KxirM8AFw+din+o58aWwM4uYI0eHNjWZ0mu4HyxrYhDSLpAxNlkUrboYKtf+NDwZzFyq6ZZE94qJHMUogjD3rowvwVE/cFAFYN61wqSLDRIZCIzagzt/K8xha1vsu+w==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="JLzbrqeQ1gbOYz2mwfYYszRzsmPJWQfk33TXdAhPFHLGLoTVERKqMgSNGX0dRU5xHJbk2soTRoeeZpjVRpbdLs+6whrUAbxFWOn858VaVvv9DvhCpw4bSiqKmRys4MS/Uf0kJRNCJ8jKhE2V7ob4kpUHTtQQUeij/TQgQAiy9fSf+BFmSWgm1k2DcuFHctKl/uap4i+Y0bR5aXXTlL396r09yVHYcso7wYbHlMyP2zR0Dye0Z/JkA4jhtvza8DeVKkz8UAhK1QVxzG4Bor7jNbpH4PpqkbGFdrWfYxFXq5SdyPnyVjJ8FK+ZJbUUWa8SUUPgEijV8WTgqjQLv3I0TA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 2898D464E91943E994AB81BD611AEC88
+      - 847E17DB9CC5456985ABB8C22F2E5FCD
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:02 GMT
       Opc-Request-Id:
-      - 2898D464E91943E994AB81BD611AEC88/775ECFCC7E77C1AA0983AC3FEFA72925/34D5FF433B841790A1D501CF7A245544
+      - 847E17DB9CC5456985ABB8C22F2E5FCD/5F2CE4BB7467F87D52039A3294829256/4A0F4600BF9D4549376CB15E451B9AF9
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -407,7 +407,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:02 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumes?availabilityDomain=Foha:US-ASHBURN-AD-3&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -424,22 +424,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:02 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="oUptBJxAWNGg2CbMsZvpmB52tobELtlVI3cMoUMoGdZggcdhzch4ytG05HGP3SZwvcX+2LHv22xHKZXqVQfjeVJMd9n/SgR+woHdyONL3b3gyu0IvDuaERB8g4vqkSb/53TYG2L1wZob4s2fWsBP5q9Gr7GFQ5VP98NDTmVTm/q9RXY7NRRTXPWimCX337PRVULk17forcCvhsg/hRuj8QL/Cy4iMkhPfS2737TEwuSqH24A30HFLe6Q+5OKbQJIgPRh+w+ekbrIcmpOT+xneyZC1z9AkytM3uxyD9/Zmy36+RfDlhxn9TyGJg7z1ve5N0oOgmtqmy8WS+3y7OIO+g==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="lpUVK0gBEOsK5uQbbwp7Q5JgQ8T8njWsgRoC60E0ROD8y0gLq/R0t52llBSJdgcJ4Zdxbh0u0yjCn9CIYV7R8OTzIL20EyztK3pObOyBTh1/EWlqP5VuwcsBSvq8QzvrLC2rPfNfTAf9p6QC0dCEdAWPHSsuyrJ/NoIspS7ZlM9znYQsgl+xxuaH1TWnqlXtRcesTiJwOvyPT1D9+/P61n05P+5MYmfJBdTb9F8rsDTssnQcoBc2+aXPhgMxTwsvoJ2n8WAITNlMWIJ2sN7vGpIgqxH/j/4dG+cT3vIN3c2t2UsxXjdwXHZUfv/1nmWEQlPC2+LaPUR7Eo3LVRg8lA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - A2C228EA18454ECC98287B591BF2F5EA
+      - 2D1521157D26445B84A36C3221FC64AA
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:02 GMT
       Opc-Request-Id:
-      - A2C228EA18454ECC98287B591BF2F5EA/6ABD65F357C8094154652705C6211FEF/9FF3CDF60A3670EAFE3D5819669B2889
+      - 2D1521157D26445B84A36C3221FC64AA/5C481F8841AE41455346897706D8D3EA/9A1F162A6232BE730FEE4C3B98FB9E94
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -450,7 +450,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:31 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:02 GMT
 - request:
     method: get
     uri: https://database.us-ashburn-1.oraclecloud.com/20160918/autonomousDatabases?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -467,22 +467,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:02 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ivHuo2EyWvenbU8H5hILHm3dXLu4FilWIOdpQ7muMgc/i+vjEoAJvjVBvJF64tv5NBUao1IEfkzMuVjUP+EBOPm9bBpBIQJHEsEB6/33y11rqaeUoAW0JQqq22G9NELxPgpLVs5ekALLqGB14NCrdAx2igaeTwdczJ2z9rQeDmDL9wjfT2TZtxl8d5+oG+wb6i6CkQq4HiPLD14g2HhVc+V0zzWjYAYBP21yP/HoO7xBJaMHpaZroSygtdDcmJ2EH/WvR/WZyabdraMkbAQkhqm6mQN9sXaHV1IxkMRGRmiqH11Ee+kU6miC1BWOgczT+wRLNaZKwfUYV/cr2I3eVg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Gk5LvHJZAPiGSPA1rtS9RdvBUgS6Gbjc5klJjgvHJnxAI1HxqqE/Jd+fp8G0BKZ3FGrFVsQohliMoUHvjmPx4CqCgphbeKe+KzqRHvSr/I0ttnihFv6o7S3gLrtco3ZgSf86Ey/lptIgA2K5oJ30zm17he/QRSHfMQNtDc42SurVm3/5UzWy+njCKZJzYmkE3js4HZnAxEHulSAVVKvGmNSXSqrSID0BtJExlpKNsv3YFUf/koQipfL8dBa6X0JuEjjCfqTNsv850uAILCQlrntpGpXtlBk7oPu46Y+b+beewEnxhg9RaHlVS26wSO2uuBkpoEBGH6pvOlxlntTKcQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - DEAE8CC2E5494631B003F9913FAA5F96
+      - A0540E423B6243659EB72066481E983D
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:31 GMT
+      - Fri, 13 Aug 2021 19:23:02 GMT
       Opc-Request-Id:
-      - DEAE8CC2E5494631B003F9913FAA5F96/8A0C3DC79FD3FD57186AD0140659B1C2/CF79F57FD6183734A1632A1258310E06
+      - A0540E423B6243659EB72066481E983D/322A55EC7C8F5A5E92A8F86E3556CC67/2AEB510C488617DAAAB28AD80D7773DA
       Content-Type:
       - application/json
       Vary:
@@ -494,9 +494,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"additionalDatabaseStatus":null,"apexDetails":{"apexVersion":"20.2.0.00.20","ordsVersion":"21.2.2.197.1238"},"arePrimaryWhitelistedIpsUsed":null,"autoRefreshFrequencyInSeconds":null,"autoRefreshPointInSeconds":null,"autoRefreshPolicy":null,"autonomousContainerDatabaseId":null,"autonomousMaintenanceScheduleType":"REGULAR","availableUpgradeVersions":[],"backupConfig":{"manualBackupBucketName":null,"manualBackupType":"NONE"},"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","connectionStrings":{"allConnectionStrings":{"HIGH":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_high.adb.oraclecloud.com","MEDIUM":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_medium.adb.oraclecloud.com","LOW":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_low.adb.oraclecloud.com"},"dedicated":null,"high":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_high.adb.oraclecloud.com","low":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_low.adb.oraclecloud.com","medium":"adb.us-ashburn-1.oraclecloud.com:1522/g6a9d7db76adb15_db202108131402_medium.adb.oraclecloud.com","profiles":null},"connectionUrls":{"apexUrl":"https://G6A9D7DB76ADB15-DB202108131402.adb.us-ashburn-1.oraclecloudapps.com/ords/apex","graphStudioUrl":"https://G6A9D7DB76ADB15-DB202108131402.adb.us-ashburn-1.oraclecloudapps.com/graphstudio/","machineLearningUserManagementUrl":"https://G6A9D7DB76ADB15-DB202108131402.adb.us-ashburn-1.oraclecloudapps.com/omlusers/","sqlDevWebUrl":"https://G6A9D7DB76ADB15-DB202108131402.adb.us-ashburn-1.oraclecloudapps.com/ords/sql-developer"},"cpuCoreCount":1,"customerContacts":null,"dataSafeStatus":"NOT_REGISTERED","dataStorageSizeInGBs":20,"dataStorageSizeInTBs":1,"dataguardRegionType":null,"dbName":"DB202108131402","dbVersion":"19c","dbWorkload":"DW","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-08-13T18:05:21.672Z"}},"displayName":"DB
-        202108131402","failedDataRecoveryInSeconds":null,"freeformTags":{},"id":"ocid1.autonomousdatabase.oc1.iad.anuwcljsw3enqvya6pxc43uemcy2zx7purn64fimk5euwq4kmfwlqasvsmga","infrastructureType":null,"isAccessControlEnabled":null,"isAutoScalingEnabled":false,"isDataGuardEnabled":false,"isDedicated":false,"isFreeTier":true,"isMtlsConnectionRequired":null,"isOracleServiceGatewayAllowed":false,"isPreview":false,"isReconnectCloneEnabled":false,"isRefreshableClone":null,"isVirtualClone":null,"keyHistoryEntry":[{"id":"ORACLE_MANAGED_KEY","kmsKeyVersionId":null,"timeActivated":"2021-08-13T18:06:29.814Z","vaultId":null}],"keyStoreId":null,"keyStoreWalletName":null,"kmsKeyId":"ORACLE_MANAGED_KEY","kmsKeyLifecycleDetails":null,"kmsKeyVersionId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","nsgIds":null,"ocpuCount":null,"openMode":"READ_WRITE","operationsInsightsStatus":"NOT_ENABLED","peerDbIds":null,"permissionLevel":"UNRESTRICTED","privateEndpoint":null,"privateEndpointIp":null,"privateEndpointLabel":null,"provisionableCpus":null,"refreshableMode":null,"refreshableStatus":null,"role":null,"scheduledOperations":null,"serviceConsoleUrl":"https://adb.us-ashburn-1.oraclecloud.com/console/index.html?tenant_name=OCID1.TENANCY.OC1..AAAAAAAAG6MTONZMUNDADIX23PW4YGWKHA3BU3YENZRYCLSVBLO5TG2QADRQ&database_name=DB202108131402&service_type=ADW","sourceId":null,"sqlWebDeveloperUrl":null,"standbyDb":null,"standbyWhitelistedIps":null,"subnetId":null,"supportedRegionsToCloneTo":["GRU","AMS","LHR","PHX"],"systemTags":{"orcl-cloud":{"free-tier-retained":"true"}},"timeCreated":"2021-08-13T18:05:21.679Z","timeDataGuardRoleChanged":null,"timeDeletionOfFreeAutonomousDatabase":null,"timeLocalDataGuardEnabled":null,"timeMaintenanceBegin":"2021-08-14T19:00:00.000Z","timeMaintenanceEnd":"2021-08-14T21:00:00.000Z","timeOfAutoRefreshStart":null,"timeOfLastFailover":null,"timeOfLastRefresh":null,"timeOfLastRefreshPoint":null,"timeOfLastSwitchover":null,"timeOfNextRefresh":null,"timeReclamationOfFreeAutonomousDatabase":"2021-08-20T18:05:46.643Z","timeUntilReconnectCloneEnabled":null,"usedDataStorageSizeInTBs":1,"vaultId":null,"whitelistedIps":null}]'
+        202108131402","failedDataRecoveryInSeconds":null,"freeformTags":{},"id":"ocid1.autonomousdatabase.oc1.iad.anuwcljsw3enqvya6pxc43uemcy2zx7purn64fimk5euwq4kmfwlqasvsmga","infrastructureType":null,"isAccessControlEnabled":null,"isAutoScalingEnabled":false,"isDataGuardEnabled":false,"isDedicated":false,"isFreeTier":true,"isMtlsConnectionRequired":null,"isOracleServiceGatewayAllowed":false,"isPreview":false,"isReconnectCloneEnabled":false,"isRefreshableClone":null,"isVirtualClone":null,"keyHistoryEntry":[{"id":"ORACLE_MANAGED_KEY","kmsKeyVersionId":null,"timeActivated":"2021-08-13T18:06:29.814Z","vaultId":null}],"keyStoreId":null,"keyStoreWalletName":null,"kmsKeyId":"ORACLE_MANAGED_KEY","kmsKeyLifecycleDetails":null,"kmsKeyVersionId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","nsgIds":null,"ocpuCount":null,"openMode":"READ_WRITE","operationsInsightsStatus":"NOT_ENABLED","peerDbIds":null,"permissionLevel":"UNRESTRICTED","privateEndpoint":null,"privateEndpointIp":null,"privateEndpointLabel":null,"provisionableCpus":null,"refreshableMode":null,"refreshableStatus":null,"role":null,"scheduledOperations":null,"serviceConsoleUrl":"https://adb.us-ashburn-1.oraclecloud.com/console/index.html?tenant_name=OCID1.TENANCY.OC1..AAAAAAAAG6MTONZMUNDADIX23PW4YGWKHA3BU3YENZRYCLSVBLO5TG2QADRQ&database_name=DB202108131402&service_type=ADW","sourceId":null,"sqlWebDeveloperUrl":null,"standbyDb":null,"standbyWhitelistedIps":null,"subnetId":null,"supportedRegionsToCloneTo":["GRU","AMS","LHR","PHX"],"systemTags":{"orcl-cloud":{"free-tier-retained":"true"}},"timeCreated":"2021-08-13T18:05:21.679Z","timeDataGuardRoleChanged":null,"timeDeletionOfFreeAutonomousDatabase":null,"timeLocalDataGuardEnabled":null,"timeMaintenanceBegin":"2021-08-14T19:00:00.000Z","timeMaintenanceEnd":"2021-08-14T21:00:00.000Z","timeOfAutoRefreshStart":null,"timeOfLastFailover":null,"timeOfLastRefresh":null,"timeOfLastRefreshPoint":null,"timeOfLastSwitchover":null,"timeOfNextRefresh":null,"timeReclamationOfFreeAutonomousDatabase":"2021-08-20T18:05:47.036Z","timeUntilReconnectCloneEnabled":null,"usedDataStorageSizeInTBs":1,"vaultId":null,"whitelistedIps":null}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:33 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:03 GMT
 - request:
     method: get
     uri: https://database.us-ashburn-1.oraclecloud.com/20160918/autonomousDatabases?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -513,22 +513,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:33 GMT
+      - Fri, 13 Aug 2021 19:23:03 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="oGGd+QQBmPY7sQv70vOhg4nAtKYkc808FQLDdre937mT57dmx2HyQ0Wh1sFyAeudjeTAFC7uJv/ES1/xnHBMARS8eb/FpXqQ0QVZRC25IrsKasx2z6U88nmZVaKr3UZJ13yzG8HHT2bF83PVsgWks8KirB6q1qiRjTsQx3Z4SPtZFynZ9nGyHYrLqW9FAcAB2PLIUmJnvMcxtLEcoXuapmPXQ71zBF6JXgpU1DZ+SBNN3D2rTF8te1Sp0H/9JFVhyN/wbVBgmmdzT8fikfyBTjNMn9tyPcON4oWmVUg+ufSbGYBnwQwnRCqvusn6Ce/rMOLbMWhqQ0KOB12lODAA4Q==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="UjSZec9U6mnWTRtDVo6l51aA8sqsOo/v+e+PdYIO+k0B9BmMZMYOZR3WaghmiQ3seJzTDdyGJdxrATOc+sHZmbJhDoAucWnf3RTS+zDQAlN8pvq6erpWCuPZrUGv9az72g9FMAMaj0kvksRJ+EDp5Fp0M+R8YUyJnOUpdW7WUXm719XAZ38ns82aE0vlezAFPXvJEFTirKgMa8NCvKkcKX5cugESloPdHyPi1tI7FVWGAfsaDgqr/c3ubwnKtOy64EW8VzIK5MsCuQeG5fRHOaCZrO5L3dvJF3EMopKYt8hDI40YYuaz+sbgdn1U3JOfV8IWiTEA87EHk5a/8bjvvw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 9E273C2D7767417DAACEE2176C563790
+      - 54077B4FB56345ACA1B3C5FE21FD7802
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:33 GMT
+      - Fri, 13 Aug 2021 19:23:04 GMT
       Opc-Request-Id:
-      - 9E273C2D7767417DAACEE2176C563790/732A1B05FFDE4FBD9168807B7674064B/6326E68CF1CCBE4CA6EC7AA6175CB41E
+      - 54077B4FB56345ACA1B3C5FE21FD7802/4FD219091E44D1F2B9E03AECEEC71500/B4C7CCAF0C292DE0247ACFEDE9B7C64F
       Content-Type:
       - application/json
       Vary:
@@ -541,7 +541,97 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:33 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:05 GMT
+- request:
+    method: get
+    uri: https://mysql.us-ashburn-1.ocp.oraclecloud.com/20190415/dbSystems?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - 'Oracle-RubySDK/2.15.0 (ruby 2.7.4; x86_64-linux-gnu) '
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 13 Aug 2021 19:23:05 GMT
+      Authorization:
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="PbyubrZlHLGse0TvObtQhPxF1KhGK/UzOiRlkPu57LjKaNWLMzaze4L0jc6dOhIjYB+3L1mB9+JnjjrPOCK6/fFTzPs//GDpQe74rTjxR2TrtBXtw7y2Cy/qXg5GdnU4GlOb7uTFcPHa1GXX5e7xN0mHj4Bb+PiLaKcm66WkiWnVFFswTl/eFY1Ozz29BsZKFy7YKnwQHUCIfW4usKWvJ7HyDdjkrRr77+vkqLYyGiBjCnsgDUiXVvbvbjAJ4al0RTP/XsTDV4rPwZa2+Zp/PXr1v9qsOzcaG+UuCagS6jiKGQsOaEOnucqy96gXF6NQZ9VIcpMxcfX7eGgTT799dQ==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.15.0
+      Opc-Request-Id:
+      - 6760A4FA26CF454EAC7E5C576E6105E9
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Aug 2021 19:23:05 GMT
+      Opc-Request-Id:
+      - 6760A4FA26CF454EAC7E5C576E6105E9/FDA0471A3CDE28ADE1933785EA3DE70B/9A351DDB89CE82D033C90948D4ACBDC0
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: null
+  recorded_at: Fri, 13 Aug 2021 19:23:05 GMT
+- request:
+    method: get
+    uri: https://mysql.us-ashburn-1.ocp.oraclecloud.com/20190415/dbSystems?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - 'Oracle-RubySDK/2.15.0 (ruby 2.7.4; x86_64-linux-gnu) '
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 13 Aug 2021 19:23:05 GMT
+      Authorization:
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="hUNz5IYksNySUXJBeJ7Oc1bNx1oPUguPlgAS+YAXaqtqjGAsKrVjNFeqdAQ0Hx90I/+TMUFVhTyESDZoRvQEB1O2Z02Pd9rk2se+5Q/EGQsQZpJ7uHF8IBRx73ZJ1oYjrbleNrGuGOBxvAHprMtuMtpEpXwJ5zHWKqVdXDZPmPwgcw14XYBua1cZU+8Of4JXP6RBIiiEbVR4Tjqr5XLJAqyot+mJR/Ab1l/GjeM1NT3ifWZhBQTgrNk3Pzg7or0QHGxW18WNuuZKzGCYkXh85JFH4WMA+wMhY3pBN7FtfFvjg0pUmW0ZBqErlpVQM0SWTCD/+0hNEalHD4+jaiKbGw==",version="1"
+      Opc-Client-Info:
+      - Oracle-RubySDK/2.15.0
+      Opc-Request-Id:
+      - B52AF4E49CDA4CB082C5F78F3C33BA14
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 13 Aug 2021 19:23:05 GMT
+      Opc-Request-Id:
+      - B52AF4E49CDA4CB082C5F78F3C33BA14/13C134A4AC9CB80EADC3125343AE28F9/26BBFAFE71B368ABD4A21F122C9C4DE9
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - application/json
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2'
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: null
+  recorded_at: Fri, 13 Aug 2021 19:23:05 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/shapes?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -558,22 +648,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:33 GMT
+      - Fri, 13 Aug 2021 19:23:05 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="YeAeeYiTnUnOUuw/ImWZPQwgCwjkAXwFOcbqvcU4Cl52iF0oj2zyF+fRDH+jfdV364S3UmbYG9HnCK9cskPOE8BDcBk+D/Kx3evugHziEDzdDMWZ+VYRXf6M7TCyVLwDrarYPGAUTNY5qXrj+dWhUWTiquZZUY6Y9arcv7HdRl6fUjYHPkBoX622W0EetrooT93v54Et6pATm6AF+26Nl75F+d2k5FrvhBYNgq4c7UnPe7/X0euA4dDDRdqgwICOLhbifIiG6DaWCnvU0hK68DrdwNFcl/ax685OdTBszmK1SYWcNK2ATzozccTBlb4bpE6aFqPkoiQW71iVUcOaLA==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="NXHrV0RgJ+2QzxyVJadAC7yJY+4+U9k6E/Vu+Z1Lu0PYW7X8eq+rypKCmOomYa/Jha7U8TwXYd0+S8J9VjqXBdA1ZQFTQ0+saaItddQG37z1KAePGr1KCi1seVeM6vNdTe37V7ONxzJnfLH4sxxFRNvc+TwO5nXuci8EMPbI5utSftaHKsXsE5Ixa8nn/JT62XjgIRsBgfiHeSnwotITQdFia7NqqtvcINDFE4JrdJIfTcQSmNPHKwaXpERqzjFU4FHD/reKLf7s8ZfDHdO+PwC+OlKSkrYkcOrKmig/DbEoMjxHKARjkx7S5sdPeYvd/WJ4iPFgY3pxZg3otTfw9A==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 17240690FF1A4F638FEEEAEC9D605B7F
+      - 852F33A5BC56433BBA9D1FE890787B2C
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:33 GMT
+      - Fri, 13 Aug 2021 19:23:05 GMT
       Opc-Request-Id:
-      - 17240690FF1A4F638FEEEAEC9D605B7F/2B9586E3182DAB3907DE15E386729B39/C5FA5CB823D023FEB264B0CF7860A5CE
+      - 852F33A5BC56433BBA9D1FE890787B2C/DF2E52CB098B9581B929F2E9D130AF51/E906DAC745EBA4E017F9C641E5327CAE
       Content-Type:
       - application/json
       Connection:
@@ -587,7 +677,7 @@ http_interactions:
       string: !binary |-
         W3siYXZhaWxhYmlsaXR5RG9tYWluIjoiRm9oYTpVUy1BU0hCVVJOLUFELTMiLCJiYXNlbGluZU9jcHVVdGlsaXphdGlvbnMiOm51bGwsIm1pblRvdGFsQmFzZWxpbmVPY3B1c1JlcXVpcmVkIjpudWxsLCJzaGFwZSI6IkJNLlN0YW5kYXJkLkExLjE2MCIsInByb2Nlc3NvckRlc2NyaXB0aW9uIjoiMy4wIEdIeiBBbXBlcmXCriBBbHRyYeKEoiIsIm9jcHVzIjoxNjAuMCwibWVtb3J5SW5HQnMiOjEwMjQuMCwibmV0d29ya2luZ0JhbmR3aWR0aEluR2JwcyI6MTAwLjAsIm1heFZuaWNBdHRhY2htZW50cyI6MjU2LCJncHVzIjowLCJncHVEZXNjcmlwdGlvbiI6bnVsbCwibG9jYWxEaXNrcyI6MCwibG9jYWxEaXNrc1RvdGFsU2l6ZUluR0JzIjpudWxsLCJsb2NhbERpc2tEZXNjcmlwdGlvbiI6bnVsbCwiaXNMaXZlTWlncmF0aW9uU3VwcG9ydGVkIjpmYWxzZSwib2NwdU9wdGlvbnMiOm51bGwsIm1lbW9yeU9wdGlvbnMiOm51bGwsIm5ldHdvcmtpbmdCYW5kd2lkdGhPcHRpb25zIjpudWxsLCJtYXhWbmljQXR0YWNobWVudE9wdGlvbnMiOm51bGwsInBsYXRmb3JtQ29uZmlnT3B0aW9ucyI6bnVsbH0seyJhdmFpbGFiaWxpdHlEb21haW4iOiJGb2hhOlVTLUFTSEJVUk4tQUQtMyIsImJhc2VsaW5lT2NwdVV0aWxpemF0aW9ucyI6bnVsbCwibWluVG90YWxCYXNlbGluZU9jcHVzUmVxdWlyZWQiOm51bGwsInNoYXBlIjoiVk0uU3RhbmRhcmQuQTEuRmxleCIsInByb2Nlc3NvckRlc2NyaXB0aW9uIjoiMy4wIEdIeiBBbXBlcmXCriBBbHRyYeKEoiIsIm9jcHVzIjoxLjAsIm1lbW9yeUluR0JzIjo2LjAsIm5ldHdvcmtpbmdCYW5kd2lkdGhJbkdicHMiOjEuMCwibWF4Vm5pY0F0dGFjaG1lbnRzIjoyLCJncHVzIjowLCJncHVEZXNjcmlwdGlvbiI6bnVsbCwibG9jYWxEaXNrcyI6MCwibG9jYWxEaXNrc1RvdGFsU2l6ZUluR0JzIjpudWxsLCJsb2NhbERpc2tEZXNjcmlwdGlvbiI6bnVsbCwiaXNMaXZlTWlncmF0aW9uU3VwcG9ydGVkIjpmYWxzZSwib2NwdU9wdGlvbnMiOnsibWluIjoxLjAsIm1heCI6ODAuMH0sIm1lbW9yeU9wdGlvbnMiOnsibWluSW5HQnMiOjEuMCwibWF4SW5HQnMiOjUxMi4wLCJkZWZhdWx0UGVyT2NwdUluR0JzIjo2LjAsIm1pblBlck9jcHVJbkdCcyI6MS4wLCJtYXhQZXJPY3B1SW5HQnMiOjY0LjB9LCJuZXR3b3JraW5nQmFuZHdpZHRoT3B0aW9ucyI6eyJtaW5JbkdicHMiOjEuMCwibWF4SW5HYnBzIjo0MC4wLCJkZWZhdWx0UGVyT2NwdUluR2JwcyI6MS4wfSwibWF4Vm5pY0F0dGFjaG1lbnRPcHRpb25zIjp7Im1pbiI6MiwibWF4IjoyNC4wLCJkZWZhdWx0UGVyT2NwdSI6MS4wfSwicGxhdGZvcm1Db25maWdPcHRpb25zIjpudWxsfSx7ImF2YWlsYWJpbGl0eURvbWFpbiI6IkZvaGE6VVMtQVNIQlVSTi1BRC0zIiwiYmFzZWxpbmVPY3B1VXRpbGl6YXRpb25zIjpudWxsLCJtaW5Ub3RhbEJhc2VsaW5lT2NwdXNSZXF1aXJlZCI6bnVsbCwic2hhcGUiOiJWTS5TdGFuZGFyZC5FMi4xLk1pY3JvIiwicHJvY2Vzc29yRGVzY3JpcHRpb24iOiIyLjAgR0h6IEFNRCBFUFlD4oSiIDc1NTEgKE5hcGxlcykiLCJvY3B1cyI6MS4wLCJtZW1vcnlJbkdCcyI6MS4wLCJuZXR3b3JraW5nQmFuZHdpZHRoSW5HYnBzIjowLjQ4LCJtYXhWbmljQXR0YWNobWVudHMiOjEsImdwdXMiOjAsImdwdURlc2NyaXB0aW9uIjpudWxsLCJsb2NhbERpc2tzIjowLCJsb2NhbERpc2tzVG90YWxTaXplSW5HQnMiOm51bGwsImxvY2FsRGlza0Rlc2NyaXB0aW9uIjpudWxsLCJpc0xpdmVNaWdyYXRpb25TdXBwb3J0ZWQiOnRydWUsIm9jcHVPcHRpb25zIjpudWxsLCJtZW1vcnlPcHRpb25zIjpudWxsLCJuZXR3b3JraW5nQmFuZHdpZHRoT3B0aW9ucyI6bnVsbCwibWF4Vm5pY0F0dGFjaG1lbnRPcHRpb25zIjpudWxsLCJwbGF0Zm9ybUNvbmZpZ09wdGlvbnMiOm51bGx9XQ==
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:34 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:06 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/shapes?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -604,22 +694,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:34 GMT
+      - Fri, 13 Aug 2021 19:23:06 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="lE9jnaUAX7WPPZndQsbVwxxJmlMu0OD7YqlW06xjxVNbnJouGQno2mFw9GRuetB1EffcmCpr4gFCeKaxbgYxZ7AZ3BrxqAbSahVH59R8pApaV1vc8v153AOLvzmJYWP4EBvZPIF7bLxcqlcq+qEHyOh9uwMgMzZk4c2ejp/JVijVfn24fZ//xu9NKfUw6acIkeo74YKVaemz1LoFU2Pc7oBOp4AsFY6HrYXHSt54HopSxZhRvD/27xa/4Ag2g4t6Nfo1hKUF/rXUqgSHFhgU982rROnlb31KU3V7JCUBQVU9iVnQ6BMYXFZ9NmrYInFGPa+bVkqTX5zcNMKs79dihw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="NkcPoNz3wcVGH+nWjGJMW/VEAeoYYnZGXcy3YF1RiKanXcB92ap/0rJ/CL3xTUo2mn95mS5WYUQBpPJkoHiPAjNUms11KAFphxIPeyjLSSczrtwRj1cAGxBhCUulSAITnafqKaffLmWaRibNusGJoHICrBPaBexEwHKu7jQgZ5hvK5RAvOTCY1CDzMFTjn5py+45dK/3L2JdOtZoyjQcy81lxySRvdI3IaC7kHst92AlslVW+6rOfOxJaZF3p73fSZAu+vX24eT5Rf4x65cRDDLLVPfD8h1OVeXSbD4JxESSelqwpiWfTyLmi2q4YKL38cmQIKjP4jl0l+ybxQ5wXQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 600F28E180D8459E86CB37E31442AA58
+      - 4EEFFF5728664A62B38D359A9427F518
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:34 GMT
+      - Fri, 13 Aug 2021 19:23:06 GMT
       Opc-Request-Id:
-      - 600F28E180D8459E86CB37E31442AA58/85DD6A6FAD5138554AACF2A9E3BDC11F/C4CD22E907D45997A6E89F515E204A9F
+      - 4EEFFF5728664A62B38D359A9427F518/B7274C1068F9AF6189E3FD95879DFBC8/9ADB5BDE7BC9064D93B6715FA61C8782
       Content-Type:
       - application/json
       Connection:
@@ -633,7 +723,7 @@ http_interactions:
       string: !binary |-
         W3siYXZhaWxhYmlsaXR5RG9tYWluIjoiRm9oYTpVUy1BU0hCVVJOLUFELTMiLCJiYXNlbGluZU9jcHVVdGlsaXphdGlvbnMiOm51bGwsIm1pblRvdGFsQmFzZWxpbmVPY3B1c1JlcXVpcmVkIjpudWxsLCJzaGFwZSI6IkJNLlN0YW5kYXJkLkExLjE2MCIsInByb2Nlc3NvckRlc2NyaXB0aW9uIjoiMy4wIEdIeiBBbXBlcmXCriBBbHRyYeKEoiIsIm9jcHVzIjoxNjAuMCwibWVtb3J5SW5HQnMiOjEwMjQuMCwibmV0d29ya2luZ0JhbmR3aWR0aEluR2JwcyI6MTAwLjAsIm1heFZuaWNBdHRhY2htZW50cyI6MjU2LCJncHVzIjowLCJncHVEZXNjcmlwdGlvbiI6bnVsbCwibG9jYWxEaXNrcyI6MCwibG9jYWxEaXNrc1RvdGFsU2l6ZUluR0JzIjpudWxsLCJsb2NhbERpc2tEZXNjcmlwdGlvbiI6bnVsbCwiaXNMaXZlTWlncmF0aW9uU3VwcG9ydGVkIjpmYWxzZSwib2NwdU9wdGlvbnMiOm51bGwsIm1lbW9yeU9wdGlvbnMiOm51bGwsIm5ldHdvcmtpbmdCYW5kd2lkdGhPcHRpb25zIjpudWxsLCJtYXhWbmljQXR0YWNobWVudE9wdGlvbnMiOm51bGwsInBsYXRmb3JtQ29uZmlnT3B0aW9ucyI6bnVsbH0seyJhdmFpbGFiaWxpdHlEb21haW4iOiJGb2hhOlVTLUFTSEJVUk4tQUQtMyIsImJhc2VsaW5lT2NwdVV0aWxpemF0aW9ucyI6bnVsbCwibWluVG90YWxCYXNlbGluZU9jcHVzUmVxdWlyZWQiOm51bGwsInNoYXBlIjoiVk0uU3RhbmRhcmQuQTEuRmxleCIsInByb2Nlc3NvckRlc2NyaXB0aW9uIjoiMy4wIEdIeiBBbXBlcmXCriBBbHRyYeKEoiIsIm9jcHVzIjoxLjAsIm1lbW9yeUluR0JzIjo2LjAsIm5ldHdvcmtpbmdCYW5kd2lkdGhJbkdicHMiOjEuMCwibWF4Vm5pY0F0dGFjaG1lbnRzIjoyLCJncHVzIjowLCJncHVEZXNjcmlwdGlvbiI6bnVsbCwibG9jYWxEaXNrcyI6MCwibG9jYWxEaXNrc1RvdGFsU2l6ZUluR0JzIjpudWxsLCJsb2NhbERpc2tEZXNjcmlwdGlvbiI6bnVsbCwiaXNMaXZlTWlncmF0aW9uU3VwcG9ydGVkIjpmYWxzZSwib2NwdU9wdGlvbnMiOnsibWluIjoxLjAsIm1heCI6ODAuMH0sIm1lbW9yeU9wdGlvbnMiOnsibWluSW5HQnMiOjEuMCwibWF4SW5HQnMiOjUxMi4wLCJkZWZhdWx0UGVyT2NwdUluR0JzIjo2LjAsIm1pblBlck9jcHVJbkdCcyI6MS4wLCJtYXhQZXJPY3B1SW5HQnMiOjY0LjB9LCJuZXR3b3JraW5nQmFuZHdpZHRoT3B0aW9ucyI6eyJtaW5JbkdicHMiOjEuMCwibWF4SW5HYnBzIjo0MC4wLCJkZWZhdWx0UGVyT2NwdUluR2JwcyI6MS4wfSwibWF4Vm5pY0F0dGFjaG1lbnRPcHRpb25zIjp7Im1pbiI6MiwibWF4IjoyNC4wLCJkZWZhdWx0UGVyT2NwdSI6MS4wfSwicGxhdGZvcm1Db25maWdPcHRpb25zIjpudWxsfSx7ImF2YWlsYWJpbGl0eURvbWFpbiI6IkZvaGE6VVMtQVNIQlVSTi1BRC0zIiwiYmFzZWxpbmVPY3B1VXRpbGl6YXRpb25zIjpudWxsLCJtaW5Ub3RhbEJhc2VsaW5lT2NwdXNSZXF1aXJlZCI6bnVsbCwic2hhcGUiOiJWTS5TdGFuZGFyZC5FMi4xLk1pY3JvIiwicHJvY2Vzc29yRGVzY3JpcHRpb24iOiIyLjAgR0h6IEFNRCBFUFlD4oSiIDc1NTEgKE5hcGxlcykiLCJvY3B1cyI6MS4wLCJtZW1vcnlJbkdCcyI6MS4wLCJuZXR3b3JraW5nQmFuZHdpZHRoSW5HYnBzIjowLjQ4LCJtYXhWbmljQXR0YWNobWVudHMiOjEsImdwdXMiOjAsImdwdURlc2NyaXB0aW9uIjpudWxsLCJsb2NhbERpc2tzIjowLCJsb2NhbERpc2tzVG90YWxTaXplSW5HQnMiOm51bGwsImxvY2FsRGlza0Rlc2NyaXB0aW9uIjpudWxsLCJpc0xpdmVNaWdyYXRpb25TdXBwb3J0ZWQiOnRydWUsIm9jcHVPcHRpb25zIjpudWxsLCJtZW1vcnlPcHRpb25zIjpudWxsLCJuZXR3b3JraW5nQmFuZHdpZHRoT3B0aW9ucyI6bnVsbCwibWF4Vm5pY0F0dGFjaG1lbnRPcHRpb25zIjpudWxsLCJwbGF0Zm9ybUNvbmZpZ09wdGlvbnMiOm51bGx9XQ==
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:34 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:08 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/images?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -650,26 +740,26 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:34 GMT
+      - Fri, 13 Aug 2021 19:23:08 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="U975NCewyckUNthRh5f4IKeOT1vl56tgGZL0GkuGMibNDGmoaDDqyBuuOh77RSJ7ON+BpEN+DHckr75qRrM34KW4wE9t3crJOZoNXRquQqruC59TR1cTEDN9JoUiXFT/Ik3tKL4Dbe2f5DX9UVgonNKlYlNd3hpDvBEmqO/cnqFgu2gIbhW2qDQ0FRZtaVsTuMxOxjw0Ers1CoRgJ5QlaDASp5VrhBDrKV7c3HPYtjykdDKCj4ctWrYjStQrfjWmvXsTfgaLzCRAZGj2FDUbdi7zm03z1C70ACw2Q29Cq1/zjE4GLMgHHbCmEstwcKaaKCbweNHACudg4f6rczmOPQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="YxCIvwxusYfke9Gwlk1mz8oo2k7Mi5Riz2xzNHBW5MF0QICbYIlmQQL/s2VlIWMB/Jc3FCIKOkdifVim3Ld3GwzjIn9ouW+Od5L7WozlOGeMbgQ3n4EPksGRBdxDv6WXh4tp/wf2YVZhUZ6FBDjAHFT4jcfINKGzc2SjgshK9MJSn7bF5WcVnqNRBaB437gotlSMrPPkZxkMw1fEQohvVSh+/x4eu+xBvD7nJET2y5HY/7fCBgS50wdb8Mn/s+WQs8ANd1l+wOg1yWXiRrenq0zkihLy4AFFoTJ0uUhkrbM6FDwpOxQ3j1Yr+iwpRROYDQ/U3UZ77MGQnsKx3HpjLQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 47581E809F814B3EBE0CC5BCCE6DDC18
+      - F02AD4E540C84B7EA563159B2A063699
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:34 GMT
+      - Fri, 13 Aug 2021 19:23:08 GMT
       Opc-Request-Id:
-      - 47581E809F814B3EBE0CC5BCCE6DDC18/A8119AA37113B8DB63F9C63E81B056D0/C1822951114581A4D5839EDFEC379F18
+      - F02AD4E540C84B7EA563159B2A063699/B657E0796AAAFB44071B3ABB04C6122D/ACFBA62523FA83B54905E888DFC22206
       Content-Type:
       - application/json
       Opc-Next-Page:
-      - AFUWCLJRAAAAAAAAAABXQQKBIFAUCQKBIFAUCSTMMVKXA6KZKZSFEYKVHFYFGWDMJZJEKRLZKNLWYM3BKZYFQTSXOBFGC3JZOBKVMUSKJVKTK4S2IVJFKVJQNR5FGVZRI5RTC4BVKNKFUSTCKZFHOWJSNRFU6UZUOVGFO6DYKZDHAT3CNQ4WYUSWKU2FUWDQNNQXSNKFLJMECMCVLBNEUWSIMRWVU6SJPBSFIWSTLFVU42KVPJKTAWKVOM2VEMCWIZQVO2CSKJKFE2KPIRDGSZLLM55FOR3UJ5SDCVJSMJLUUQ3FLBSHGYSVLJKVU6TLGBKEQZDLKUZFMTCUIVUEYZKWLIYFCM2KKJKEO5CUMN5GYNKOPJMXSZKVGFNFGRZVINJVQTRTKZLEM3DEPJSFUYZTKZNFKV3MLBHHURT2KYYUUSTFJBNGMUSUNBGGEVLIO5NFMTJQKNVESMCOGJDEYUKVKZWWG2TIGFSDE2DSKVCVENDBGFFEKTKYKZDFI3SCGBIWUTSCKFWTSTSOI5KTEUJQOR2VMSDINVKDERSLKJWFCMLELBSE4VSEJJCFEM3QI5KG4RLUMIZGWM2MK42VEVTNNRUU23CKIJHVO4BTMRWVUNCNPJNFMVRSOBBVORCFGFSW2TTZMRDUUZSPKRUE2TSUJJXGEVKZORQVISSCJVKWQ52ZNN2FSWSGMRXWC3CGLFHDGZDVMVWDQ5DBGNNHEYKEIYZVSMCWGVRUQQTZMVWGIMK2NM4TKUJSKZCU6RJVO5HFQRSSJVCWWMTFIZJFSZKHPBYU6V2WJNHG23DXK5EEM3KVNVHDCVTNN54VG2ZRGZREKOKULJLTK43DPJHG6VKXJJZVKRCONBQVOTRUKRCVUU22GFDFMYSXIU2VGVCCKRNFISSXMJWDSQSSNJLDAUKUJI3FCMTYKFKW24BVKNLHARCWPJLFQTLLGVTEYVCGO5REI2DBMEYVEVDFNNJHSTCYII2FC3SCJJJEQRJTKYZVMQ2XNRLFUU2YIZEGGSCSGFLGSMKVLFXE42LDGFLEYZLNOBLWIMBRI5HFKNKDKMZUE23ENV3XSUSWOBZU43DHGNJVOZCILJDHANKSNV2DMZCVOBCGE3JVNFQVORTBLFVFUYLBGFNGMZCGIJJFSVJVJ5QXUTTYJVLEURDDKRJG6UTNMR4WKV2KIJRWY2DXKJKEEV22IZDGQVRRIJGU42SSJZIWY4CEKQYVK5CRKRWGYY3MIZYFU3SOOZRFOURQMJVU4VSRNNWFQUSVKI3FKVKOJJKVM3CVKVWVUMTCNN4GSVCIKU2EYVSSGRSWWVTUKRLHATCVGI2UEVKUKJLVI3LEN5JXUVTUKVKWQQ2YGBYEUWTLLJ3U6V2GJJHUQRTSKNXHA6SMNM4XEU2IJYYFUM3QGBMXUVRVKRLUUWSTPEYXMTKUMRFWGMTDHU
+      - AFUWCLJRAAAAAAAAAABXQQKBIFAUCQKBIFAUCSTMMVKXA6KZKZSFEYKVHFYFGWDMJZJEKRLZKNLWYM3BKZYFQTSXOBFGC3JZOBKVMUSKJVKTK4S2IVJFKVJQNR5FGVZRI5RTC4BVKNKFUSTCKZFHOWJSNRFU6UZUOVHEMOKUKNKFUU2OIZYDKWRSJJKE4VCWIJKEGNKMKVXFUR2UGNWGQVSVNBDFSMTUJ5HGUVTJKJCUKMSVIV4DITCVKZDFMWCOIRJHUQTMMMYGY2TBGJ4FOYTONBYVCMS2NNQXUZBWLJXFMYLFNNWEWVCFHAYVM2ZVJJKUMQLYJZKWW5CPI5CTGVSFNRXVQMDDPFRFKMJTJVLVMMLCGJUHMUKWKJMFISDIGRRUITSLKFKE4S2RGFBGWZKXIV2E4V3YIRJUQ3BTMVLHA6SUJBWGYVSTGAYVK2SWGNNFQ3ZRMJWDSQ2ULBLG6ZCUNBYGIVSOJVRGUQSCKRKWQ4TEIRFEIWBSKJLVS2SGGNGUIQSZKRWTI5DBIZHEYY2GKF4VU6SNGRLGWRTYLFMGQQ2RKVJGCTJTIJTGI3DEN5KDAYZUKMYUUWDEGA2VGVRSGVCFE3SJGJKW2ZZVJUZVMTCSGA2HQVLOIY2GCVCSLJKDGVTTJVLE4ZSRKZLGYYJSJUYFK23EOVSFQWTOMJEEM6LEGFYESTSUIZBWCWCJGBLDC4CLMN5EESSTPJHEGZBQKJVGG3CWJJLUKTSXJ5MGYQ2WGAYW2TCXGV3VSVCCGZHFK2CYMQZWYWSNJBUHIYKXHFWGK3TQNZIVOUSJKVKXARSWGBSHITKHJJEGIVLYNRRG43CUMNEEU5KSGNYFGTCVNQYFEVLXGBRDA4DZJ5CGQWTCNRXTCYLMOAYVGRK2LFSW2TLZJVCXAR3FK5HHOWLLNB3U2WDHPJRWWRJTKNWGWNDFNUYVAYJRIZLFEVKSJ5GXUTSQJVCTI6CVI5UEMUJRIY2VEMCSJBJDEWTOLFWXQQTENJFHKWKXHFVGGVTEJVKDAZBQJVXFUQTDNZDFSVCINRIWI3C2PBRVK3DIMVWGQ2C2KZDDMVCGHB4FMMBVONLUKNJWMJWVEUDEIRBFSV2VOMZGIRSVGVLVITTWMJ5EU4S2NRJFGY3KMQZFMMRYGVNFQ23UJVLFUVSXKZSHQWBQJZGWGMSWO5LUIVSYLFKE42SZGJ2GQTTMLJ3VE3LMPJIW4STVKZME4WCUNJNFKYZQLEZFMRZRNFIXSMLULFLEMS2ZKRETGVKVOBDE4RKSPJIVMUJVMVDGYT2PLBDE4WSYNN4E2VK2KRRW4RSRJ5CU45COGJJGCVKXOBHWIWCOGRLGWOBSKRLVUVSNPJBEGWLKMMYGCVK2NNKGWMLQLJKFUSSMNZYGQVRSPBKFMVLXO5MW2RSNLFXHAS2RK5NE4VTNJJYFIVSFHU
       Access-Control-Expose-Headers:
       - opc-previous-page,opc-next-page,opc-client-info,ETag,opc-total-items,opc-request-id,Location,opc-work-request-id
       Connection:
@@ -775,7 +865,7 @@ http_interactions:
         Autonomous Linux","operatingSystemVersion":"7.9","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-23T21:28:00.297Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Oracle-Autonomous-Linux-7.9-2021.05-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaahz2dqo6g5piofgr7mvfyguqh4lhlhnza3aqoj3xrkn6csju7t2oa","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"Oracle
         Autonomous Linux","operatingSystemVersion":"7.9","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":0,"timeCreated":"2021-05-20T23:58:18.795Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.07.20-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaawhxoqave5p44fbhdd3j7t2mkw2iaryi6etbjhlxdaftv3zqer5fq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-07-28T23:17:03.485Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.06.15-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaaluym3qtvnvt7y4zms4ibwcus6wc5guxvqejjx45zkszkyi6aqmuq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-17T23:44:44.249Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.05.25-1","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaadzlyimwgplwurg2nm5yiwbz4ah6hlj2aasrvq5mzcxb7reohpfka","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-05-26T20:56:16.077Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-7-2021.07.26-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaanfnmparjiuoexabghmvapawxikc36rfppojyp4daly5yaslkvcja","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"7","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-07-28T22:24:32.781Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-7-2021.06.14-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaauaporbmifxt7nopqnafcgzx4tgueteiidcp55ldhqii25wrijv7q","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"7","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-17T23:43:35.979Z"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:36 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:09 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/images?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -792,26 +882,26 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:36 GMT
+      - Fri, 13 Aug 2021 19:23:09 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="mFDdxM+uL/UgbcA70Igid/UbpbM804BU0QtnnP4+XpqmQsc206tnoyb/XtCS7F0RqWzdo2JbJaWzaxAYqJYJLeAC47pGRT3Cem8HtQxvv9h0q6xTC1KMt9n5+0/CIaYg3lngRUgIuEd8oX6S0MAsWytdIpmg5od88ILPknX5mTRFgWpMWUe3teU27mKv4OT4XgXjc7Rg9Jjjz1o9mTytjy9sXn6p5j7Dkv1BCzt2lJntlWoPDmg3AgLXhLx2YbYTUms2jXswIeIFy4JLOC4KbawOlULRYHIJ2BanLY1TnsdT1lChl/REmJ6q8gVmhwoNOSl/XyO8A7WkEdbXFLBeEw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="UDL1jYjJGA+NvXvjH0r37AiQr+Qt3byEciW1hBUN/dItwJsueNjNbxC9nZ8Xh8ySYt/lS9qisW4fwf/5YC97rydiRPFjNlUkWfw+AmhMUY56t29Q7geJU54eHZdpKvOPGLF+9hNNj8NlBDJ8UvuSYrBhkztHyJr2mpxxYkhYAMKhG5rV2yyl+yaNvrfX0lcJboKczAARLWdWcofnwUz9CHZR6FW0Kf+J27EkaYQR2qfRH67x58nsBPqi/EWbTpPiX0i0n3XY/Ke9fn6yxo0qVCHO9hRh8e2ua99VONjNtk5ufRM4BGIeYZdVr52tVSBsXwGXfghvaqD4ri9UAlBzFw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 43B7430C9CEE4CB88C06EC691C930934
+      - '099CF703F80A46EB9D94060819B12385'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:36 GMT
+      - Fri, 13 Aug 2021 19:23:10 GMT
       Opc-Request-Id:
-      - 43B7430C9CEE4CB88C06EC691C930934/5B1590F54DA06A9E02A5DCEE847EF059/2810A1075621848C96692CB7CF5272DD
+      - '099CF703F80A46EB9D94060819B12385/4C777EA7DB53D605C668FA0238382944/DD46A89437D15F0E81B84205F3AB8C3C'
       Content-Type:
       - application/json
       Opc-Next-Page:
-      - AFUWCLJSAAAAAAAAAABXQQKBIFAUCQKBIFAUCSTMMVKXA6KZKZSFEYKVHFYFGWDMJZJEKRLZKNLWYM3BKZYFQTSXOBFGC3JZOBKVMUSKJVKTK4S2IVJFKVJQNR5FGVZRI5RTC4BVKNKFUSTCKZFHOWJSNRFU6UZUOVKG4SS2J5MFU5KSPJLGYU2WJZLFKSDMJZQWSNKLLAYU42DBGA4U2YKUNBZFI6JRMFJFMZCOMFKUU2DBI54HSY2GKJJFI2SGMZLGWRSSLFXFK6LCKVJDCTSFHE2FGWDEJNREQQSJKQYUMS2OGJHHQYKYIZWWGVCGONGVK53YKVLXAWDEIMYTKZKHPBHFMMCSIZLFMUTZKFVWQSKZNZWDGY3OLE2FSVTIINJVQRSKMJWFUZSWGFBHEVDMIUZWKRLQGZQWW5CUKF5FESSNGFJFQVDLOBLWERLYMFSFQZCIKF4TC5KUI5FFKZCYJZYU2VZVOZHVQZCXJUYGY2LFNVJEIWL2KZZVER3QOFJVQ2DXKQYUURCRNNITGY2UMRBFOSDQPJKUOSTLK5EGI5K2IRBEKTSXGVFVUV2KOVNFOTLXMFXGQS2SNQ4XUVL2NRXGCVSFGRLFIRS2JZLXQMSTNJJEMUKXNRGU2MLMNJJTC33ULEYE2MLDLBNEEUSXNBCFQMSKNJSWUZDPK5DHA43FNMYXUUSFGFGVGMDXGVQVMZCZMRXFMYKSNNFDMUSEMRWVEVSGKJIVOOKQK5WWIRSWIVLEQUTJGFMU2V22OBRDAUTYKNMEC6TENJITCUSVKZHVS6SGNRQUI2DKK5VXQRLDKRVTEY3LJZZFERTELBQVK2BSMJDVE3KUKVSGMTSVIZZWG2SGIRREMVTWMJ5EUSCNIZGTIYSFGFWVURZYPBJVQTSUKNDWQ2LBNUYXSU2IKJHFS3CCNJRDETRSKQZUMQ3BI5LDGYSXGFEE2VSWK5JWU2ZSJ5MEEU2OIVTXOZKWKV4FM22SK5ITCSTOJVWE252WNJWFMTCWKJFWIMCGMFLDA3ZVKZKWWNDCNRLGMURQJV3VMMKGOVSDGTSJMMZGG6KZK5NFEVSWOBEWGRLMLBLDEZZRLF4TCSSRGAYVUTKFGV4VMRCSNFITGURRMMZFMUKTGNNHMYSYLJBFGSDENVKTCQJSMVCXAUCVKZNFUTRROBHWCRCGOZSUKSRRLJCUMR3CIVYGCUTLGVUFO3JVGVQWUUT2LIZWITDFKRHFQVBSGFKGI23YMZRVKRTTKVKXI4DDGNTXQUTKIYZVU3DQIJHVQSRUMJKFEV2VLBDGUVKYLE2VO3K2KBITG2BVMFCTKSCXLBTXITKENA2GEMKZGRHUQURQMJWVE32XNZYGQVSHGAZU2RCKN5JEQ3CIMRCXAM2MNU2XQUZRHFWE2MDUOJSFQRSQKNDTKUKTIVNDCVSGOBNGG3LDHU
+      - AFUWCLJSAAAAAAAAAABXQQKBIFAUCQKBIFAUCSTMMVKXA6KZKZSFEYKVHFYFGWDMJZJEKRLZKNLWYM3BKZYFQTSXOBFGC3JZOBKVMUSKJVKTK4S2IVJFKVJQNR5FGVZRI5RTC4BVKNKFUSTCKZFHOWJSNRFU6UZUOVKEITSQMNVTC4CNGFDFQTJTIZ5GEVLYLBLWSNKUKJKE4SCUJBYG2YSEMR2FS2ZVJFKUM3CYJVWDSSTDI5HFGY3NNN5GG2SJGJSEK6CWLF5E4RKNGNLHMU2YJF4FK3DMNZKG2URUMNVE44KTIZBGQYKGMRWGCR2GMZJEIZDWKRKWQWCOKZUDKYSHGVEFGV2GK5KFK3DQMRWGQ52UKZYFEVKGNB5FO2TIORRVOTRRJV5GWMTEGFFHSY3MIJHVG3KZPFLFISTJKZWDSMKMK44VIU3NKU2E2V2VGBGTAZDKMNWTS2LFIMYU4V3KNBDWC2SKONKFMUSJKYZWY2STI5SG2UTLNRGFE3JVPJGFKZCUJUZFMU2NIZETIZCHHAZVGM22KVRUIZDPKRXEUVDBGFHHQURTLJJFGVK2J5KEIVTILIZEUM2SKVRXQVKGM4ZVE3TIGFLG243YJ5CWQ4KVKZHG4Y2VHFHWK23IJVGWWWSEMFVFM42WKRHHCYKWN42FKV22I5HVQ3CILJVGYVCTNEYUETSHJZEVIRCGLBJTEWSJK5LVETCOI5FHAVTLKEZVI3CCLBRDE4D2KNDFESKUI52HATTOMRKFO3SNGVGVKVTOLEYHQMSTI44TKTSGNRNFESCVO5RUMURWK5UTCRCOJBWFSWSXNBHWG3TEJFKEKOLGKNWFU52UIZJHOVDKKE2VK2ZZNRLEQUSMKNLWY32VI44UQU2VNQ3GIMTXGJQWW23XMEYFMYLBGFLFAVCGKIZVU22OKVIVQWLUKFWFMVKSLBLFQUSEJJ5FERCRGJLVKZDRKN5FEMSNKZSE4VSFHFEGGV3YJRQW4VRRKJVVM3LCNRJE2U2GIF4FKRCOGRQTE6CPKZVGIVK2IZUHAWSUMRDFM3JRONJDANLGMJDXI6KOGJETAYKXJZ4E2VLIIJKFK3CIJZWVSM3DKVETAWSWKZXWKSCCIRKTCWSRMVLWONCUPJDFUURSJJJFEVKONFGUMOKNMJBTCQ22NJHG2ULOLJHFI2SOKNSGW2CHKNCTAMCYPJVXQVJTMRKFS2ZVONREQ3ZRKFXGINSRK54ESWSWNBWWEWCZGNKTAVLZK5VVU2SNNU2XUZDMNRDGEMKCPBKFI2DILJCGQR2WK5LHQZDLHFCVMMSOOVLDA4C2KVDUMTLCGBWFOVCXKJ5GERJVIZSEMZBVMRVFK6DELBFHMU2EKZCWIR2GKRRWUVTGMJDGYRSMNEYTCZBSJZ3VSMKZGBRDE6CHMMZE43COI44WCZKEMMYFMSDDHU
       Access-Control-Expose-Headers:
       - opc-previous-page,opc-next-page,opc-client-info,ETag,opc-total-items,opc-request-id,Location,opc-work-request-id
       Connection:
@@ -917,7 +1007,7 @@ http_interactions:
         Autonomous Linux","operatingSystemVersion":"7.9","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-23T21:28:00.297Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"Oracle-Autonomous-Linux-7.9-2021.05-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaahz2dqo6g5piofgr7mvfyguqh4lhlhnza3aqoj3xrkn6csju7t2oa","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"Oracle
         Autonomous Linux","operatingSystemVersion":"7.9","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":0,"timeCreated":"2021-05-20T23:58:18.795Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.07.20-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaawhxoqave5p44fbhdd3j7t2mkw2iaryi6etbjhlxdaftv3zqer5fq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-07-28T23:17:03.485Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.06.15-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaaluym3qtvnvt7y4zms4ibwcus6wc5guxvqejjx45zkszkyi6aqmuq","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-17T23:44:44.249Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-8-2021.05.25-1","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaadzlyimwgplwurg2nm5yiwbz4ah6hlj2aasrvq5mzcxb7reohpfka","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"8","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-05-26T20:56:16.077Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-7-2021.07.26-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaanfnmparjiuoexabghmvapawxikc36rfppojyp4daly5yaslkvcja","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"7","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-07-28T22:24:32.781Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-7-2021.06.14-0","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaauaporbmifxt7nopqnafcgzx4tgueteiidcp55ldhqii25wrijv7q","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"7","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-06-17T23:43:35.979Z"},{"baseImageId":null,"compartmentId":null,"createImageAllowed":true,"definedTags":{},"displayName":"CentOS-7-2021.05.25-1","freeformTags":{},"id":"ocid1.image.oc1.iad.aaaaaaaawf6f6p2x2cgtfums6sirkvdvxarbvvpfswuxo73pskqmrmnbe76q","launchMode":"NATIVE","launchOptions":{"bootVolumeType":"PARAVIRTUALIZED","firmware":"UEFI_64","networkType":"PARAVIRTUALIZED","remoteDataVolumeType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":true,"isConsistentVolumeNamingEnabled":true},"lifecycleState":"AVAILABLE","operatingSystem":"CentOS","operatingSystemVersion":"7","agentFeatures":null,"listingType":null,"sizeInMBs":47694,"billableSizeInGBs":3,"timeCreated":"2021-05-26T21:03:06.850Z"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:37 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:11 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/instances/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -934,22 +1024,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:37 GMT
+      - Fri, 13 Aug 2021 19:23:11 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Lo7yWkNAs2ia4RGm2gTGhdRwhoVMxgOPViTRgZ3L2a2Vfb0vYF/Zl4Yds+oLulhTxCgtGMBuDep/Qu8/8EzGYmXkBZSclRHfThF/9JT5rLvNBvXeHSPZKJE4wYaSgcbYc3Aq8+SLsZWLQXXZvRelu87pXnqv1tokMr+fus7F24OpyMwkrczRMG81C4+04wbWeSgYay8ha6jTbZnysCpPMR3l7idA6ZMLNEVshAV91aDz8sVv2O9AxLVTKazaB2UQ6IVlnwVssP8TgyMyd0bUtaeazuY2ogwvjv+BiBN62RegRmPjdFlCqN8sTCKY3icO2OFrlEtVYoIPV2dQeVBTOw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="iTzYWPqbBpjugnLJvT7FnFGj5Li56R1rHGFNs0hBe8cLsEydkqJ+9y/HpsGlQcZmbomJZXmNP7Hqtq7xli7G4b5SF+FVzwTuijsjbhuXmKOvJF2Wg6HHHgYldpTl5Nw/OLEXc9bYfoP85HLuRcStLcHkFLhQzdUgo93trROYbQciOLsVMrXBZgqRILJlSMfzxkLBN9z/1hBRI/CnScEECEjNMQNJH2wDDRLn7SeC3lDJHC7m3TwAs5R9Re3emHgPnJeYcvi1cAURbOgyyoQoX3IsNHPT3uYLDfe3iBW3MXxhXsTtGfXgY1bM6xCRY7rnDniLp0MqybjwJsLA/AgahA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - ECDE301CDD02414392B86C7F94391324
+      - B59F7B0E8544438ABA9BC30EEE90D6B1
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:37 GMT
+      - Fri, 13 Aug 2021 19:23:11 GMT
       Opc-Request-Id:
-      - ECDE301CDD02414392B86C7F94391324/F7A49228BD73DB95C5E1984B530299B8/8B98DF66E3A3DB1710D074D1D4E22ADF
+      - B59F7B0E8544438ABA9BC30EEE90D6B1/2A72684BC64739AF56D59BEA7521AD19/54FF2E06B93AD4631A2BD020DF6A32F9
       Content-Type:
       - application/json
       Connection:
@@ -963,7 +1053,7 @@ http_interactions:
       string: !binary |-
         W3siYXZhaWxhYmlsaXR5RG9tYWluIjoiRm9oYTpVUy1BU0hCVVJOLUFELTMiLCJjYXBhY2l0eVJlc2VydmF0aW9uSWQiOm51bGwsImNvbXBhcnRtZW50SWQiOiJvY2lkMS50ZW5hbmN5Lm9jMS4uYWFhYWFhYWEiLCJkZWRpY2F0ZWRWbUhvc3RJZCI6bnVsbCwiZGVmaW5lZFRhZ3MiOnsiT3JhY2xlLVRhZ3MiOnsiQ3JlYXRlZEJ5Ijoib3JhY2xlaWRlbnRpdHljbG91ZHNlcnZpY2UvYWNjb3VudHNAbWFuYWdlaXEub3JnIiwiQ3JlYXRlZE9uIjoiMjAyMS0wMi0yM1QxODozODowMC42ODNaIn19LCJkaXNwbGF5TmFtZSI6Imluc3RhbmNlLTIwMjEwMjIzLTEyMzkiLCJleHRlbmRlZE1ldGFkYXRhIjp7fSwiZmF1bHREb21haW4iOiJGQVVMVC1ET01BSU4tMSIsImZyZWVmb3JtVGFncyI6e30sImlkIjoib2NpZDEuaW5zdGFuY2Uub2MxLmlhZC5hbnV3Y2xqdHczZW5xdnljdjQ3ZHg2ZXdjc21wanF6YXpwcXhibHNpa3p6a2l3N3ViaGhnb3BxZjNpM3EiLCJpbWFnZUlkIjoib2NpZDEuaW1hZ2Uub2MxLmlhZC5hYWFhYWFhYXFkYzdqc2xidHVlN2FiaHd2eGFxM2lodmF6ZnZpaGhzMnJ3azJtdmNpdjM2djd1eDVzZGEiLCJpcHhlU2NyaXB0IjpudWxsLCJsYXVuY2hNb2RlIjoiUEFSQVZJUlRVQUxJWkVEIiwibGF1bmNoT3B0aW9ucyI6eyJib290Vm9sdW1lVHlwZSI6IlBBUkFWSVJUVUFMSVpFRCIsImZpcm13YXJlIjoiVUVGSV82NCIsIm5ldHdvcmtUeXBlIjoiUEFSQVZJUlRVQUxJWkVEIiwicmVtb3RlRGF0YVZvbHVtZVR5cGUiOiJQQVJBVklSVFVBTElaRUQiLCJpc1B2RW5jcnlwdGlvbkluVHJhbnNpdEVuYWJsZWQiOmZhbHNlLCJpc0NvbnNpc3RlbnRWb2x1bWVOYW1pbmdFbmFibGVkIjp0cnVlfSwiaW5zdGFuY2VPcHRpb25zIjp7ImFyZUxlZ2FjeUltZHNFbmRwb2ludHNEaXNhYmxlZCI6ZmFsc2V9LCJhdmFpbGFiaWxpdHlDb25maWciOnsiaXNMaXZlTWlncmF0aW9uUHJlZmVycmVkIjpudWxsLCJyZWNvdmVyeUFjdGlvbiI6IlJFU1RPUkVfSU5TVEFOQ0UifSwicHJlZW1wdGlibGVJbnN0YW5jZUNvbmZpZyI6bnVsbCwibGlmZWN5Y2xlU3RhdGUiOiJSVU5OSU5HIiwibWV0YWRhdGEiOnt9LCJyZWdpb24iOiJpYWQiLCJzaGFwZSI6IlZNLlN0YW5kYXJkLkUyLjEuTWljcm8iLCJzaGFwZUNvbmZpZyI6eyJvY3B1cyI6MS4wLCJtZW1vcnlJbkdCcyI6MS4wLCJiYXNlbGluZU9jcHVVdGlsaXphdGlvbiI6bnVsbCwicHJvY2Vzc29yRGVzY3JpcHRpb24iOiIyLjAgR0h6IEFNRCBFUFlD4oSiIDc1NTEgKE5hcGxlcykiLCJuZXR3b3JraW5nQmFuZHdpZHRoSW5HYnBzIjowLjQ4LCJtYXhWbmljQXR0YWNobWVudHMiOjEsImdwdXMiOjAsImdwdURlc2NyaXB0aW9uIjpudWxsLCJsb2NhbERpc2tzIjowLCJsb2NhbERpc2tzVG90YWxTaXplSW5HQnMiOm51bGwsImxvY2FsRGlza0Rlc2NyaXB0aW9uIjpudWxsfSwic291cmNlRGV0YWlscyI6eyJzb3VyY2VUeXBlIjoiaW1hZ2UiLCJib290Vm9sdW1lU2l6ZUluR0JzIjpudWxsLCJpbWFnZUlkIjoib2NpZDEuaW1hZ2Uub2MxLmlhZC5hYWFhYWFhYXFkYzdqc2xidHVlN2FiaHd2eGFxM2lodmF6ZnZpaGhzMnJ3azJtdmNpdjM2djd1eDVzZGEiLCJrbXNLZXlJZCI6bnVsbH0sInN5c3RlbVRhZ3MiOnsib3JjbC1jbG91ZCI6eyJmcmVlLXRpZXItcmV0YWluZWQiOiJ0cnVlIn19LCJ0aW1lQ3JlYXRlZCI6IjIwMjEtMDItMjNUMTg6Mzg6MDEuNTgyWiIsImFnZW50Q29uZmlnIjp7ImlzTW9uaXRvcmluZ0Rpc2FibGVkIjpmYWxzZSwiaXNNYW5hZ2VtZW50RGlzYWJsZWQiOmZhbHNlLCJhcmVBbGxQbHVnaW5zRGlzYWJsZWQiOmZhbHNlLCJwbHVnaW5zQ29uZmlnIjpbeyJuYW1lIjoiT1MgTWFuYWdlbWVudCBTZXJ2aWNlIEFnZW50IiwiZGVzaXJlZFN0YXRlIjoiRU5BQkxFRCJ9LHsibmFtZSI6IkN1c3RvbSBMb2dzIE1vbml0b3JpbmciLCJkZXNpcmVkU3RhdGUiOiJFTkFCTEVEIn0seyJuYW1lIjoiQ29tcHV0ZSBJbnN0YW5jZSBSdW4gQ29tbWFuZCIsImRlc2lyZWRTdGF0ZSI6IkVOQUJMRUQifSx7Im5hbWUiOiJDb21wdXRlIEluc3RhbmNlIE1vbml0b3JpbmciLCJkZXNpcmVkU3RhdGUiOiJFTkFCTEVEIn1dfSwidGltZU1haW50ZW5hbmNlUmVib290RHVlIjpudWxsLCJ0aW1lU3RvcFNjaGVkdWxlZCI6bnVsbCwicHJlZmVycmVkTWFpbnRlbmFuY2VBY3Rpb24iOm51bGwsInBsYXRmb3JtQ29uZmlnIjpudWxsfV0=
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:37 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:12 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/instances/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -980,22 +1070,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:37 GMT
+      - Fri, 13 Aug 2021 19:23:12 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="KPsLXiYgX6PbBWa/wYiB8t9F75rpI1C12Pxj/erPaoXwj5weIwQ8sUOpfjdS3cKfURaV+3mDm5NvGV8wyJvX3rJUYe5CAwhP8EQnaD+k4k9QuUqLsyu/qCOoVkbw5bD3adPkTinxjv/UJGmzqmPzB62BnG53Pecg6doZtDgr7Nfnt1ZFmvkyJShhS+uB4cQJ56hJp4/mUwvXFAad+0R2LCoIjLEs8uAzf/AHi41NvSTRJ8sk8rVTI4thgMcyAlg5mQrePZt1L0HckHRZHU/kPRm2k3VF4oQpCUt90qxRYNRk6rbUBA5ASX/1mzrocxqnuNoMcfuGFIMqhOgYHjvrGg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="febFiv4Fmd6lGwkFMe/eJvxjL8Fg/Ge1XjnaqvCwOXg9TFNs83noRT35RG2hObWBb7HVDOEsxShsvktVoV8p1NGZSBWPlW6O4xGIQm1V1mzBkpx23tS+/QYKggwHUxqykXM3cJPRgc/k0jTPaA+9WM7fSWJV+0u7NgxFY18HEl+ORT/+3MYVxuoyEp/Oxar18p3NgKnRUWyRdWDb9khMY6esqsPvsO753G0OkMEgi+nMV3BTSIyp1udHGnlp/eq4OKjQhowtATJLzUF5oXJVBvbGitRiViB9s8+7kx2Bnl+xagCJDd3qP1/OIwe+8p8xvFZpxSEa+LuUT8LX3aIOyA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 2425D662A6E14C84811D85DB8E87067B
+      - 8584114B8CD348A1AAE464DD3804F3C6
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:12 GMT
       Opc-Request-Id:
-      - 2425D662A6E14C84811D85DB8E87067B/92F46168FB951B0BB0E435CFFC59708F/AA7681013B47351FE346E277AD091929
+      - 8584114B8CD348A1AAE464DD3804F3C6/2C2D454FDAEC60831ACC1B4977DE0F70/32931C8ED70FE4273462AF848F913B8A
       Content-Type:
       - application/json
       Connection:
@@ -1008,7 +1098,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:12 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-1&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1025,22 +1115,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:12 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="gc4qHLak6gZB1CkFS102mGk/KG4rqM/ih1cN7F8GMW0P5op707ozyoC+MkK1OvGIqhhJSJ9QSDh+b+kHAlZ0dk5/8yPWOCzMNIrE3zzrYwp7/IkaLw5ybvef9ayrkiuq7As/HorfU/NmbykSp++A3fqnx/hYOLhsOZeJQgCtp8UvvKXqjHYB5RPUxky/rm5E9JovBWj94awAoUNCltu7+v4xrlIzw7Ssfb/9HnQBxbPI2sfg9RKmiACkwggwmT99rQKX715YlJXfg5DIiftp2Mi1R2xWtvr8avSIqBLObMlFv063v7JDyHtDpcwMCdf1CyZz5MoxzkAKRvF7YR+NuA==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="CJGXCtBDf9hRddc98/90R3Ero2emAZXAz43J9xy3Lf25gAF2os93w8QHQmrtpWOl8qO0xrVPEmCdkSRyoErpPSW0k9w+gEP6s2BKd0kqRCHQIU3a/O7I8rwWeKnR5GimqDaQ3dFmRV7/hA8Kb+LD3Tqw9EHQPZ4HDdwL6kyeZG72kj4MdiYu5iluYOxn1PBMXYwYc92jroBiBbBJjguB4GJA75BuYDQFc+oll+xPZd6HxBlCv85JadTIspiYsZIHX6Lb1ayZzQIwrpdCLrL8xQ1gYuQzAupxZVeuVp2rO1ewnwJG5eRqiKC6YKt3qj0HpDyKp74gAtu3bNldWcPBgw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 8D906108EB444EB283BD3FB18F7F14AC
+      - BDE56E83A6B04AFEBC39C454441B052A
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - 8D906108EB444EB283BD3FB18F7F14AC/4B54FE562EFDAB8E735BC5C706F9798F/F693B28C6A3A1B065BE39978D556A5DA
+      - BDE56E83A6B04AFEBC39C454441B052A/FFD458984EB7535460C5605FEBF9699E/761BE6B04ACE93313DF650F459E04982
       Content-Type:
       - application/json
       Connection:
@@ -1053,7 +1143,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-2&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1070,22 +1160,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="az1YZ1MUAqEAmD8obl9ja9011R8uha0e2JLB2NtPk0AagDTuqi2KUdXweh7Wyv/ETBWk6kCYR6SGU1QHTHqRx5Pg4/ixIOJaFRi/04ruVvKdxstkhlO7HP/kAXAN1Pc8qkz1pn3FLo+oj+aIEcVN/jt6mRZiTj+9G52T7YzC+UCihOc6rtsf0iApOycxvBrKdkhypDsQLU2Q3w1f/4GDK76Ioi1abt9Qo04WRXfDhKwSCWzwrtA10c6lHgDnop24auohuZvq5ZfxhQuzFIWtq74mBl8vxnbE6j9TaBG4+ehbzNB7rFztc47nPmCY89Um+HAxYoF7qcjP7LV5AiNQUA==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="SPHU89lKH/bDJrgcu8DqVO8Onk3OipFkWoYbuKURn/SvApCOv36D+feMoqNbcjXq2SFFmYhEthOjcvnDJQfOAXWk0MkIACXndypDTyRKQXHzKhgPATCnoOnQ4XqXzw/xaaK1QUd43t5YdzmIGDmE9uj6eOk5Tsygz7Lp/oaYYsCGEjrLhywIOcNwGcOUaToHLJk+GsvsR2F4tMC1yRqI5DqKRe1tIpTx4ex0KpDeR71VmjFugOZjDu3B3kZDGZijdCinrWqmB1XVdWd38qp+46OXPUyouxdfQByOv+M+5gfWfkMaKnVbnIwq5aQDxOsF0Q8VoaUYAHrCktoZ3xTqvA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - C948BAB4A4E6412C8B7DA6FE155BA92A
+      - 133CA62215264857B1BC5041F8378429
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - C948BAB4A4E6412C8B7DA6FE155BA92A/3F4DFA5F8B52B90F4535BA647029988A/46D2B617992572E786CB9DD585367EDF
+      - 133CA62215264857B1BC5041F8378429/C77332F9347EF3A62926311C6CBDFDDF/8EBDF16455CE98A40DA210F6568A8F65
       Content-Type:
       - application/json
       Connection:
@@ -1098,7 +1188,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-3&compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1115,22 +1205,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="G1Sp6l7jAZDH9W2wxL3V0YL6/OMCvsCdY0pLHISu49JSeRfR1D0Ax4S8qdgJr8qikJnPyZxURUPgwGzRnuJ+yBFP3tvi/RM6xA2hFgXEvqf7DgJUcNhOeCIYCkDnxYmIQG3sZa5ihuzOFehO5ilP41zG7eRJWLvbt1IAQEf9ub+QxFvbWGXJIpRnzWkTxftnaZ0t15aQik9SkVBRjr/r1E8pFOfx6UbH952OkRZsEa57cCOURX0pqaFXexPYWV65KST0mO/ODymJtiwK8lgl/kUwUvt02BN0yhD9lWxbKg/9IpQRKSnQiFd3sx/5jtdDgLHbuwAloqoEA+wuCf4njQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="IDCqEqk2xBUolOBIoIRRrcX+d5f6fcTbAvwIEhXnVUFtRzEOb5rbSZzSaBIyi4uNbGhehQOUuCdz7+gOCBdtvwImqAtB42C+kCIR7iy1dqzMdAvEU25Y9XOWq/XMfa1D0J5YXtx502A24HqKzDoBxe3LfvfWf8RUcFzYG88Jo6s2oowJSMjPis10TV+/kyBIG0xFMQPtbE+C+HHdm9ifn/XElCthIoLUWIoBNrdZTzoX/5+SJoHB6nLi/SfnAmjzJM9jNLKCGzcZ8um2JZTN6kFhDKvIKCRkjjzwtr5zc5RoFi9DN0V/uiHYPQjY4k4aqYWJGcvKM3GBxuDDBW8JhQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 6BCF4B446D45450E9ED2CDC5C7A947D1
+      - EEE578A3CE0F46DC8331A5E6460B7CA5
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - 6BCF4B446D45450E9ED2CDC5C7A947D1/4F7AC8C4CF6FCC8111596036FBE8B163/911CB80FD589A63396BB5D3E1D8C54F4
+      - EEE578A3CE0F46DC8331A5E6460B7CA5/5760B249883AAB1BBC82DCF1B6DC0691/95DC8E20C306DF699704FB14FA2320CB
       Content-Type:
       - application/json
       Connection:
@@ -1144,7 +1234,7 @@ http_interactions:
       string: '[{"availabilityDomain":"Foha:US-ASHBURN-AD-3","bootVolumeId":"ocid1.bootvolume.oc1.iad.abuwcljthizlzlqiaumvdqheg3u4nnvn2spcepfoitx65dyqqmh2mc543gpq","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","displayName":"Remote
         boot attachment for instance","id":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","instanceId":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","lifecycleState":"ATTACHED","timeCreated":"2021-02-23T18:38:10.028Z","attachmentType":"PARAVIRTUALIZED","isPvEncryptionInTransitEnabled":false,"encryptionInTransitType":"NONE"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-1&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1161,22 +1251,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="hfrytseYpY97vpDeS7SWTRTsp8B6RM41XN2ifRYPw+t/PznybtJ5S5VX3QC6GY5Xv7Qcbw/QboFsNXtpvKxjrSp0mGctxWdamQ0ofTSC7xLrjhTiQ7f64OyvpaA2TTTdJON4vXLSWeXsxFmwoG6jhs1RTOnQN0PeshBJuhDkd/qYnzbIGUzKKxVWVrPxCklNKG3LJ9/waBfhPtb3qAMmKs0Dgsdow+RWiXorN31EHAlK7rwiuP+WkPtRa1BaFGp7PY14QNiUd77tTzCzJtJ2SlWiPKP7zzo0wuC+W8urDD5wcOLf+1WHM9Y/Mqol0VicSRJEcP14mjBWpum6UGNrjQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ZOP0PX6iezK5qhhFrUYEEUvnmZJ4eoJ6x0frrQ2Vzsz793HGAvLcBLyIB0Ad1ao0Q+Z4YdtR9mdpJ1DKeGiira62YEvaPV8a56Ghp+ik9KetCGNsRNm0O+Mp9s0DjS5NwgpxBWr0DpnNRWr3QJEf1Ea1ltsTFdfSp1JAq+CsV4jOLfcVrvzlvlqIxZOi4coYZM7xaGf6Ivd2v3yyIWtJHPvclmuz3CAzbi76kKV9U5DyK9jCr9PGo5TnjVT9SewGLVZRSaOKP7zEuGMdviXGxjnUEM14SUqef9OPJFAlzYoTk9Ga1Y1RnqK9/t1aMLxtOOqIHSSVb471Dm1UCWo0nA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 653F00B305E24AACBAA410ED6AAE36FF
+      - 4B671E2A2DD84FE08F2756EB40CE78BF
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - 653F00B305E24AACBAA410ED6AAE36FF/D05BD5E3D876AC33CE05F18914B5551B/FBD9F8418FB5B36E6C3B3290B6852117
+      - 4B671E2A2DD84FE08F2756EB40CE78BF/F8C95F50997C12BCA8592E2B999BCA89/619FEEA793A1E0FBB72529CA5E7BD086
       Content-Type:
       - application/json
       Connection:
@@ -1189,7 +1279,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-2&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1206,22 +1296,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="blkoThhSE+B+KQ95BVbiM927fxxZO9/nglbbFV+YGmr3HchLhQ/vOMLDYoeGVetlLzuktJwz/nl0EhSWWyamN7us5HoqsUll0PNIT9o8c3k938cnZHv8tU3E/lRJgv+0rnGkJbC/K5UuJT7C+kKJsSqyQBXize6dJeWUEeBM/OdLQWWzyN6hPjRxGW4K/sGaYB/g2GQDb0x6IY+FzRg6vew3dj/MSeJex7wyAW9Cps6DTsnc+cPSWCnUpvzynssWxhYhqhuS0wsfYYOsQReOAYl89r9xfpfxeaE/zsc5PYAwVBDOM/xQ+ojnJ0aP6vpkyyrJUtrhLnqRojGE3ALLyQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="g15EohmZlnHnJsQaGU9Y3CkwUk8v8Rn8ohNgHQA0JwEwdsc7aGGMBlU9098oINZCRBmlbxOM/KEScYSQWFaTtMKECw9LqcPb0EFcXNFaFF+8GG6DyVOe1wiOTnpMZ2ltvkp/uHZ1Yjt8VFj6SBFZweTjObDYykV0biBmwa9fMTqhLJzv5ixBkWhy1nUYCdnyIQT22E5u4/fyhShGooxLI/MvKbiWvpRwfrC1aiE7ZNE1WQ6rVNHBVQIuLjLYHSbj9YtZgqKHl7DNuMAGeYP7aUDvBh/w1i8S5xRkMA0vDqa6KjTRuqzZaAHro4GUV0Xc7dX4X1KBw7jfaIhkwvrQTQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 2A93DDCCFF364B33922434010DD4958A
+      - F8F36D35E6BC465FAE2F5AFB84C10576
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - 2A93DDCCFF364B33922434010DD4958A/9C3BF788E1FD0611FA15E0D3715BD62C/12B81CB02DD1EF54A1D4D255E9BBACFA
+      - F8F36D35E6BC465FAE2F5AFB84C10576/91BB1B51B4B018F62A5CF69BF8A355A9/77F7C7F462312B89A409A7168FF24C62
       Content-Type:
       - application/json
       Connection:
@@ -1234,7 +1324,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:38 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/bootVolumeAttachments/?availabilityDomain=Foha:US-ASHBURN-AD-3&compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1251,22 +1341,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:38 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="O6l/xahFyEcOjRFMmZ1B5IACoUVX4jSvpC17tIJNlef4lFIoT/IuV3EZGEYfhZQllpEXrAp+ashjFPUFquBL+hWz89BOMzPURUOQ7YBw7KWPMnm6c4o39sE4hKbJSUQAxo6vKBJzTe+marREHWQpmQr8AzP0Ad+yv6Sp2xrv/uInpJyfqo44f6Ax/YAcWsjnSPR3kBrR1exzbqHZg3JOqfTI+XGpfGbLKTxzkApNQPW4eXLUpDZh4yFbN0dcs3EmFZGwb6QlCWdryS+dqMky6J8yCnZ8Oi6kiS6DuL9yDTmFVzPwhRludlYd3X5bEjekpMG7WKWTVGS3dG3jIWgXjg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="A7lmkzMma+Ruw1OzKFPCZy0XPS3w/OjM+kdK/8bWQQvhc8zA5qLVAsX0ipu8s3u4T5QuHUUuPam+OJ0EUxs8gFe4uukISUsotK34RrPvQkAznlEmXS6PD1wumYlTOfXEsfZZR0WOp+/6cbQThpyAlDYLDofMYKpDS14Ir9nNHVAAYHsq0IEjx7O9aiC0G2+673RAJKIEQwLFqRrb2crBxw0AGqSIRlGpmQsfT36bNrlTPBpm8oJ8Vaktvpxj9Zdp7YQnOx0jT+XS3rcyRtf3zFeFydNP4EuUHcE6c2U64rwoUO7On1JyoJDkoupRd9cay8nP3jRPFO5QLsCIaH2GgA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 22BB3D0918DA45DC839D87A635546BAD
+      - 006152B4F2454B89ADBE77CA1899E9F7
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Opc-Request-Id:
-      - 22BB3D0918DA45DC839D87A635546BAD/F8B8370BFE936D1682100A4BF6449DCF/C2D9C4CC9557F6BD299E0AC061F50C05
+      - 006152B4F2454B89ADBE77CA1899E9F7/3050054DFACACFCCA78CD64412B3E466/0C026EF8D8B26B77781846E0BFBDFFD3
       Content-Type:
       - application/json
       Connection:
@@ -1279,7 +1369,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:39 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:13 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/volumeAttachments/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1296,22 +1386,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:13 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ilsfQm7c32hyN15Ap9UVYs8KI8aYil7EyBL543kol/ARQL1eFS358RbAzoXLshLvnU/diSE9x36bFwtP4bO3ST1W1vd/6qpCmxccbl2aa+dndPb1+mphg7rlAP53Tqicc9YOthhr5IQPjzjqrKiiDi9pmyTmCXjHsNmBqI1DJNTJWi1Kbn5UGeu9ui2femRx0t+jDAyRvNFVMYWmGsuYIHYto4PHBhZwgX4BgjUBdT3oNFdkYpW7NvleN2DA2Gxux3cA6SUXIcL8J3zddWOST+UuwAl0XK+z0F6MXD6ufqoiSu3pE1PJLux4qlitCa1Y1oWQiOWAN3sBPgYpx+7PCw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="goIsySUWnAWhhyYA4dGzZxdltQLSaoAH4d/axdFOd0P/M/a0rLtPVH/1y942K589Pqnouqn1lqwm7qRc/YP7pi81CdGhE4lD5HO8vphHjqgw+MwzjKi+qXCHy148D4mOe2PziT63lidg3GPA07IM6pIs/w0Wf2i7DBclphnk5weVpSzdByETX4tfW6WKnA4XFOM89LIlyuT6ltkCwZXVtcg/qNKBRDw6KHO4cwxhm0MkvWaM+9WMhpoiv//+NuqKkZX1WGw959PuDNV7clZtU1TDf0QNl04nLhK0P0zxKPQVa1ARyncRjaYqybHYVLzToqhkjW6ltuITdoI8nK9jVQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 602A99BEB7DA4AB8AA90A4BE78AB721D
+      - B43950F862D64870970CF6866BA7E5E9
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Opc-Request-Id:
-      - 602A99BEB7DA4AB8AA90A4BE78AB721D/8131696C004B581394675CF19F1F4E30/1065BAC6B87E051099CFE1C6FF2D0190
+      - B43950F862D64870970CF6866BA7E5E9/B54220900F0AE794D4145DCEAB405162/11C458E1A81D4BD793FB1AC246FE6A33
       Content-Type:
       - application/json
       Connection:
@@ -1324,7 +1414,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"attachmentType":"paravirtualized","availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","device":"/dev/oracleoci/oraclevdb","displayName":"volumeattachment20210302202008","id":"ocid1.volumeattachment.oc1.iad.anuwcljtw3enqvyc6mtrxxspqc3dnxzg3rrd5kqn42cw65s34n2ojyiir3za","instanceId":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","isReadOnly":false,"isShareable":false,"lifecycleState":"ATTACHED","timeCreated":"2021-03-02T20:20:09.265Z","volumeId":"ocid1.volume.oc1.iad.abuwcljtuksa3l3ws63kvbtjpbh4vlwude4hiaipht6raafofxo2jhi4z5zq","isPvEncryptionInTransitEnabled":false,"isMultipath":null,"iscsiLoginState":null,"encryptionInTransitType":null}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:39 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:14 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/volumeAttachments/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1341,22 +1431,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="WZw2FiaCg06VzxmsbKyR4eSivKEaTQOAN1eErRa3uOH2FETn/GLfH3kpEvEQ4dJig9rXa4UdmOJsFRPoF0usot1k5ck69BMMJiPM5Doa2LVpghDPmpdMgRgQ2w/Xf8619H6K2zxKfZ1lsSRZYCEAIH0a5w+0ePINmwY1USTJxj2nVmZa/9TaPgPxCesDjztCr5smEVq6PvxPQTZPRd+MlrOzy+z76iR7gnkgtzTZpjeDXEjvRiiLxDoUmCcgesWVkmhxhh2RnDVw+qN+CXcsii2+aILa6NJdnsrDpnVdgzLtf1f6ZWcCqKFnzbhMa6E9hmkwn+ZX/IgUwxQzu5m7+A==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="ik6UGQuBBGaygc2Nv0nrPt7YR7WObAxcy43zGPgrRJS1jqcnOA3mnMyL+g/MsYat3BJpWVYvjnMNvgcFbSqzlHy8AggGZdNpGL3qxQfZ3Hj2UUK8I4IccM3gF6V56dSfsS/2xOp443UPDeRIydzPwNQhVFHkJ2Ue4KdZMqSJS7MEoVT6z6IClUS/cD3I3CPksyJ5gApX/nNr5dx3UpQJ64A3LfqU/uOoaMZnCqm8Ih5FuxWt8VER8nOp+zrtiR+qMt5wIJIc5+zYEKthWMCFcKfyeHmGyOGMNZGWWcUbdQepGrFU/OIUkpkxGRtrsfFjqIUeAYMYcT/c1Z2iwoEElA==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 2C3D89B106024D66836F4508F8F7C252
+      - 1FB9C5894CF440A5B7AF88D71DEAB9A4
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Opc-Request-Id:
-      - 2C3D89B106024D66836F4508F8F7C252/FC766A4D2F36CED1354578E4AE76BDCB/39198A6E58AED94001897CD9F2E8097F
+      - 1FB9C5894CF440A5B7AF88D71DEAB9A4/48DA96B09984845D28DC781862C5A8AD/9BC634F2FBE714544E83FB277D292501
       Content-Type:
       - application/json
       Connection:
@@ -1369,7 +1459,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:39 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:14 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/subnets?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1386,22 +1476,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="BI6IDoVPVtZ3ZAjaKNiifik5sJY5X4qsUfuJAw2xVSBr5cYkPy0ZCevdIlEBhdfnS3sewDac0e3zKgbQORc5hNQSvXNej7CXMbCZ+ccMnueU1O4DC/4dHNA8C2bsR8MXQyP1Df1gllfrV518orf2WnydgsKoln7YsYzq/x23utvcqcRNHSy9uadZ1fsc5QaLcJPMN2gmKsIHto+i/skrenMCnZ+8tb+M2Z+i/gchA4rBJaoZoIL2medPyfo7pdTiA1liqWVLJoO+XOKabBO0voN9el9RmnJDmmcFqXGPSqbMn8feelbkqjK9i+LQKBt4OThQDaH3zHhy/YqxRNE93Q==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="V98qW/PUWAZdHWwvZixOU/bPppD6PMTWzvAn9repShDpFehN1QXTbbtVmGZZmp9/LCAb6oTTa5oYgIlrICncvjuJkfzqfBhq6wD9OU7Krl0YmxTisl7NCg+So5teSFXmEw8FlVTlqOwxu/g4avW3mi8CKWvtydy1dOJ21gI9h147pQ38WZ+aqjJ1o3R5ba6NdLLY1a4/n0NTfkwDZW0H1Y3b7916GvdFNbaXlMxSij3TH/hDkL4EkaoA/uvcINIML62BX7B/8LyZ6vnWugfEUNAPzHurgSMPP//3XyzuZmkXmRZLKsRrGO0b8gWr7bxfIdtiEPw4N7AIWZfx8yfTzg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 8E78261439984010994C5F36F7353702
+      - D71ECF42117E4C62812A5D4628692371
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Opc-Request-Id:
-      - 8E78261439984010994C5F36F7353702/E92BE5B95DBCC586B6C9A1236105CE1E/C59F925ECD9425448378ED73CABC5025
+      - D71ECF42117E4C62812A5D4628692371/75CBDE9C8AD690FF9EA10DDACA85E100/6D1BBA0B7A7C3DA1552D6A5793AE731B
       Content-Type:
       - application/json
       Connection:
@@ -1414,7 +1504,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"cidrBlock":"10.0.0.0/24","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-02-23T18:37:54.843Z"}},"dhcpOptionsId":"ocid1.dhcpoptions.oc1.iad.aaaaaaaamtzadideccxwlhthy72rsbnq462gtklxxytysfu7jj5j4tyysega","displayName":"subnet-20210223-1239","dnsLabel":"subnet02231337","freeformTags":{},"id":"ocid1.subnet.oc1.iad.aaaaaaaanmzazihpr74jpktyicjibszf3dyye4tho43nxemsixabsc7ugdqq","lifecycleState":"AVAILABLE","prohibitInternetIngress":false,"prohibitPublicIpOnVnic":false,"routeTableId":"ocid1.routetable.oc1.iad.aaaaaaaar3hyup262hdxbhuazuxvvqmz2luzxl6fuk6lvszsbctlqo3sfrtq","securityListIds":["ocid1.securitylist.oc1.iad.aaaaaaaaipwz6mh3e6qcaiso63d55mnkyll5yw2wifhoauwszzzs5hisjfmq"],"subnetDomainName":"subnet02231337.vcn02231337.oraclevcn.com","timeCreated":"2021-02-23T18:37:54.890Z","vcnId":"ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq","virtualRouterIp":"10.0.0.1","virtualRouterMac":"00:00:17:76:07:14"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:39 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:14 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/subnets?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1431,22 +1521,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="hf2A2oPaT1Ym7P/m1ZJj594WyEkJmKg7fE+kbzQwdRlPRJylb3X3Uyd24WfPlCb56XZvJA9u+hJEiGQ7lwRbi9oyvCM/I08ZLf/2oTPkSadQYgefuzsPgdOqcNjDdMK+xEgVs9Z9mPs1ReP77D9hbhTf92ud8CE7DtjINlJJ1SseFyZM6Axvht6Kjt2Ah1BE/+K6DW5HlIHBXZgY2I87+d/9JsbftBgOX5K58dobXsO5tl2c7vvt6BCWj3r9sUTdg/7KMgS5prssbiKsO448dWNeEj1M0zeqAGfiJIi5jkLjysn+qFgjGl5SEj0Qq/CXcRdWsDg04ntI37L2P5+WJQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="FfLec2TPA01Jx/YS3W6xNMUAjdge517hXhNwcAXaK43DWEICraRKkLGg1eg+NQSLD1wZaqRfux6GTgvNU7varQ1IYvFOKp+hmLxiKpj84hwaIepCQJC4Oh/hxdBf8G8VjkQXGSb6EkMj5uOvr9bagLOKd2my/Y0Ko8JIOX8X3ZZ0t6RiWu31AL1YtUx5TX9HWEZh/GuC+4rf3FNc8q2XO+wUU2LLEoKnv89LwYzAnEPx2+IPCA3RXxbH3kJRiU7uFADhtTg8dQN3/hOjNdaKQ0zQm5Z8BpBERa4/jvX+HDCJKtZe2WG7DEf6wSdEbGs9XBzLuLwIE8dCMn32f26a0g==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - CD1B68C0AAA346C49F2E2A8A9A531461
+      - '070496E49F354C628C59DAD7A9D8F99E'
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Opc-Request-Id:
-      - CD1B68C0AAA346C49F2E2A8A9A531461/41DCB229E8BA7D86E651CC7CB058D633/EEC3518B5B31FD73FE02FA64BFF8B2C2
+      - '070496E49F354C628C59DAD7A9D8F99E/C21B10A11FB96B879E3841A6472F8F9A/EA648CFC516A6533C97DA083F3D0D92B'
       Content-Type:
       - application/json
       Connection:
@@ -1459,7 +1549,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:39 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:14 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/vnicAttachments/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1476,22 +1566,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="MGU0250l3CmDp6ZSd+04JkW9V62IwyOfencvQpD8jq7nzpC31V8SBfq/DIEwcstrBjZPyZFp0VekZi2xpkFgGjvj/EbRG+FafxMFFfdXMDoW2P9XN2DFij1tHfeUqYv7MtOPZ6oSV8oHAKNlZbT+CwBg52rpsw+eaHABFHDhAiHpnCip3kQvLv8wfyDTSft5cpuuqsAooAIHgqN05apkeeS6R0vv26wxK0huODpsbfSfIutNzEkr0get9PUYbk/93lSaXIxhICpaBo6wbgBLw0NRHoaZxjEl8oLPmnMJU26Gxl0mgxTQY6/UEOdZTQB2TkCiLSPeOF7beW4SK5rPjw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Ofkkj9jdfWrQik2TiuTskiPbx4fWXu4pZuEmV5P9rao2w23KICWBNfb8MT0IIeEIb+BZhiSNIIzm4pZ3bT7qbylFPdJl5rL4s8DdfJKLbOgnaofjhG+2FnFLWsNKNCXPNLnBSx0d2AmAmQgKxLp9vIE+tgENBGGDkq494uXBs7BUQusvENcKf+SUsYZp7LV68MnwAbxZ3IaP0l8xjSl7Gj7t1dZ1lU3vAQjcdJZhUO5xGAYiNqbgqnOpMYfARmIvLe1amIDZVq7+2LQvKmHsJsNja2c+DYqibjNN2pvpcppZjAYGCPgIErMHEvum7oYG7LTRcNlF8b+y7cnoo37/Rw==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - BCC6A823E6D04730BC4F453895884C8B
+      - 6A731DCF63F04432AFC5ADF154DDE0C9
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:39 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Opc-Request-Id:
-      - BCC6A823E6D04730BC4F453895884C8B/E4BEEBB5BA9599865304B7917C619D28/BD84DDE9D3692F66F257B733DB3941E7
+      - 6A731DCF63F04432AFC5ADF154DDE0C9/EB0267A0FD6F066FD3BE4C8F51CABD97/C7464117C9B18963B8307423637099E2
       Content-Type:
       - application/json
       Connection:
@@ -1504,7 +1594,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","displayName":null,"id":"ocid1.vnicattachment.oc1.iad.anuwcljtw3enqvycc23dpb2jammgabapc6eysfyowmt7l6n5wzver74exo7a","instanceId":"ocid1.instance.oc1.iad.anuwcljtw3enqvycv47dx6ewcsmpjqzazpqxblsikzzkiw7ubhhgopqf3i3q","lifecycleState":"ATTACHED","nicIndex":0,"subnetId":"ocid1.subnet.oc1.iad.aaaaaaaanmzazihpr74jpktyicjibszf3dyye4tho43nxemsixabsc7ugdqq","vlanId":null,"timeCreated":"2021-02-23T18:38:11.025Z","vlanTag":3137,"vnicId":"ocid1.vnic.oc1.iad.abuwcljt5ddcgxptz6arjcdfpje74zydmpfrpqeg2kjkbwiax26rwo36nzfa"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:40 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:14 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/vnicAttachments/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1521,22 +1611,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:14 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="lAbobNswE0dOLYq84DKLwRQlxV8jVqaKR37NroMrUWZwYd4NTvyYQ7HVqUvlfWFJMuv79pVB4lG7plnIe2QAebg+VSvkOi3/rlLFR3dGN9fJEqPh3QjT34RLolruO45o1j6wyxbNYeoc58U4gFWAo6ELu4Z5JGnaJeFno9Op+9zPPhNq1S5lssC5BA8RsW8ntMWpkeUENQ0I3X8QzVby21k93dPcvfKBsfLSByQeRBS7wJbseazQNMgCLY1aWPn7JFJvXZhmANhf+2a5pgpxGD/yd6dWx1/bO2aJpMq6pleILuqmImfdz/Vlm0+lkJLGnK4QaF6MOiFhFjWQdz/3Qw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="nCODCcoJhQF8AamZ/LTx668dl65BKpYcWmjXP2JuW01vO2GllLMay3YRpxEuTM1Cr30XDqqJok6509PbR2X1k9TnuUEV16U9FM0QZH3l6sDwe6DSAKT/588KfVbcFXCHQebZLTq6MAl0/0+Z9FZOt7n/GjIiG2oe2j56XsSIN/PvaZ3pB8Y6tayBHF26+dNYJLgZE8Q1P3aCwz2rDlFTXkv/fMNluo/pL6M0pCxjageHo8SgjkUT3GZtquwCOJ3NOehl9iM9T7cmAsu1Rn4k2sHhDFtlqGiWqW5SoxIeXTfc4HlMP880f/YS5qrHVCy0BqH5/HzddFjsR4J7qz0BRg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 0D55C2E8C3F041C4A5D060287A7A5461
+      - AF9ADFF7B86C458FBD392B61D1FD62C5
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:15 GMT
       Opc-Request-Id:
-      - 0D55C2E8C3F041C4A5D060287A7A5461/9040AC130C7669633088F2F666FA8547/AF1E53C0A09EFD5F7480CA3C64490E73
+      - AF9ADFF7B86C458FBD392B61D1FD62C5/A5B671991269CF000F2EBF8926EBF12D/2D35A729AE90E16AD922B5676E055862
       Content-Type:
       - application/json
       Connection:
@@ -1549,7 +1639,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:40 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:15 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/vnics/ocid1.vnic.oc1.iad.abuwcljt5ddcgxptz6arjcdfpje74zydmpfrpqeg2kjkbwiax26rwo36nzfa
@@ -1566,24 +1656,24 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:15 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="gkONOJ7NPRbW/P5zp3BTM0G1jZu8ttCl/rpyTbG7w3V0WJ2FcF+CzOaY5S4KgDhu6dF6Iscxv79N8nxbbJg8X/+4ejAa7BSYzXQJmu5erVlK7WrYAC8NfjVVk6r01M9/2uOpL9ppcVzDdGw2TC0PJu75Jy57atQXE8U2i8JmDab9fzEXRy053vLpwo9dUDqXfnRcETY8mcXZHw6dlaPFcO36ljLitOypw9UFwCXu23rTJmDw6puyZBEp3YU+i2MUAxDegDXL91roeUSg6JCOe52TTVXbYL/xVvgrBlSpsEUSZmRq8x3/v3NoLyZC9sNC55NqxLu6uV2zzO+akPRVbQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="WhNJZtA64f+doZA2pS8+TMD7RI1Xp/H/g2LQHMzTATLmjptcDSt0yn+QFu/MU+5o5/KVqoyzIqN+hT4tgFT7F8ejBggKyJ9LKHrKZBpnxXPgyB5oqMU+t6m5cisIiYDVnMwdMDl6QQ3FifDU+soBuqvc1iMv8PbXSv+3DwNwSm9LJ94gqnOPsBKgUgFi/BAJtSNW2F8wX4hy8oEf2TUzuWiD930ZHatKo2sfxuKz1ZBbPJ9VRNQYoyhTS2cmLX9fcr1nPqdrAdfVy8lx2WFIiBa2RGKUyqUHQWkTMZ/NcQPwXqlB6U2DCbHREilnSyUGTqX+38yg7xhZ7ljkXvRyNQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - 994A15855CFC471E894D3FC5C4557AA3
+      - F3F4EED832634C2B9AF7EB5478601372
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:15 GMT
       Opc-Request-Id:
-      - 994A15855CFC471E894D3FC5C4557AA3/AE1816D71D90F14948B757038D1D4F8E/53F960C6F7E2D6ADFBADF381C1286563
+      - F3F4EED832634C2B9AF7EB5478601372/B2CD97F3063C3A1708C9CA04CCEA8ADB/E3A4C68BC5230AB0E7DB6E8CA37D53B9
       Etag:
-      - 28d1e655
+      - 3bf69196
       Connection:
       - keep-alive
       Content-Type:
@@ -1596,7 +1686,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-02-23T18:38:00.683Z"}},"displayName":"instance-20210223-1239","freeformTags":{},"hostnameLabel":"instance-20210223-1239","id":"ocid1.vnic.oc1.iad.abuwcljt5ddcgxptz6arjcdfpje74zydmpfrpqeg2kjkbwiax26rwo36nzfa","isPrimary":true,"lifecycleState":"AVAILABLE","macAddress":"02:00:17:09:70:43","nsgIds":[],"privateIp":"10.0.0.2","publicIp":"150.136.153.71","skipSourceDestCheck":false,"subnetId":"ocid1.subnet.oc1.iad.aaaaaaaanmzazihpr74jpktyicjibszf3dyye4tho43nxemsixabsc7ugdqq","timeCreated":"2021-02-23T18:38:10.756Z"}'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:40 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:15 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/vcns?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1613,22 +1703,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:15 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="anvg9mUHItxd5BgbgXRc1k8fk/2UuqhjEgbWR0DU/NM7dFJIe31Q2mVEjvOWSHc61soZUfobN6otG4IxetFgSYVVkUcgCed19QhPBnQ0GM4vUsf1mBjosJi4B2mvsDKjzfiWDaV7VG7sprdirxvPjffK89v7hMlJvsIGvFComUHnBi0y5wAinibyC9BJVYaDfATe0JMYY5CZ0q24eZGGSXB+s8eqhKobPJ4arYp4SbUjtNdrXVE8JwFxx+RRBk+dOJYQ4YHAi0qsjHrh0zCO/xTba7x4IGcTJYPgXw0qnecsJa/QBFVAm2b5hZpwC+PzZXnq+D3w9fihLXLPRs3FKg==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="P+5Gykjbk4jBHqZgrvh+Ec9sIUNr99akJyvTKQD+ND7sS6Pup+RnajgPC5SNRWjeZNDM/nDnoW3xLK22y2gyx762+/T/Pppor9gT9J/f5pBsi2y1DpbJX+qSqYhEyFuaHn4RG++hUJWQsIaqHkIyIHgD94N2d3yzmeYy5YLxE1zNyq4+S7elTPmbEb8Q/DrAbYckQa+53ixRJBDZmXhC0OB4vpntnr8V35wNdL3K0SZzScDAcdZPPRFnGrNyG5Zg6SXDDGkpgZ/bouTL9wdDEjkrWe+ubxzHYvK+Jn1c3iLqi6jFC3RffV5e3tlkFSm9GId2grdUXA9NV2V+bKAfjQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - CE366A1F7E7D4ABE9185DBAD94DF8909
+      - 81193A103B604100901D37FFD4F6B7BB
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Opc-Request-Id:
-      - CE366A1F7E7D4ABE9185DBAD94DF8909/AAE9EBD6ECD7E3F5B82FAEBB010AECA3/01590E26FA0BDFA50AADADB929CD5F5D
+      - 81193A103B604100901D37FFD4F6B7BB/04404E716DDB9DF39A12FF98542E4630/2975363D7D051931B0BDF07DED3BFA32
       Content-Type:
       - application/json
       Connection:
@@ -1641,7 +1731,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"cidrBlock":"10.0.0.0/16","cidrBlocks":["10.0.0.0/16"],"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","defaultDhcpOptionsId":"ocid1.dhcpoptions.oc1.iad.aaaaaaaamtzadideccxwlhthy72rsbnq462gtklxxytysfu7jj5j4tyysega","defaultRouteTableId":"ocid1.routetable.oc1.iad.aaaaaaaar3hyup262hdxbhuazuxvvqmz2luzxl6fuk6lvszsbctlqo3sfrtq","defaultSecurityListId":"ocid1.securitylist.oc1.iad.aaaaaaaaipwz6mh3e6qcaiso63d55mnkyll5yw2wifhoauwszzzs5hisjfmq","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-02-23T18:37:53.226Z"}},"displayName":"vcn-20210223-1239","dnsLabel":"vcn02231337","freeformTags":{},"id":"ocid1.vcn.oc1.iad.amaaaaaaw3enqvya24pw6a2kqhuwllzk5447qch6cdemiqvxdlnahagepodq","lifecycleState":"AVAILABLE","timeCreated":"2021-02-23T18:37:53.307Z","vcnDomainName":"vcn02231337.oraclevcn.com"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:40 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:16 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/vcns?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1658,22 +1748,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:40 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="l6g34E9MueIKcEvGbQE0z7uJ+boAD/RlmTszk+iB0INoms+AiqiKVmcWfrnSFsZaqHgCrOJzOPodQXPqY19yUExSIS4oKX8kyi7gIubvEanh//0oYWfdlJBbPBHRRZKtUhEe8QzeOjjzWnz2nNlLEWiPtuOyDMYOCxnB5TdKG9QwLyTW291YS/uS2zRTc8pgjMGrom2uZUxt4j0ABx7QW4kx+7f18mCgYVGh7pllMu37+v+lhhcTan5gnzgv7BQBRA4S0Ix59UT71pWIYtVFxorArhys2JjJULuxt+29B5w1QVWLcVvBfkDVwFQiIzpW+JRBWiRRR7JZ4iajEwv7CQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Vdrl9q+hQyuPYR6sDQBsuZ3whzZncjVrEhs7sH+eft0hupTS3nkhpBP8DudlIAr8RedX/8PN3Fb/yvBkKm1UEb0tRiXUlJafm03ELlXtQ4VPiug2iDbyXMfiAl2UePV2gKJM8N9WtGq7FzRVIt0iYs+6x1PFlXI5ujyWGWCghwq2rIbDJRhSDztsCrcjSs0upmQ5aV1MYwGLGergJUZx7WebvfRskhWOesIvqRr4iRqrkgAlF+7JSi2W9c4gpcqNoJAoJmhtdCka4k5PdDB2LjypU7zDudrvHgWkxWvBk7W4hqCumIHrtnufnL4OpYB5/RQiabSDRogoZY8yS4ZQKg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - E66162E2C1584C4A8B6826052A03FE2D
+      - 0AC08EDA825447A5BDFA0FF3E1F91A80
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:41 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Opc-Request-Id:
-      - E66162E2C1584C4A8B6826052A03FE2D/6AFB3DEDC95B15DC0FC5B40CE674B3D5/D839016D38BCDED0A686C35C2D164810
+      - 0AC08EDA825447A5BDFA0FF3E1F91A80/446E412CCEFF68360463533751C81E85/5919D5F7F85D5D0479AB50F8AC5BED1F
       Content-Type:
       - application/json
       Connection:
@@ -1686,7 +1776,7 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:41 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:16 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/volumes?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
@@ -1703,22 +1793,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:41 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="LTfov4U9Xivn6niB7mJ6bvLLpA+GD/KhnCC2lH+Q1up/kXBivuP5trxObZubasLYSYfsLcYfKt/4XqGu/TRy+HdEXBzrnfCnxSmrMagEMSt0NyQqSwpDxnkAD0Y0DaSkLe8yls9vpcQ9yu1lTMOE8prdywnuto55gJGDuVQrzac12IK3A92GHPzxfnVY7G0ago5l20ZedxT6ln0A/+PXfAoFdNsWyH0nnG1gIrZ9KFY5X8MjE1Swbekn2G5p3KabA6pnllLvrSm2yYeu9intVtBPaWncHpb+1SgtwfIw0AOkBmLWsAYTgBxb0QzCFNl7c/xIBAUC98TDqHPgzJB6lQ==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="WNtQI/z1brX1k6H7UCxWDDe9bSOkG9EAL9cwJvtW+yqbsq6BTQY+2LpILREimrEW6ZKyRegj/f5P5x0wtkOqRsx9h9djJLX0dPOjHlAODyKIq4pAV7/jPbeOFXuFGO2ENzOW+MuBnaT+OOEJ9MRCMaCU4FjU5EIUxJBNPH89SbYZV8magBCmuUFO3r6J80pOxxivL+m5R+sVucCRTH8rrAmcOhEt6FKiUGDL2kKe26lg67JbJvU+7aVy/N1ln3BmGLrchcR0jGmQ/Pac/Vai5nKiZ2TDn2K/rKA+s5JeN+8nX/WpEn4Z0nq1NVEZLqHSup6ejW7eLo8pqub4WSUbYQ==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - ADE9C3606685418687ABC8BFB23641FE
+      - 79E1C524E3E240E59C3A2CE401E8CF3D
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:41 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Opc-Request-Id:
-      - ADE9C3606685418687ABC8BFB23641FE/7B00EA75358AC1A9A70C2A8C4E3982A8/A61E59314CFD2469660D3E23E7758A97
+      - 79E1C524E3E240E59C3A2CE401E8CF3D/0AE99E607F407C932E58FFBF0480C257/8AB8C842DA382CAC2510FA2DED288925
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -1729,7 +1819,7 @@ http_interactions:
       encoding: UTF-8
       string: '[{"availabilityDomain":"Foha:US-ASHBURN-AD-3","compartmentId":"ocid1.tenancy.oc1..aaaaaaaa","definedTags":{"Oracle-Tags":{"CreatedBy":"oracleidentitycloudservice/accounts@manageiq.org","CreatedOn":"2021-03-02T20:19:34.315Z"}},"displayName":"miq-volume","freeformTags":{},"systemTags":{"orcl-cloud":{"free-tier-retained":"true"}},"id":"ocid1.volume.oc1.iad.abuwcljtuksa3l3ws63kvbtjpbh4vlwude4hiaipht6raafofxo2jhi4z5zq","isHydrated":true,"kmsKeyId":null,"lifecycleState":"AVAILABLE","vpusPerGB":10,"sizeInGBs":50,"sizeInMBs":51200,"sourceDetails":null,"timeCreated":"2021-03-02T20:19:34.565Z","volumeGroupId":null,"isAutoTuneEnabled":false,"autoTunedVpusPerGB":null,"blockVolumeReplicas":null,"volumeType":"FULL"}]'
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:41 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:16 GMT
 - request:
     method: get
     uri: https://iaas.us-ashburn-1.oraclecloud.com/20160918/volumes?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
@@ -1746,22 +1836,22 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Aug 2021 18:56:41 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Authorization:
-      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="Oc4QJ+8mURvYHHbLY+poxZ5BSeR2IQ8YVlu3WgX5X7ixnBHOo+0mZ/XI++fwrzYzoGKw+BTYc8nHNJpEUIvOAi4QSD+sxSnerzrR6nqGI7qNBaK4R4hTDblDtycRCh9d/gZsep6XXHPj19d7CKLEO04Je1Tu7R9Al9TtEDXAKdfbZs7BEaYobE0M7VbgQCLlQvd1BHxdFF9JzCjCYPLCy7Iqz0odh1IdqLi0REZC9b3hUcNou2YolthgD1Y3n4UJGBufiOReSbM32SbxXAWOb9zZVoRjWxuwGrgnQMPd2mQO/4i57D+1TtL6EK4RlQB/1JGg/3GIK+aEWb52Ky94iw==",version="1"
+      - Signature headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa/ocid1.user.oc1..aaaaaaaa/e4:64:e7:31:9b:da:fc:78:05:bb:7c:47:65:1e:c8:66",algorithm="rsa-sha256",signature="H+SctSMlkowjGlP72OLBWD/djs5bgtK//gj8C/CCRiqu1MUvjQy/fsXCi/Sjab8fjEzezTTwm9D08H2SZbN4bNrlHhrlCOP8NOrLhvTWYgS9ENwkfcNRcqUyGQiRa5rQjglT0a6Gizo2hB5C1BPf/cVAM3p5qImQBMacDoBrvRZa63n1LxSN3l3LPKu1LRKyiJzyKyqcNzRV/mWbwYfnELTmx6gXsJalD0B7uWiVvRmfGch5ta+Ls2wZOUWZAHWNeDcVp7obLdfe+ysrRnUej1rZHWnOccEK/Tq/QTYKwESh5pmf92DchAHbTp+KCbu1lq3SfEZddIErBkDxJoH+dg==",version="1"
       Opc-Client-Info:
       - Oracle-RubySDK/2.15.0
       Opc-Request-Id:
-      - B08BF87F55034FC3A25E3F650D9CBDD5
+      - 1435DAF98C144395BA001A6E2C30F067
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Fri, 13 Aug 2021 18:56:41 GMT
+      - Fri, 13 Aug 2021 19:23:16 GMT
       Opc-Request-Id:
-      - B08BF87F55034FC3A25E3F650D9CBDD5/413AEA84277E6B98704FAB999281D9A1/3FD3294CB93DAB85C8FD204C2874A90F
+      - 1435DAF98C144395BA001A6E2C30F067/6EC0AAB8060216A4427FB3B0E943C2FA/5288C12D24094CE7CF1E731DEE74D07C
       Content-Type:
       - application/json
       X-Content-Type-Options:
@@ -1772,5 +1862,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: null
-  recorded_at: Fri, 13 Aug 2021 18:56:41 GMT
+  recorded_at: Fri, 13 Aug 2021 19:23:16 GMT
 recorded_with: VCR 5.1.0

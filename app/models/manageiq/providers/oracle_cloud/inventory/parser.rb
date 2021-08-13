@@ -52,13 +52,22 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
   end
 
   def databases
-    collector.autonomous_databases.each do |database|
+    collector.oracle_databases.each do |database|
       persister.cloud_databases.build(
         :ems_ref      => database.id,
         :name         => database.db_name,
         :cloud_tenant => persister.cloud_tenants.lazy_find(database.compartment_id),
         :db_engine    => "Oracle Database #{database.db_version}",
         :used_storage => database.data_storage_size_in_gbs&.gigabytes
+      )
+    end
+
+    collector.mysql_databases.each do |database|
+      persister.cloud_databases.build(
+        :ems_ref      => database.id,
+        :name         => database.display_name,
+        :cloud_tenant => persister.cloud_tenants.lazy_find(database.compartment_id),
+        :db_engine    => "MySQL #{database.mysql_version}"
       )
     end
   end
