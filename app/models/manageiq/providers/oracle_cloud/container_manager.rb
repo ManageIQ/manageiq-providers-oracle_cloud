@@ -9,6 +9,24 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
   require_nested :Refresher
   require_nested :RefreshWorker
 
+  def connect_options(options = {})
+    options.merge(
+      :hostname    => options[:hostname] || address,
+      :port        => options[:port] || port,
+      :bearer      => bearer_token(options[:auth_type]),
+      :http_proxy  => self.options ? self.options.fetch_path(:proxy_settings, :http_proxy) : nil,
+      :ssl_options => options[:ssl_options] || {
+        :verify_ssl => verify_ssl_mode,
+        :cert_store => ssl_cert_store
+      }
+    )
+  end
+
+  def bearer_token(auth_type)
+    authentication = authentication_best_fit(auth_type || "bearer")
+    self.class.bearer_token(realm, authentication.userid, authentication.auth_key, authentication.public_key, provider_region, uid_ems)
+  end
+
   class << self
     def ems_type
       @ems_type ||= "oke".freeze
@@ -44,7 +62,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
       bearer = bearer_token(tenant, user, private_key, public_key, region, cluster_id)
 
       options = {
-        :bearer => bearer,
+        :bearer      => bearer,
         :ssl_options => {
           :verify_ssl => OpenSSL::SSL::VERIFY_NONE
         }
@@ -52,8 +70,6 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
 
       !!raw_connect(hostname, port, options)
     end
-
-    private
 
     def bearer_token(tenant, user, private_key, public_key, region, cluster_id)
       config                  = oci_config(tenant, user, private_key, public_key, region)
@@ -74,6 +90,8 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
 
       Base64.urlsafe_encode64(url.to_s)
     end
+
+    private
 
     def oci_config(tenant, user, private_key, public_key, region)
       require "oci"
