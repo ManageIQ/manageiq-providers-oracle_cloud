@@ -12,10 +12,11 @@ VCR.configure do |config|
   config.ignore_hosts 'codeclimate.com' if ENV['CI']
   config.cassette_library_dir = File.join(ManageIQ::Providers::OracleCloud::Engine.root, 'spec/vcr_cassettes')
 
-  config.define_cassette_placeholder(Rails.application.secrets.oracle_cloud_defaults[:user_id]) do
-    Rails.application.secrets.oracle_cloud[:user_id]
+  secrets = Rails.application.secrets
+  secrets.oracle_cloud.each do |key, val|
+    config.define_cassette_placeholder(secrets.oracle_cloud_defaults[key]) { val }
   end
-  config.define_cassette_placeholder(Rails.application.secrets.oracle_cloud_defaults[:tenant_id]) do
-    Rails.application.secrets.oracle_cloud[:tenant_id]
+  secrets.oracle_oke.each do |key, val|
+    config.define_cassette_placeholder(secrets.oracle_oke_defaults[key]) { val }
   end
 end
