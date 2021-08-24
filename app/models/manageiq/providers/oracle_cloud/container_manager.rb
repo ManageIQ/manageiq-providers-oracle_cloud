@@ -9,8 +9,6 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
   require_nested :Refresher
   require_nested :RefreshWorker
 
-  include ManageIQ::Providers::OracleCloud::ManagerMixin
-
   class << self
     def ems_type
       @ems_type ||= "oke".freeze
@@ -33,8 +31,32 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
       }
     end
 
+    def verify_credentials(args)
+      region, tenant, cluster_id = args.values_at("provider_region", "realm", "uid_ems")
+
+      default_endpoint = args.dig("endpoints", "default")
+      hostname, port = default_endpoint&.values_at("hostname", "port")
+
+      default_authentication = args.dig("authentications", "default")
+      user, private_key, public_key = default_authentication&.values_at("userid", "auth_key", "public_key")
+      private_key ||= find(args["id"]).authentication_token("default")
+
+      bearer = bearer_token(tenant, user, private_key, public_key, region, cluster_id)
+
+      options = {
+        :bearer => bearer,
+        :ssl_options => {
+          :verify_ssl => OpenSSL::SSL::VERIFY_NONE
+        }
+      }
+
+      !!raw_connect(hostname, port, options)
+    end
+
+    private
+
     def bearer_token(tenant, user, private_key, public_key, region, cluster_id)
-      config                  = raw_connect(tenant, user, private_key, public_key, region)
+      config                  = oci_config(tenant, user, private_key, public_key, region)
       container_engine_client = OCI::ContainerEngine::ContainerEngineClient.new(:config => config)
 
       # Prepare a signed request
@@ -51,6 +73,25 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
       url.query = params.to_query
 
       Base64.urlsafe_encode64(url.to_s)
+    end
+
+    def oci_config(tenant, user, private_key, public_key, region)
+      require "oci"
+
+      # Strip out any "----- BEGIN/END PUBLIC KEY -----" lines
+      public_key.gsub!(/-----(BEGIN|END) PUBLIC KEY-----/, "")
+      # Build a key fingerprint e.g. aa:bb:cc:dd:ee...
+      fingerprint = Digest::MD5.hexdigest(Base64.decode64(public_key)).scan(/../).join(":")
+
+      config = OCI::Config.new
+
+      config.user        = user
+      config.tenancy     = tenant
+      config.key_content = ManageIQ::Password.try_decrypt(private_key)
+      config.fingerprint = fingerprint
+      config.region      = region
+
+      config
     end
   end
 end
