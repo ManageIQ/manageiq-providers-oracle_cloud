@@ -1,4 +1,5 @@
 class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Providers::Inventory::Collector
+  require_nested :ContainerManager
   require_nested :CloudManager
   require_nested :NetworkManager
   require_nested :TargetCollection
