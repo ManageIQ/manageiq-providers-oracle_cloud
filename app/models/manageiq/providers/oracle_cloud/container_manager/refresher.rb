@@ -1,5 +1,5 @@
 module ManageIQ::Providers
-  module Oracle
+  module OracleCloud
     class ContainerManager::Refresher < ManageIQ::Providers::BaseManager::Refresher
     end
   end
