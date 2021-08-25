@@ -9,6 +9,8 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
   require_nested :Refresher
   require_nested :RefreshWorker
 
+  include ManageIQ::Providers::OracleCloud::OciConnectMixin
+
   def connect_options(options = {})
     options.merge(
       :hostname    => options[:hostname] || address,
@@ -89,27 +91,6 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
       url.query = params.to_query
 
       Base64.urlsafe_encode64(url.to_s)
-    end
-
-    private
-
-    def oci_config(tenant, user, private_key, public_key, region)
-      require "oci"
-
-      # Strip out any "----- BEGIN/END PUBLIC KEY -----" lines
-      public_key.gsub!(/-----(BEGIN|END) PUBLIC KEY-----/, "")
-      # Build a key fingerprint e.g. aa:bb:cc:dd:ee...
-      fingerprint = Digest::MD5.hexdigest(Base64.decode64(public_key)).scan(/../).join(":")
-
-      config = OCI::Config.new
-
-      config.user        = user
-      config.tenancy     = tenant
-      config.key_content = ManageIQ::Password.try_decrypt(private_key)
-      config.fingerprint = fingerprint
-      config.region      = region
-
-      config
     end
   end
 end

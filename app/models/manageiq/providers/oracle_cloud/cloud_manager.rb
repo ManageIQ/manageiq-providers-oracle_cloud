@@ -12,7 +12,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   require_nested :Template
   require_nested :Vm
 
-  include ManageIQ::Providers::OracleCloud::ManagerMixin
+  include ManageIQ::Providers::OracleCloud::OciConnectMixin
 
   supports :metrics
   supports :regions
@@ -22,6 +22,39 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   def ensure_network_manager
     build_network_manager(:type => 'ManageIQ::Providers::OracleCloud::NetworkManager') unless network_manager
+  end
+
+  def connect(options = {})
+    auth_type = options.delete(:auth_type)
+
+    authentication = authentication_best_fit(auth_type)
+    config = self.class.raw_connect(
+      uid_ems,
+      authentication.userid,
+      authentication.auth_key,
+      authentication.public_key,
+      provider_region
+    )
+
+    service = options.delete(:service)
+    if service
+      api_client_klass = "OCI::#{service}".safe_constantize
+      raise ArgumentError, _("Invalid service") if api_client_klass.nil?
+
+      api_client_klass.new(options.reverse_merge(:config => config))
+    else
+      config
+    end
+  end
+
+  def verify_credentials(auth_type = nil, _options = {})
+    begin
+      connect(:service => "Identity::IdentityClient").get_user(authentication_userid(auth_type))
+    rescue => err
+      raise MiqException::MiqInvalidCredentialsError, err.message
+    end
+
+    true
   end
 
   def self.hostname_required?
@@ -106,6 +139,23 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
         }
       ]
     }
+  end
+
+  def self.verify_credentials(args)
+    region, tenant = args.values_at("provider_region", "uid_ems")
+
+    default_endpoint = args.dig("authentications", "default")
+    user, private_key, public_key = default_endpoint&.values_at("userid", "auth_key", "public_key")
+
+    private_key ||= find(args["id"]).authentication_token("default")
+
+    config = raw_connect(tenant, user, private_key, public_key, region)
+    identity_api = OCI::Identity::IdentityClient.new(:config => config)
+    !!identity_api.get_user(user)
+  end
+
+  def self.raw_connect(tenant, user, private_key, public_key, region)
+    oci_config(tenant, user, private_key, public_key, region)
   end
 
   private_class_method def self.provider_region_options

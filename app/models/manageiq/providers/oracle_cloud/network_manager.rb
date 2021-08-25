@@ -3,8 +3,6 @@ class ManageIQ::Providers::OracleCloud::NetworkManager < ManageIQ::Providers::Ne
   require_nested :NetworkPort
   require_nested :Refresher
 
-  include ManageIQ::Providers::OracleCloud::ManagerMixin
-
   # Auth and endpoints delegations, editing of this type of manager must be disabled
   delegate :authentication_check,
            :authentication_status,
