@@ -25,13 +25,13 @@ FactoryBot.define do
   end
 
   factory :ems_oracle_oke_with_vcr_authentication, :parent => :ems_oracle_oke do
-    realm { Rails.application.secrets.oracle_oke[:tenant_id] }
+    realm { Rails.application.secrets.oracle_cloud[:tenant_id] }
     uid_ems { Rails.application.secrets.oracle_oke[:cluster_id] }
 
     after(:create) do |ems|
-      user_id     = Rails.application.secrets.oracle_oke[:user_id]
-      private_key = Rails.application.secrets.oracle_oke[:private_key]
-      public_key  = Rails.application.secrets.oracle_oke[:public_key]
+      user_id     = Rails.application.secrets.oracle_cloud[:user_id]
+      private_key = Rails.application.secrets.oracle_cloud[:private_key]
+      public_key  = Rails.application.secrets.oracle_cloud[:public_key]
 
       ems.default_endpoint.update!(
         :hostname          => Rails.application.secrets.oracle_oke[:hostname],
