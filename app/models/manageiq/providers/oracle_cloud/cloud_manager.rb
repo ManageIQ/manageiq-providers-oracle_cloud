@@ -20,6 +20,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   before_create :ensure_managers
   before_update :ensure_managers_zone_and_provider_region
 
+  validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
+
   def ensure_network_manager
     build_network_manager(:type => 'ManageIQ::Providers::OracleCloud::NetworkManager') unless network_manager
   end
@@ -80,7 +82,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
           :isRequired   => true,
           :validate     => [{:type => "required"}],
           :includeEmpty => true,
-          :options      => provider_region_options
+          :options      => ManageIQ::Providers::OracleCloud::Regions.regions_for_options
         },
         {
           :component  => "text-field",
@@ -157,15 +159,6 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   def self.raw_connect(tenant, user, private_key, public_key, region)
     oci_config(tenant, user, private_key, public_key, region)
   end
-
-  private_class_method def self.provider_region_options
-    ManageIQ::Providers::OracleCloud::Regions
-      .all
-      .sort_by { |r| r[:name].downcase }
-      .map { |r| {:label => r[:name], :value => r[:name]} }
-  end
-
-  validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
 
   def allow_targeted_refresh?
     true
