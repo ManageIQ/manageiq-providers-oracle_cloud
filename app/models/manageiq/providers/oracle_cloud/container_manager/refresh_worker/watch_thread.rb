@@ -5,7 +5,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager::RefreshWorker::WatchTh
     # Since we have to reconnect with a new bearer token we can't simply save the
     # connect_options for reconnecting.  We have to save the info that we need
     # to request a new bearer token from Oracle Cloud.
-    connect_options = {
+    oci_connect_options = {
       :hostname    => ems.address,
       :port        => ems.port,
       :tenant_id   => ems.realm,
@@ -18,7 +18,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager::RefreshWorker::WatchTh
       :private_key => auth.auth_key
     }
 
-    new(connect_options, ems.class, queue, entity_type, resource_version).tap(&:start!)
+    new(oci_connect_options, ems.class, queue, entity_type, resource_version).tap(&:start!)
   end
 
   def connection(_entity_type = nil)
