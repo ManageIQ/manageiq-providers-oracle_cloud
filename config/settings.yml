@@ -10,6 +10,11 @@
 :ems_refresh:
   :oracle_cloud:
     :refresh_interval: 15.minutes
+  :oke:
+    :streaming_refresh: true
+    :chunk_size: 1_000
+    :inventory_collections:
+      :saver_strategy: batch
 :http_proxy:
   :oracle_cloud:
     :host:
@@ -21,8 +26,11 @@
     :event_catcher:
       :event_catcher_oracle_cloud:
         :poll: 20.seconds
+      :event_catcher_oracle_oke:
+        :poll: 20.seconds
     :queue_worker_base:
       :ems_metrics_collector_worker:
         :ems_metrics_collector_worker_oracle_cloud: {}
       :ems_refresh_worker:
         :ems_refresh_worker_oracle_cloud: {}
+        :ems_refresh_worker_oracle_oke: {}

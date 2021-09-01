@@ -40,6 +40,10 @@ module ManageIQ
         regions.values.index_by { |v| v[:hostname] }
       end
 
+      def self.regions_for_options
+        all.sort_by { |r| r[:name].downcase }.map { |r| {:label => r[:name], :value => r[:name]} }
+      end
+
       def self.all
         regions.values
       end
