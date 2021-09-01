@@ -14,21 +14,16 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
   validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
 
   def connect_options(options = {})
-    options.merge(
-      :hostname    => options[:hostname] || address,
-      :port        => options[:port] || port,
-      :bearer      => bearer_token(options[:auth_type]),
-      :http_proxy  => self.options ? self.options.fetch_path(:proxy_settings, :http_proxy) : nil,
-      :ssl_options => options[:ssl_options] || {
-        :verify_ssl => verify_ssl_mode,
-        :cert_store => ssl_cert_store
-      }
-    )
-  end
+    authentication = authentication_best_fit(options.fetch(:auth_type, "bearer"))
 
-  def bearer_token(auth_type)
-    authentication = authentication_best_fit(auth_type || "bearer")
-    self.class.bearer_token(realm, authentication.userid, authentication.auth_key, authentication.public_key, provider_region, uid_ems)
+    super.merge(
+      :tenant      => realm,
+      :user        => authentication.userid,
+      :private_key => authentication.auth_key,
+      :public_key  => authentication.public_key,
+      :region      => provider_region,
+      :cluster_id  => uid_ems
+    )
   end
 
   class << self
@@ -46,6 +41,12 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
 
     def default_port
       6443
+    end
+
+    def kubernetes_auth_options(options)
+      {
+        :bearer_token => bearer_token(*options.values_at(:tenant, :user, :private_key, :public_key, :region, :cluster_id))
+      }
     end
 
     def params_for_create
@@ -186,18 +187,22 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
       region, tenant, cluster_id = args.values_at("provider_region", "realm", "uid_ems")
 
       default_endpoint = args.dig("endpoints", "default")
-      hostname, port = default_endpoint&.values_at("hostname", "port")
+      hostname, port, security_protocol, certificate_authority = default_endpoint&.values_at("hostname", "port", "security_protocol", "certificate_authority")
 
       default_authentication = args.dig("authentications", "bearer")
       user, private_key, public_key = default_authentication&.values_at("userid", "auth_key", "public_key")
       private_key ||= find(args["id"]).authentication_token("default")
 
-      bearer = bearer_token(tenant, user, private_key, public_key, region, cluster_id)
-
       options = {
-        :bearer      => bearer,
+        :tenant      => tenant,
+        :user        => user,
+        :private_key => private_key,
+        :public_key  => public_key,
+        :region      => region,
+        :cluster_id  => cluster_id,
         :ssl_options => {
-          :verify_ssl => OpenSSL::SSL::VERIFY_NONE
+          :verify_ssl            => security_protocol == "ssl-without-validation" ? OpenSSL::SSL::VERIFY_NONE : OpenSSL::SSL::VERIFY_PEER,
+          :certificate_authority => certificate_authority
         }
       }
 
