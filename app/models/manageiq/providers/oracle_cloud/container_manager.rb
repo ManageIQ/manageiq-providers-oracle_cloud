@@ -13,7 +13,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
 
   validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
 
-  support :create
+  supports :create
 
   def connect_options(options = {})
     authentication = authentication_best_fit(options.fetch(:auth_type, "bearer"))
