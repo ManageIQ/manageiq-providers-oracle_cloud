@@ -14,6 +14,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   include ManageIQ::Providers::OracleCloud::OciConnectMixin
 
+  supports :create
   supports :metrics
   supports :regions
 
