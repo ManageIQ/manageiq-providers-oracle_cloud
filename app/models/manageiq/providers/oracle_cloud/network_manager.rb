@@ -1,5 +1,6 @@
 class ManageIQ::Providers::OracleCloud::NetworkManager < ManageIQ::Providers::NetworkManager
   require_nested :CloudNetwork
+  require_nested :LoadBalancer
   require_nested :NetworkPort
   require_nested :Refresher
 

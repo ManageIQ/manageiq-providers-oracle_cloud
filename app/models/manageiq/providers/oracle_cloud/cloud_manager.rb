@@ -1,6 +1,7 @@
 class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::CloudManager
   require_nested :AvailabilityZone
   require_nested :CloudDatabase
+  require_nested :CloudTenant
   require_nested :CloudVolume
   require_nested :EventCatcher
   require_nested :EventParser
