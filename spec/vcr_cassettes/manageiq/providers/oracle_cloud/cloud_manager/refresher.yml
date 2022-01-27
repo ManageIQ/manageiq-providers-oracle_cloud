@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/compartments/ocid1.tenancy.oc1..aaaaaaaa
+    uri: https://identity.us-ashburn-1.oci.oraclecloud.com/20160918/compartments/ocid1.tenancy.oc1..aaaaaaaa
     body:
       encoding: US-ASCII
       string: ''
@@ -51,7 +51,7 @@ http_interactions:
   recorded_at: Fri, 13 Aug 2021 19:23:00 GMT
 - request:
     method: get
-    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/compartments/?accessLevel=ANY&compartmentId=ocid1.tenancy.oc1..aaaaaaaa&compartmentIdInSubtree=true
+    uri: https://identity.us-ashburn-1.oci.oraclecloud.com/20160918/compartments/?accessLevel=ANY&compartmentId=ocid1.tenancy.oc1..aaaaaaaa&compartmentIdInSubtree=true
     body:
       encoding: US-ASCII
       string: ''
@@ -100,7 +100,7 @@ http_interactions:
   recorded_at: Fri, 13 Aug 2021 19:23:00 GMT
 - request:
     method: get
-    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
+    uri: https://identity.us-ashburn-1.oci.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa
     body:
       encoding: US-ASCII
       string: ''
@@ -147,7 +147,7 @@ http_interactions:
   recorded_at: Fri, 13 Aug 2021 19:23:01 GMT
 - request:
     method: get
-    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
+    uri: https://identity.us-ashburn-1.oci.oraclecloud.com/20160918/availabilityDomains/?compartmentId=ocid1.compartment.oc1..aaaaaaaaxjfejit7hoixj4wq3nki5p6xubbqzxugrryrt4qdyt6abx566hgq
     body:
       encoding: US-ASCII
       string: ''
