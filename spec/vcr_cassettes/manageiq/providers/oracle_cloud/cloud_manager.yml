@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://identity.us-ashburn-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaa
+    uri: https://identity.us-ashburn-1.oci.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaa
     body:
       encoding: US-ASCII
       string: ''
