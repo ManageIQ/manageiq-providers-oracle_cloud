@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.com/ManageIQ/manageiq-providers-oracle_cloud.svg?branch=master)](https://travis-ci.com/github/ManageIQ/manageiq-providers-oracle_cloud)
 [![Maintainability](https://api.codeclimate.com/v1/badges/<badge_token>/maintainability)](https://codeclimate.com/github/ManageIQ/manageiq-providers-oracle_cloud/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/<badge_token>/test_coverage)](https://codeclimate.com/github/ManageIQ/manageiq-providers-oracle_cloud/test_coverage)
-[![Security](https://hakiri.io/github/ManageIQ/manageiq-providers-oracle_cloud/master.svg)](https://hakiri.io/github/ManageIQ/manageiq-providers-oracle_cloud/master)
 
 [![Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ManageIQ/manageiq-providers-oracle_cloud?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
