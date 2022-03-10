@@ -15,7 +15,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
 
   include ManageIQ::Providers::OracleCloud::OciConnectMixin
 
-  validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
+  validates_inclusion_of :provider_region, :in => ->(_) { ManageIQ::Providers::OracleCloud::Regions.names }
 
   supports :create
 
