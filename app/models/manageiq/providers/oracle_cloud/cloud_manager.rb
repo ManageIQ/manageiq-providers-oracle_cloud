@@ -22,7 +22,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   before_create :ensure_managers
   before_update :ensure_managers_zone_and_provider_region
 
-  validates :provider_region, :inclusion => {:in => ManageIQ::Providers::OracleCloud::Regions.names}
+  validates_inclusion_of :provider_region, :in => ->(_) { ManageIQ::Providers::OracleCloud::Regions.names }
 
   def ensure_network_manager
     build_network_manager(:type => 'ManageIQ::Providers::OracleCloud::NetworkManager') unless network_manager
