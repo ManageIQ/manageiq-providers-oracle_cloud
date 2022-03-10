@@ -1,0 +1,83 @@
+---
+ap-chuncheon-1:
+  :name: ap-chuncheon-1
+ap-hyderabad-1:
+  :name: ap-hyderabad-1
+ap-melbourne-1:
+  :name: ap-melbourne-1
+ap-mumbai-1:
+  :name: ap-mumbai-1
+ap-osaka-1:
+  :name: ap-osaka-1
+ap-seoul-1:
+  :name: ap-seoul-1
+ap-sydney-1:
+  :name: ap-sydney-1
+ap-tokyo-1:
+  :name: ap-tokyo-1
+ca-montreal-1:
+  :name: ca-montreal-1
+ca-toronto-1:
+  :name: ca-toronto-1
+eu-amsterdam-1:
+  :name: eu-amsterdam-1
+eu-frankfurt-1:
+  :name: eu-frankfurt-1
+eu-zurich-1:
+  :name: eu-zurich-1
+me-jeddah-1:
+  :name: me-jeddah-1
+me-dubai-1:
+  :name: me-dubai-1
+sa-saopaulo-1:
+  :name: sa-saopaulo-1
+uk-cardiff-1:
+  :name: uk-cardiff-1
+uk-london-1:
+  :name: uk-london-1
+us-ashburn-1:
+  :name: us-ashburn-1
+us-phoenix-1:
+  :name: us-phoenix-1
+us-sanjose-1:
+  :name: us-sanjose-1
+sa-vinhedo-1:
+  :name: sa-vinhedo-1
+sa-santiago-1:
+  :name: sa-santiago-1
+il-jerusalem-1:
+  :name: il-jerusalem-1
+eu-marseille-1:
+  :name: eu-marseille-1
+ap-singapore-1:
+  :name: ap-singapore-1
+me-abudhabi-1:
+  :name: me-abudhabi-1
+eu-milan-1:
+  :name: eu-milan-1
+eu-stockholm-1:
+  :name: eu-stockholm-1
+af-johannesburg-1:
+  :name: af-johannesburg-1
+us-langley-1:
+  :name: us-langley-1
+us-luke-1:
+  :name: us-luke-1
+us-gov-ashburn-1:
+  :name: us-gov-ashburn-1
+us-gov-chicago-1:
+  :name: us-gov-chicago-1
+us-gov-phoenix-1:
+  :name: us-gov-phoenix-1
+uk-gov-london-1:
+  :name: uk-gov-london-1
+uk-gov-cardiff-1:
+  :name: uk-gov-cardiff-1
+ap-chiyoda-1:
+  :name: ap-chiyoda-1
+ap-ibaraki-1:
+  :name: ap-ibaraki-1
+me-dcc-muscat-1:
+  :name: me-dcc-muscat-1
+ap-dcc-canberra-1:
+  :name: ap-dcc-canberra-1
