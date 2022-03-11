@@ -42,6 +42,13 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
     service = options.delete(:service)
     if service
+      # OCI service classes have a top-level class which requires all of the
+      # dependent models and API Clients so if you want e.g. OCI::Events::EventsClient
+      # you would require "oci/events/events"
+      oci_klass   = service.split("::").first&.underscore
+      oci_require = options.delete(:require) || "oci/#{oci_klass}/#{oci_klass}"
+      require oci_require
+
       api_client_klass = "OCI::#{service}".safe_constantize
       raise ArgumentError, _("Invalid service") if api_client_klass.nil?
 
@@ -154,7 +161,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
     private_key ||= find(args["id"]).authentication_token("default")
 
     config = raw_connect(tenant, user, private_key, public_key, region)
+
+    require "oci/identity/identity"
     identity_api = OCI::Identity::IdentityClient.new(:config => config)
+
     !!identity_api.get_user(user)
   end
 

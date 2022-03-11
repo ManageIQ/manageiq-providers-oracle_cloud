@@ -216,6 +216,7 @@ class ManageIQ::Providers::OracleCloud::ContainerManager < ManageIQ::Providers::
     end
 
     def bearer_token(tenant, user, private_key, public_key, region, cluster_id)
+      require "oci/container_engine/container_engine"
       config                  = oci_config(tenant, user, private_key, public_key, region)
       container_engine_client = OCI::ContainerEngine::ContainerEngineClient.new(:config => config)
 

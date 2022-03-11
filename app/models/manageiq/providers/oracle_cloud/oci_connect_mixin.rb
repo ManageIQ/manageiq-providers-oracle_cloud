@@ -3,7 +3,9 @@ module ManageIQ::Providers::OracleCloud::OciConnectMixin
 
   module ClassMethods
     def oci_config(tenant, user, private_key, public_key, region)
-      require "oci"
+      require "oci/common"
+      require "oci/auth/auth"
+      require "oci/object_storage/object_storage" # The core OCI::Response checks for OCI::ObjectStorage::ListObjects
 
       # Strip out any "----- BEGIN/END PUBLIC KEY -----" lines
       public_key.gsub!(/-----(BEGIN|END) PUBLIC KEY-----/, "")

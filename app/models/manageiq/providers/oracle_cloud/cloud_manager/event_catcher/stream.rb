@@ -13,6 +13,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
   end
 
   def poll
+    require "oci/streaming/streaming"
+
     # First create the target kafka topic that we will subscribe to
     stream = find_or_create_stream!
 
@@ -63,6 +65,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream
     all_rules = events_client.list_rules(compartment_id).data
     manageiq_events_rule = all_rules.select { |rule| rule.lifecycle_state == "ACTIVE" }.detect { |rule| rule.display_name == "manageiq-events" }
     return manageiq_events_rule if manageiq_events_rule.present?
+
+    require "oci/events/events"
 
     result = events_client.create_rule(
       OCI::Events::Models::CreateRuleDetails.new(
