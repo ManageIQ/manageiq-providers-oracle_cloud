@@ -1,5 +1,6 @@
 class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDatabase
   supports :create
+  supports :delete
 
   def self.params_for_create(ems)
     {
@@ -163,5 +164,28 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
         )
       )
     end
+  end
+
+  def raw_delete_cloud_database
+    check_database_type == :oracle ? delete_oracle_database : delete_mysql_database
+  rescue => err
+    _log.error("cloud database=[#{name}], error: #{err}")
+    raise
+  end
+
+  def delete_oracle_database
+    with_provider_connection(:service => 'Database::DatabaseClient') do |connection|
+      connection.delete_autonomous_database(ems_ref)
+    end
+  end
+
+  def delete_mysql_database
+    with_provider_connection(:service => 'Mysql::DbSystemClient') do |connection|
+      connection.delete_db_system(ems_ref)
+    end
+  end
+
+  def check_database_type
+    db_engine.include?("Oracle Database") ? :oracle : :mysql
   end
 end
