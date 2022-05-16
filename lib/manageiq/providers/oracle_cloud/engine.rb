@@ -11,6 +11,14 @@ module ManageIQ
           app.config.paths["config/secrets"] << root.join("config", "secrets.yml").to_s
         end
 
+        def self.init_loggers
+          $oracle_log ||= Vmdb::Loggers.create_logger("oracle.log")
+        end
+
+        def self.apply_logger_config(config)
+          Vmdb::Loggers.apply_config_value(config, $oracle_log, :level_oracle)
+        end
+
         def self.vmdb_plugin?
           true
         end

@@ -17,6 +17,7 @@ module ManageIQ::Providers::OracleCloud::OciConnectMixin
       config.key_content = ManageIQ::Password.try_decrypt(private_key)
       config.fingerprint = fingerprint
       config.region      = region
+      config.logger      = $oracle_log
 
       config
     end

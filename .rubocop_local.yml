@@ -1,0 +1,5 @@
+Style/GlobalVars:
+  AllowedVariables:
+  # Loggers
+  - $oracle_log
+  - $log
