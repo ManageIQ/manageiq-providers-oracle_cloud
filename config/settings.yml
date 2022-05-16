@@ -23,6 +23,8 @@
     :password:
     :port:
     :user:
+:log:
+  :level_oracle: info
 :workers:
   :worker_base:
     :event_catcher:
