@@ -1,6 +1,7 @@
 class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDatabase
   supports :create
   supports :delete
+  supports :update
 
   def self.params_for_create(ems)
     {
@@ -162,6 +163,46 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :subnet_id           => subnet_id,
           :availability_domain => options[:availability_domain]
         )
+      )
+    end
+  end
+
+  def params_for_update
+    {
+      :fields => [
+        {
+          :component => 'text-field',
+          :id        => 'name',
+          :name      => 'name',
+          :label     => _('Rename Cloud Database'),
+        }
+      ],
+    }
+  end
+
+  def raw_update_cloud_database(options)
+    check_database_type == :oracle ? update_oracle_database(options) : update_mysql_database(options)
+  rescue => err
+    _log.error("cloud database=[#{name}], error: #{err}")
+    raise
+  end
+
+  def update_oracle_database(options)
+    with_provider_connection(:service => 'Database::DatabaseClient') do |connection|
+      connection.update_autonomous_database(
+        ems_ref,
+        OCI::Database::Models::UpdateAutonomousDatabaseDetails.new(
+          :display_name => options[:name]
+        )
+      )
+    end
+  end
+
+  def update_mysql_database(options)
+    with_provider_connection(:service => 'Mysql::DbSystemClient') do |connection|
+      connection.update_db_system(
+        ems_ref,
+        OCI::Mysql::Models::UpdateDbSystemDetails.new(:display_name => options[:name])
       )
     end
   end
