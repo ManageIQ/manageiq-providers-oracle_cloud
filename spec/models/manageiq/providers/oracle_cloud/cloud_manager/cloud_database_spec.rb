@@ -7,19 +7,19 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
     FactoryBot.create(:cloud_database_oracle, :ext_management_system => ems, :name => "test-db", :db_engine => db_engine)
   end
 
-  describe 'oracle cloud database actions' do
-    let(:connection) do
-      double("OCI::Database::DatabaseClient")
-    end
-
-    before do
-      allow(ems).to receive(:with_provider_connection).and_yield(connection)
-    end
-
-    let(:db_engine) { "Oracle Database" }
-
-    context '#create_oracle_database' do
+  describe "#create_database" do
+    context "with an oracle database" do
       require 'oci/database/database'
+
+      let(:connection) do
+        double("OCI::Database::DatabaseClient")
+      end
+
+      let(:db_engine) { "Oracle Database" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
+      end
 
       it 'creates an Oracle database' do
         expect(connection).to receive(:create_autonomous_database).with(OCI::Database::Models::CreateAutonomousDatabaseDetails.new(
@@ -40,40 +40,21 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
       end
     end
 
-    context '#delete_oracle_database' do
-      it 'deletes the Oracle database' do
-        expect(connection).to receive(:delete_autonomous_database).with(cloud_database.ems_ref)
-        cloud_database.delete_cloud_database
-      end
-    end
-
-    context '#update_oracle_database' do
-      it 'updates the Oracle database' do
-        expect(connection).to receive(:update_autonomous_database).with(
-          cloud_database.ems_ref,
-          OCI::Database::Models::UpdateAutonomousDatabaseDetails.new(:display_name => "test-db123")
-        )
-        cloud_database.update_cloud_database({:name => "test-db123"})
-      end
-    end
-  end
-
-  describe 'mysql cloud database actions' do
-    let(:connection) do
-      double("OCI::Mysql::DbSystemClient")
-    end
-
-    before do
-      allow(ems).to receive(:with_provider_connection).and_yield(connection)
-    end
-
-    let(:db_engine) { "MySQL" }
-
-    context '#create_mysql_database' do
+    context "with a MySQL database" do
       require 'oci/mysql/mysql'
+
+      let(:connection) do
+        double("OCI::Mysql::DbSystemClient")
+      end
 
       let(:cloud_subnet) do
         FactoryBot.create(:cloud_subnet_oracle)
+      end
+
+      let(:db_engine) { "MySQL" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
       end
 
       it 'creates a MySQL database' do
@@ -97,21 +78,86 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
                                                              :availability_domain => "Foha:US-ASHBURN-AD-1"})
       end
     end
+  end
 
-    context '#delete_mysql_database' do
-      it 'deletes the MySQL database' do
-        expect(connection).to receive(:delete_db_system).with(cloud_database.ems_ref)
-        cloud_database.delete_cloud_database
+  describe "#update_database" do
+    context "with an oracle database" do
+      require 'oci/database/database'
+
+      let(:connection) do
+        double("OCI::Database::DatabaseClient")
+      end
+
+      let(:db_engine) { "Oracle Database" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
+      end
+
+      it 'updates the Oracle database' do
+        expect(connection).to receive(:update_autonomous_database).with(
+          cloud_database.ems_ref,
+          OCI::Database::Models::UpdateAutonomousDatabaseDetails.new(:display_name => "test-db123")
+        )
+        cloud_database.update_cloud_database({:name => "test-db123"})
       end
     end
 
-    context '#update_mysql_database' do
+    context "with a MySQL database" do
+      require 'oci/mysql/mysql'
+
+      let(:connection) do
+        double("OCI::Mysql::DbSystemClient")
+      end
+
+      let(:db_engine) { "MySQL" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
+      end
+
       it 'updates the MySQL database' do
         expect(connection).to receive(:update_db_system).with(
           cloud_database.ems_ref,
           OCI::Mysql::Models::UpdateDbSystemDetails.new(:display_name => "test-db123")
         )
         cloud_database.update_cloud_database({:name => "test-db123"})
+      end
+    end
+  end
+
+  describe "#delete_database" do
+    context "with an oracle database" do
+      let(:connection) do
+        double("OCI::Database::DatabaseClient")
+      end
+
+      let(:db_engine) { "Oracle Database" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
+      end
+
+      it 'deletes the Oracle database' do
+        expect(connection).to receive(:delete_autonomous_database).with(cloud_database.ems_ref)
+        cloud_database.delete_cloud_database
+      end
+    end
+
+    context "with a MySQL database" do
+      let(:connection) do
+        double("OCI::Mysql::DbSystemClient")
+      end
+
+      let(:db_engine) { "MySQL" }
+
+      before do
+        allow(ems).to receive(:with_provider_connection).and_yield(connection)
+      end
+
+      it 'deletes the MySQL database' do
+        expect(connection).to receive(:delete_db_system).with(cloud_database.ems_ref)
+        cloud_database.delete_cloud_database
       end
     end
   end
