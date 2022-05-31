@@ -21,5 +21,11 @@ module ManageIQ::Providers::OracleCloud::OciConnectMixin
 
       config
     end
+
+    def oci_proxy_settings
+      return if http_proxy.nil?
+
+      OCI::ApiClientProxySettings.new(http_proxy[:host], http_proxy[:port], http_proxy[:user], http_proxy[:password])
+    end
   end
 end
