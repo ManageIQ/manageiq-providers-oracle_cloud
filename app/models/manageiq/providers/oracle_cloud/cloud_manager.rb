@@ -42,7 +42,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
       api_client_klass = "OCI::#{service}".safe_constantize
       raise ArgumentError, _("Invalid service") if api_client_klass.nil?
 
-      api_client_klass.new(options.reverse_merge(:config => config))
+      api_client_klass.new(options.reverse_merge(:config => config, :proxy_settings => self.class.oci_proxy_settings))
     else
       config
     end
@@ -151,7 +151,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
     private_key ||= find(args["id"]).authentication_token("default")
 
     config = raw_connect(tenant, user, private_key, public_key, region)
-    identity_api = OCI::Identity::IdentityClient.new(:config => config)
+    identity_api = OCI::Identity::IdentityClient.new(:config => config, :proxy_settings => oci_proxy_settings)
     !!identity_api.get_user(user)
   end
 
