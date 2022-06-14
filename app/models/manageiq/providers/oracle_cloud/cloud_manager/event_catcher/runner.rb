@@ -28,8 +28,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
 
   private
 
-  attr_reader   :ems
-  attr_accessor :event_stream
+  attr_reader :ems, :event_stream
 
   def parse_event(event)
     ManageIQ::Providers::OracleCloud::CloudManager::EventParser.event_to_hash(event, ems_id)
@@ -40,11 +39,11 @@ class ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Runner < Man
   end
 
   def ensure_event_stream
-    self.event_stream ||= ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream.new(ems)
+    @event_stream ||= ManageIQ::Providers::OracleCloud::CloudManager::EventCatcher::Stream.new(ems)
   end
 
   def reset_event_stream
-    self.event_stream = nil
+    @event_stream = nil
   end
 
   def ems_id
