@@ -19,6 +19,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :label        => _('Database Type'),
           :includeEmpty => true,
           :isRequired   => true,
+          :validate     => [{:type => 'required'}],
           :options      => ['oracle', 'mysql'].map do |db|
             {
               :label => db,
@@ -33,6 +34,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :label        => _('Availability Domain'),
           :includeEmpty => true,
           :isRequired   => true,
+          :validate     => [{:type => 'required'}],
           :options      => ems.availability_zones.map do |az|
             {
               :label => az.name,
@@ -46,6 +48,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :name       => 'compartment_id',
           :label      => _('Compartment ID'),
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
         },
         {
           :component  => 'text-field',
@@ -53,6 +56,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :name       => 'username',
           :label      => _('Admin Username'),
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
           :condition  => {
             :when => 'database',
             :is   => 'mysql',
@@ -64,6 +68,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :name       => 'password',
           :label      => _('Admin Password'),
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
         },
         {
           :component  => 'text-field',
@@ -71,6 +76,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :name       => 'shape_name',
           :label      => _('Database Shape Name'),
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
           :condition  => {
             :when => 'database',
             :is   => 'mysql',
@@ -83,6 +89,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :label        => _('Cloud Subnet'),
           :includeEmpty => true,
           :isRequired   => true,
+          :validate     => [{:type => 'required'}],
           :condition    => {
             :when => 'database',
             :is   => 'mysql',
@@ -102,6 +109,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :type       => 'number',
           :step       => 1,
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
           :condition  => {
             :when => 'database',
             :is   => 'oracle',
@@ -115,6 +123,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :type       => 'number',
           :step       => 1,
           :isRequired => true,
+          :validate   => [{:type => 'required'}],
           :condition  => {
             :when => 'database',
             :is   => 'oracle',
