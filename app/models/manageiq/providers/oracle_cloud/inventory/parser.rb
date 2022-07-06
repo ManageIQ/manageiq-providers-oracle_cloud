@@ -54,9 +54,12 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
 
   def databases
     collector.oracle_databases.each do |database|
+      next if database.lifecycle_state == "DELETED"
+
       persister.cloud_databases.build(
         :ems_ref      => database.id,
         :name         => database.db_name,
+        :status       => normalize_db_status(database.lifecycle_state),
         :cloud_tenant => persister.cloud_tenants.lazy_find(database.compartment_id),
         :db_engine    => "Oracle Database #{database.db_version}",
         :used_storage => database.data_storage_size_in_gbs&.gigabytes
@@ -64,12 +67,34 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
     end
 
     collector.mysql_databases.each do |database|
+      next if database.lifecycle_state == "DELETED"
+
       persister.cloud_databases.build(
         :ems_ref      => database.id,
         :name         => database.display_name,
+        :status       => normalize_db_status(database.lifecycle_state),
         :cloud_tenant => persister.cloud_tenants.lazy_find(database.compartment_id),
         :db_engine    => "MySQL #{database.mysql_version}"
       )
+    end
+  end
+
+  def normalize_db_status(lifecycle_state)
+    case lifecycle_state
+    when "PROVISIONING", "CREATING"
+      "initializing"
+    when "ACTIVE", "AVAILABLE", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS",
+         "UPDATING", "UPGRADING"
+      "available"
+    when "AVAILABLE_NEEDS_ATTENTION", "RESTORE_FAILED", "FAILED"
+      "unhealthy"
+    when "INACTIVE", "STOPPING", "STOPPED", "TERMINATING", "TERMINATED",
+         "UNAVAILABLE", "RESTORE_IN_PROGRESS", "MAINTENANCE_IN_PROGRESS",
+         "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "INACCESSIBLE",
+         "DELETING"
+      "unavailable"
+    else
+      "unknown"
     end
   end
 
