@@ -179,6 +179,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::Refresher do
       cloud_database = ems.cloud_databases.find_by(:ems_ref => "ocid1.autonomousdatabase.oc1.iad.anuwcljsw3enqvya6pxc43uemcy2zx7purn64fimk5euwq4kmfwlqasvsmga")
       expect(cloud_database).to have_attributes(
         :name         => "DB202108131402",
+        :status       => "available",
         :db_engine    => "Oracle Database 19c",
         :used_storage => 20.gigabytes,
         :type         => "ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase",
