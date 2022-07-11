@@ -31,12 +31,12 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
                                                                           :compartment_id           => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq"
                                                                         ))
 
-        cloud_database.class.raw_create_cloud_database(ems, {:name           => cloud_database.name,
-                                                             :compartment_id => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq",
-                                                             :database       => "oracle",
-                                                             :password       => "test123",
-                                                             :cpu_cores      => 1,
-                                                             :storage        => 1})
+        cloud_database.class.raw_create_cloud_database(ems, {"name"           => cloud_database.name,
+                                                             "compartment_id" => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq",
+                                                             "database"       => "oracle",
+                                                             "password"       => "test123",
+                                                             "cpu_cores"      => 1,
+                                                             "storage"        => 1})
       end
     end
 
@@ -68,14 +68,14 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
                                                                 :compartment_id      => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq"
                                                               ))
 
-        cloud_database.class.raw_create_cloud_database(ems, {:name                => cloud_database.name,
-                                                             :compartment_id      => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq",
-                                                             :database            => "mysql",
-                                                             :username            => "user123",
-                                                             :password            => "test123",
-                                                             :shape_name          => "MySQL.VM.Standard.E3.1.8GB",
-                                                             :subnet              => cloud_subnet.id.to_s,
-                                                             :availability_domain => "Foha:US-ASHBURN-AD-1"})
+        cloud_database.class.raw_create_cloud_database(ems, {"name"                => cloud_database.name,
+                                                             "compartment_id"      => "ocid1.tenancy.oc1..aaaaaaaag6mtonzmundadix23pw4ygwkha3bu3yenzryclsvblo5tg2qadrq",
+                                                             "database"            => "mysql",
+                                                             "username"            => "user123",
+                                                             "password"            => "test123",
+                                                             "shape_name"          => "MySQL.VM.Standard.E3.1.8GB",
+                                                             "subnet"              => cloud_subnet.id.to_s,
+                                                             "availability_domain" => "Foha:US-ASHBURN-AD-1"})
       end
     end
   end
@@ -99,7 +99,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
           cloud_database.ems_ref,
           OCI::Database::Models::UpdateAutonomousDatabaseDetails.new(:display_name => "test-db123")
         )
-        cloud_database.update_cloud_database({:name => "test-db123"})
+        cloud_database.update_cloud_database({"name" => "test-db123"})
       end
     end
 
@@ -121,7 +121,7 @@ describe ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase do
           cloud_database.ems_ref,
           OCI::Mysql::Models::UpdateDbSystemDetails.new(:display_name => "test-db123")
         )
-        cloud_database.update_cloud_database({:name => "test-db123"})
+        cloud_database.update_cloud_database({"name" => "test-db123"})
       end
     end
   end

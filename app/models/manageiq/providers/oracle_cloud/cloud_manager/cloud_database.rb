@@ -38,7 +38,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
           :options      => ems.availability_zones.map do |az|
             {
               :label => az.name,
-              :value => az.id.to_s
+              :value => az.name
             }
           end,
         },
@@ -134,9 +134,9 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
   end
 
   def self.raw_create_cloud_database(ext_management_system, options)
-    options[:database] == 'oracle' ? create_oracle_database(ext_management_system, options) : create_mysql_database(ext_management_system, options)
+    options["database"] == 'oracle' ? create_oracle_database(ext_management_system, options) : create_mysql_database(ext_management_system, options)
   rescue => err
-    _log.error("cloud database=[#{options[:name]}], error: #{err}")
+    _log.error("cloud database=[#{options["name"]}], error: #{err}")
     raise
   end
 
@@ -146,12 +146,12 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
     ext_management_system.with_provider_connection(:service => 'Database::DatabaseClient') do |connection|
       connection.create_autonomous_database(
         OCI::Database::Models::CreateAutonomousDatabaseDetails.new(
-          :db_name                  => options[:name],
-          :display_name             => options[:name],
-          :admin_password           => options[:password],
-          :cpu_core_count           => options[:cpu_cores],
-          :data_storage_size_in_tbs => options[:storage],
-          :compartment_id           => options[:compartment_id]
+          :db_name                  => options["name"],
+          :display_name             => options["name"],
+          :admin_password           => options["password"],
+          :cpu_core_count           => options["cpu_cores"],
+          :data_storage_size_in_tbs => options["storage"],
+          :compartment_id           => options["compartment_id"]
         )
       )
     end
@@ -160,17 +160,17 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
   def self.create_mysql_database(ext_management_system, options)
     require 'oci/mysql/mysql'
 
-    subnet_id = ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet.find(options[:subnet]).ems_ref
+    subnet_id = ManageIQ::Providers::OracleCloud::NetworkManager::CloudSubnet.find(options["subnet"]).ems_ref
     ext_management_system.with_provider_connection(:service => 'Mysql::DbSystemClient') do |connection|
       connection.create_db_system(
         OCI::Mysql::Models::CreateDbSystemDetails.new(
-          :display_name        => options[:name],
-          :admin_username      => options[:username],
-          :admin_password      => options[:password],
-          :compartment_id      => options[:compartment_id],
-          :shape_name          => options[:shape_name],
+          :display_name        => options["name"],
+          :admin_username      => options["username"],
+          :admin_password      => options["password"],
+          :compartment_id      => options["compartment_id"],
+          :shape_name          => options["shape_name"],
           :subnet_id           => subnet_id,
-          :availability_domain => options[:availability_domain]
+          :availability_domain => options["availability_domain"]
         )
       )
     end
@@ -201,7 +201,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
       connection.update_autonomous_database(
         ems_ref,
         OCI::Database::Models::UpdateAutonomousDatabaseDetails.new(
-          :display_name => options[:name]
+          :display_name => options["name"]
         )
       )
     end
@@ -211,7 +211,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager::CloudDatabase < ::CloudDat
     with_provider_connection(:service => 'Mysql::DbSystemClient') do |connection|
       connection.update_db_system(
         ems_ref,
-        OCI::Mysql::Models::UpdateDbSystemDetails.new(:display_name => options[:name])
+        OCI::Mysql::Models::UpdateDbSystemDetails.new(:display_name => options["name"])
       )
     end
   end
