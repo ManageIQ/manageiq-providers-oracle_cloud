@@ -34,7 +34,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :name              => boot_volume.display_name,
         :size              => boot_volume.size_in_mbs.megabytes,
         :status            => boot_volume.lifecycle_state,
-        :availability_zone => persister.availability_zones.lazy_find({:name => boot_volume.availability_domain}, {:ref => :by_name}),
+        :availability_zone => persister.availability_zones.lazy_find({:name => boot_volume.availability_domain}, :ref => :by_name),
         :cloud_tenant      => persister.cloud_tenants.lazy_find(boot_volume.compartment_id)
       )
     end
@@ -149,7 +149,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :flavor            => persister.flavors.lazy_find(instance.shape),
         :genealogy_parent  => persister.miq_templates.lazy_find(instance.image_id),
         :cloud_tenant      => persister.cloud_tenants.lazy_find(instance.compartment_id),
-        :availability_zone => persister.availability_zones.lazy_find({:name => instance.availability_domain}, {:ref => :by_name})
+        :availability_zone => persister.availability_zones.lazy_find({:name => instance.availability_domain}, :ref => :by_name)
       )
 
       hardware = persister.hardwares.build(
@@ -244,7 +244,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Parser < ManageIQ::Providers:
         :name              => volume.display_name,
         :size              => volume.size_in_mbs.megabytes,
         :status            => volume.lifecycle_state,
-        :availability_zone => persister.availability_zones.lazy_find({:name => volume.availability_domain}, {:ref => :by_name}),
+        :availability_zone => persister.availability_zones.lazy_find({:name => volume.availability_domain}, :ref => :by_name),
         :cloud_tenant      => persister.cloud_tenants.lazy_find(volume.compartment_id)
       )
     end

@@ -45,7 +45,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
       api_client_klass = "OCI::#{service}".safe_constantize
       raise ArgumentError, _("Invalid service") if api_client_klass.nil?
 
-      api_client_klass.new(options.reverse_merge(:config => config, :proxy_settings => self.class.oci_proxy_settings))
+      api_client_klass.new(**options.reverse_merge(:config => config, :proxy_settings => self.class.oci_proxy_settings))
     else
       config
     end
