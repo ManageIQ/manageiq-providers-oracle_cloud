@@ -8,6 +8,8 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
   require_nested :Flavor
   require_nested :MetricsCapture
   require_nested :MetricsCollectorWorker
+  require_nested :ProvisionWorkflow
+  require_nested :Provision
   require_nested :Refresher
   require_nested :RefreshWorker
   require_nested :Template
@@ -17,6 +19,7 @@ class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::Clou
 
   supports :create
   supports :metrics
+  supports :provisioning
   supports :regions
 
   before_create :ensure_managers
