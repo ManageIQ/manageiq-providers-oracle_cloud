@@ -23,7 +23,10 @@ class ManageIQ::Providers::OracleCloud::CloudManager::Provision < ManageIQ::Prov
       :display_name        => dest_name,
       :image_id            => source.ems_ref,
       :shape               => instance_type.ems_ref,
-      :subnet_id           => cloud_subnet.ems_ref
+      :subnet_id           => cloud_subnet.ems_ref,
+      :metadata            => {
+        "ssh_authorized_keys" => ssh_public_key
+      }
     }
   end
 
@@ -53,5 +56,9 @@ class ManageIQ::Providers::OracleCloud::CloudManager::Provision < ManageIQ::Prov
 
   def cloud_tenant
     @cloud_tenant ||= CloudTenant.find_by(:id => get_option(:cloud_tenant))
+  end
+
+  def ssh_public_key
+    @ssh_public_key ||= get_option(:ssh_public_key)
   end
 end

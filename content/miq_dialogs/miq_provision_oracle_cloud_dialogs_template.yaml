@@ -287,6 +287,12 @@
           :required: true
           :display: :edit
           :data_type: :integer
+        :ssh_public_key:
+          :description: SSH Public Key
+          :required_method: :validate_placement
+          :required: true
+          :display: :edit
+          :data_type: :string
       :display: :show
     :customize:
       :description: Customize
