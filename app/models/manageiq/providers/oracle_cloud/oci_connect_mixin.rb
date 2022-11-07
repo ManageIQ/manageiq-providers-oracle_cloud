@@ -7,7 +7,14 @@ module ManageIQ::Providers::OracleCloud::OciConnectMixin
 
       # Strip out any "----- BEGIN/END PUBLIC KEY -----" lines
       public_key.gsub!(/-----(BEGIN|END) PUBLIC KEY-----/, "")
+
       # Build a key fingerprint e.g. aa:bb:cc:dd:ee...
+      #
+      # For an SSH public key fingerprint the MD5 algorithm has to be used other
+      # algorithms like SHA1 will result in a fingerprint format error.
+      #
+      # See https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm#four
+      # for details on the format of the key fingerprint that Oracle is expecting.
       fingerprint = Digest::MD5.hexdigest(Base64.decode64(public_key)).scan(/../).join(":")
 
       config = OCI::Config.new
