@@ -1,4 +1,5 @@
 class ManageIQ::Providers::OracleCloud::CloudManager::Vm < ManageIQ::Providers::CloudManager::Vm
+  supports :capture
   supports_not :suspend
   supports :terminate do
     unsupported_reason_add(:terminate, unsupported_reason(:control)) unless supports?(:control)
