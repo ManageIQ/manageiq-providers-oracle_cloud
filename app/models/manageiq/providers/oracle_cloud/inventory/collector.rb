@@ -12,7 +12,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def boot_volumes
     @boot_volumes ||= availability_domains.flat_map do |availability_domain|
-      blockstorage_client.list_boot_volumes(availability_domain.name, availability_domain.compartment_id).data
+      blockstorage_client.list_boot_volumes(:availability_domain => availability_domain.name, :compartment_id => availability_domain.compartment_id).data
     end
   end
 
@@ -105,7 +105,7 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def volumes
     @volumes ||= compartments.flat_map do |compartment|
-      blockstorage_client.list_volumes(compartment.id).data
+      blockstorage_client.list_volumes(:compartment_id => compartment.id).data
     end
   end
 
