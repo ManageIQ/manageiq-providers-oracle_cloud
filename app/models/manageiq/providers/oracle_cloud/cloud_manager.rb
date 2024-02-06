@@ -1,20 +1,4 @@
 class ManageIQ::Providers::OracleCloud::CloudManager < ManageIQ::Providers::CloudManager
-  require_nested :AvailabilityZone
-  require_nested :CloudDatabase
-  require_nested :CloudTenant
-  require_nested :CloudVolume
-  require_nested :EventCatcher
-  require_nested :EventParser
-  require_nested :Flavor
-  require_nested :MetricsCapture
-  require_nested :MetricsCollectorWorker
-  require_nested :ProvisionWorkflow
-  require_nested :Provision
-  require_nested :Refresher
-  require_nested :RefreshWorker
-  require_nested :Template
-  require_nested :Vm
-
   include ManageIQ::Providers::OracleCloud::OciConnectMixin
 
   supports :create
