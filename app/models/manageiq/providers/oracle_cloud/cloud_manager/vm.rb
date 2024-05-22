@@ -1,12 +1,13 @@
 class ManageIQ::Providers::OracleCloud::CloudManager::Vm < ManageIQ::Providers::CloudManager::Vm
   supports :capture
   supports_not :suspend
-  supports :terminate do
-    unsupported_reason_add(:terminate, unsupported_reason(:control)) unless supports?(:control)
-  end
+  supports(:terminate) { unsupported_reason(:control) }
   supports :reboot_guest do
-    unsupported_reason_add(:reboot_guest, unsupported_reason(:control)) unless supports?(:control)
-    unsupported_reason_add(:reboot_guest, _("The VM is not powered on")) unless current_state == "on"
+    if current_state == "on"
+      _("The VM is not powered on")
+    else
+      unsupported_reason(:control)
+    end
   end
 
   def provider_object(connection = nil)
