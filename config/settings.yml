@@ -12,6 +12,8 @@
 :ems_refresh:
   :oracle_cloud:
     :refresh_interval: 15.minutes
+  :oracle_cloud_network:
+    :refresh_interval: 0
   :oke:
     :streaming_refresh: true
     :chunk_size: 1_000
