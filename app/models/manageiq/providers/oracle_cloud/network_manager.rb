@@ -17,6 +17,10 @@ class ManageIQ::Providers::OracleCloud::NetworkManager < ManageIQ::Providers::Ne
            :to        => :parent_manager,
            :allow_nil => true
 
+  class << self
+    delegate :refresh_ems, :to => ManageIQ::Providers::OracleCloud::CloudManager
+  end
+
   def self.ems_type
     @ems_type ||= "oracle_cloud_network".freeze
   end
