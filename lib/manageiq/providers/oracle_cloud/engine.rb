@@ -4,7 +4,7 @@ module ManageIQ
       class Engine < ::Rails::Engine
         isolate_namespace ManageIQ::Providers::OracleCloud
 
-        config.autoload_paths << root.join('lib').to_s
+        config.autoload_paths << root.join('lib')
 
         def self.init_loggers
           $oracle_log ||= Vmdb::Loggers.create_logger("oracle.log")
