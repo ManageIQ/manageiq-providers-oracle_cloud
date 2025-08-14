@@ -4,12 +4,12 @@ FactoryBot.define do
   end
 
   factory :ems_oracle_cloud_with_vcr_authentication, :parent => :ems_oracle_cloud do
-    uid_ems { Rails.application.secrets.oracle_cloud[:tenant_id] }
+    uid_ems { VcrSecrets.oracle_cloud.tenant_id }
 
     after(:create) do |ems|
-      user_id     = Rails.application.secrets.oracle_cloud[:user_id]
-      private_key = Rails.application.secrets.oracle_cloud[:private_key]
-      public_key  = Rails.application.secrets.oracle_cloud[:public_key]
+      user_id     = VcrSecrets.oracle_cloud.user_id
+      private_key = VcrSecrets.oracle_cloud.private_key
+      public_key  = VcrSecrets.oracle_cloud.public_key
 
       ems.authentications << FactoryBot.create(
         :authentication,
@@ -25,17 +25,17 @@ FactoryBot.define do
   end
 
   factory :ems_oracle_oke_with_vcr_authentication, :parent => :ems_oracle_oke do
-    realm { Rails.application.secrets.oracle_cloud[:tenant_id] }
-    uid_ems { Rails.application.secrets.oracle_oke[:cluster_id] }
+    realm { VcrSecrets.oracle_cloud.tenant_id }
+    uid_ems { VcrSecrets.oracle_oke.cluster_id }
 
     after(:create) do |ems|
-      user_id     = Rails.application.secrets.oracle_cloud[:user_id]
-      private_key = Rails.application.secrets.oracle_cloud[:private_key]
-      public_key  = Rails.application.secrets.oracle_cloud[:public_key]
+      user_id     = VcrSecrets.oracle_cloud.user_id
+      private_key = VcrSecrets.oracle_cloud.private_key
+      public_key  = VcrSecrets.oracle_cloud.public_key
 
       ems.default_endpoint.update!(
-        :hostname          => Rails.application.secrets.oracle_oke[:hostname],
-        :port              => Rails.application.secrets.oracle_oke[:port],
+        :hostname          => VcrSecrets.oracle_oke.hostname,
+        :port              => VcrSecrets.oracle_oke.port,
         :security_protocol => "ssl-without-validation"
       )
 

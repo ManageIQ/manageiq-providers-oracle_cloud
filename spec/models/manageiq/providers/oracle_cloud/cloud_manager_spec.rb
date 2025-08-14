@@ -4,12 +4,12 @@ describe ManageIQ::Providers::OracleCloud::CloudManager do
       expect(
         described_class.verify_credentials(
           "provider_region" => "us-ashburn-1",
-          "uid_ems"         => Rails.application.secrets.oracle_cloud[:tenant_id],
+          "uid_ems"         => VcrSecrets.oracle_cloud.tenant_id,
           "authentications" => {
             "default" => {
-              "userid"     => Rails.application.secrets.oracle_cloud[:user_id],
-              "auth_key"   => Rails.application.secrets.oracle_cloud[:private_key],
-              "public_key" => Rails.application.secrets.oracle_cloud[:public_key]
+              "userid"     => VcrSecrets.oracle_cloud.user_id,
+              "auth_key"   => VcrSecrets.oracle_cloud.private_key,
+              "public_key" => VcrSecrets.oracle_cloud.public_key
             }
           }
         )
