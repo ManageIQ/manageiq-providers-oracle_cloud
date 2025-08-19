@@ -1,6 +1,6 @@
 # ManageIQ::Providers::OracleCloud
 
-[![CI](https://github.com/ManageIQ/manageiq-providers-oracle_cloud/actions/workflows/ci.yaml/badge.svg)](https://github.com/ManageIQ/manageiq-providers-oracle_cloud/actions/workflows/ci.yaml)
+[![CI](https://github.com/ManageIQ/manageiq-providers-oracle_cloud/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/ManageIQ/manageiq-providers-oracle_cloud/actions/workflows/ci.yaml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/<badge_token>/maintainability)](https://codeclimate.com/github/ManageIQ/manageiq-providers-oracle_cloud/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/<badge_token>/test_coverage)](https://codeclimate.com/github/ManageIQ/manageiq-providers-oracle_cloud/test_coverage)
 
