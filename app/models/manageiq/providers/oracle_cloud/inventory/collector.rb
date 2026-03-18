@@ -142,13 +142,13 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
 
   def retry_config
     @retry_config ||= OCI::Retry::RetryConfig.new(
-      :base_sleep_time_millis            =>  1000,
-      :exponential_growth_factor         =>  2,
-      :should_retry_exception_proc       =>  OCI::Retry::Functions::ShouldRetryOnError.retry_on_network_error_throttle_and_internal_server_errors, # rubocop:disable Metrics/LineLength
-      :sleep_calc_millis_proc            =>  OCI::Retry::Functions::Sleep.exponential_backoff_with_full_jitter,
-      :max_attempts                      =>  5,
-      :max_elapsed_time_millis           =>  300_000, # 5 minutes
-      :max_sleep_between_attempts_millis =>  10_000
+      :base_sleep_time_millis            => options.retry_config.base_sleep_time.to_i_with_method * 1_000,
+      :exponential_growth_factor         => options.retry_config.exponential_growth_factor,
+      :max_attempts                      => options.retry_config.max_attempts,
+      :max_elapsed_time_millis           => options.retry_config.max_elapsed_time.to_i_with_method * 1_000,
+      :max_sleep_between_attempts_millis => options.retry_config.max_sleep_between_attempts.to_i_with_method * 1_000,
+      :should_retry_exception_proc       => OCI::Retry::Functions::ShouldRetryOnError.retry_on_network_error_throttle_and_internal_server_errors,
+      :sleep_calc_millis_proc            => OCI::Retry::Functions::Sleep.exponential_backoff_with_full_jitter
     )
   end
 end
