@@ -117,26 +117,38 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
   private
 
   def blockstorage_client
-    @blockstorage_client ||= manager.connect(:service => "Core::BlockstorageClient")
+    @blockstorage_client ||= manager.connect(:service => "Core::BlockstorageClient", :retry_config => retry_config)
   end
 
   def compute_client
-    @compute_client ||= manager.connect(:service => "Core::ComputeClient")
+    @compute_client ||= manager.connect(:service => "Core::ComputeClient", :retry_config => retry_config)
   end
 
   def database_client
-    @database_client ||= manager.connect(:service => "Database::DatabaseClient")
+    @database_client ||= manager.connect(:service => "Database::DatabaseClient", :retry_config => retry_config)
   end
 
   def identity_client
-    @identity_client ||= manager.connect(:service => "Identity::IdentityClient")
+    @identity_client ||= manager.connect(:service => "Identity::IdentityClient", :retry_config => retry_config)
   end
 
   def mysql_client
-    @mysql_client ||= manager.connect(:service => "Mysql::DbSystemClient")
+    @mysql_client ||= manager.connect(:service => "Mysql::DbSystemClient", :retry_config => retry_config)
   end
 
   def virtual_network_client
-    @virtual_network_client ||= manager.connect(:service => "Core::VirtualNetworkClient")
+    @virtual_network_client ||= manager.connect(:service => "Core::VirtualNetworkClient", :retry_config => retry_config)
+  end
+
+  def retry_config
+    @retry_config ||= OCI::Retry::RetryConfig.new(
+      :base_sleep_time_millis            => options.retry_config.base_sleep_time.to_i_with_method * 1_000,
+      :exponential_growth_factor         => options.retry_config.exponential_growth_factor,
+      :max_attempts                      => options.retry_config.max_attempts,
+      :max_elapsed_time_millis           => options.retry_config.max_elapsed_time.to_i_with_method * 1_000,
+      :max_sleep_between_attempts_millis => options.retry_config.max_sleep_between_attempts.to_i_with_method * 1_000,
+      :should_retry_exception_proc       => OCI::Retry::Functions::ShouldRetryOnError.retry_on_network_error_throttle_and_internal_server_errors,
+      :sleep_calc_millis_proc            => OCI::Retry::Functions::Sleep.exponential_backoff_with_full_jitter
+    )
   end
 end
