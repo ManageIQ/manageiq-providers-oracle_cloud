@@ -12,6 +12,12 @@
 :ems_refresh:
   :oracle_cloud:
     :refresh_interval: 15.minutes
+    :retry_config:
+      :base_sleep_time: 1.second
+      :exponential_growth_factor: 2
+      :max_attempts: 5
+      :max_elapsed_time: 5.minutes
+      :max_sleep_between_attempts: 10.seconds
   :oke:
     :streaming_refresh: true
     :chunk_size: 1_000
