@@ -73,6 +73,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
   end
 
   def vnics
+    require "oci"
+
     # There doesn't appear to be a #list_vnics method so we have to get these
     # one-at-a-time.
     @vnics ||= vnic_attachments.map do |vnic_attachment|
@@ -141,6 +143,8 @@ class ManageIQ::Providers::OracleCloud::Inventory::Collector < ManageIQ::Provide
   end
 
   def retry_config
+    require "oci"
+
     @retry_config ||= OCI::Retry::RetryConfig.new(
       :base_sleep_time_millis            => options.retry_config.base_sleep_time.to_i_with_method * 1_000,
       :exponential_growth_factor         => options.retry_config.exponential_growth_factor,
