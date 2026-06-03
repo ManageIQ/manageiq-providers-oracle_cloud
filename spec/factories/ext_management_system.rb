@@ -20,6 +20,17 @@ FactoryBot.define do
     end
   end
 
+  factory :ems_oracle_cloud_with_authentication, :parent => :ems_oracle_cloud do
+    after(:create) do |ems|
+      ems.authentications << FactoryBot.create(
+        :authentication,
+        :userid     => "ocid1.user.oc1..aaaaaaaafakeuserid",
+        :auth_key   => "fake-private-key-for-testing",
+        :public_key => "fake-public-key-for-testing"
+      )
+    end
+  end
+
   factory :ems_oracle_oke, :class => "ManageIQ::Providers::OracleCloud::ContainerManager", :parent => :ems_container do
     provider_region { "us-ashburn-1" }
   end
