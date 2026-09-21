@@ -9,6 +9,8 @@
     :disabled_regions: []
     :event_handling:
       :event_groups:
+  :ems_oke:
+    :blacklisted_event_names: []
 :ems_refresh:
   :oracle_cloud:
     :refresh_interval: 15.minutes
@@ -38,6 +40,7 @@
         :poll: 20.seconds
       :event_catcher_oracle_oke:
         :poll: 20.seconds
+        :rails_worker: false
     :queue_worker_base:
       :ems_metrics_collector_worker:
         :ems_metrics_collector_worker_oracle_cloud: {}
